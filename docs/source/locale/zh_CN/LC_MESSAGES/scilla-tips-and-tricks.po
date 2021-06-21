@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, Zilliqa Research
+# This file is distributed under the same license as the scilla中文文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: scilla中文文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-21 15:18+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../scilla-tips-and-tricks.rst:4
+msgid "Scilla Tips and Tricks"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:9
+msgid "Performance"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:15
+msgid "Field map size"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:17
+msgid ""
+"If your contract needs to know the size of a field map, i.e. a field "
+"variable that is a map then the obvious implementation that reads a field"
+" map into a variable and applies the ``size`` builtin (as in the "
+"following code snippet) can be very inefficient as it requires making a "
+"copy of the map in question."
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:34
+msgid ""
+"In order to solve the issue one tracks the size information in a "
+"corresponding field variable as in the following code snippet. Notice "
+"that now instead of copying a map one just reads from ``accounts_size`` "
+"field variable."
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:52
+msgid ""
+"Now, to make sure that the map and its size stay in sync, one needs to "
+"update the size of the map when using the builtin in-place statements "
+"like ``m[k] := v`` or ``delete m[k]`` or better yet define and use "
+"systematically procedures that do exactly that."
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:57
+msgid ""
+"Here is the definition of a procedure that updates a key/value pair in "
+"the ``accounts`` map and changes its size accordingly."
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:75
+msgid ""
+"And this is the definition of a procedure that removes a key/value pair "
+"from the ``accounts`` map and changes its size accordingly."
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:95
+msgid "Money Idioms"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:99
+msgid "Partially accepting funds"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:101
+msgid ""
+"Let's say you are working on a contract which lets people tips each "
+"other. Naturally, you'd like to avoid a situation when a person tips too "
+"much because of a typo. It would be nice to ask Scilla to accept incoming"
+" funds partially, but there is no ``accept <cap>`` builtin. You can "
+"either not accept at all or accept the funds fully. We can work around "
+"this restriction by fully accepting the incoming funds and then "
+"immediately refunding the tipper if the tip exceeds some cap."
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:109
+msgid ""
+"It turns out we can encapsulate this kind of behavior as a reusable "
+"procedure."
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:127
+msgid "Now, the ``accept_with_cap`` procedure can be used as follows."
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:144
+msgid "Safety"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:150
+msgid "Transfer Contract Ownership"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:152
+msgid ""
+"If your contract has an owner (usually it means someone with admin powers"
+" like adding/removing user accounts or pausing/unpausing the contract) "
+"which can be changed at runtime then at first sight this can be "
+"formalized in the code as a field ``owner`` and a transition like "
+"``ChangeOwner``:"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:170
+msgid ""
+"However, this might lead to a situation when the current owner gets "
+"locked out of the control over the contract. For instance, the current "
+"owner can potentially transfer contract ownership to a non-existing "
+"address due to a typo in the address parameter when calling the "
+"``ChangeOwner`` transition. Here we provide a design pattern to "
+"circumvent this issue."
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:176
+msgid ""
+"One way to ensure the new owner is active is to do ownership transfer in "
+"two phases:"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:179
+msgid ""
+"the current owner offers to transfer ownership to a new owner, note that "
+"at this point the current owner is still the contract owner;"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:182
+msgid ""
+"the future new owner accepts the pending ownership transfer and becomes "
+"the current owner;"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:185
+msgid ""
+"at any moment before the future new owner accepts the transfer the "
+"current owner can abort the ownership transfer."
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:188
+msgid ""
+"Here is a possible implementation of the pattern outlined above (the code"
+" for the ``isOwner`` procedure is not shown):"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:221
+msgid ""
+"Ownership transfer for contracts with the above transition is supposed to"
+" happen as follows:"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:224
+msgid ""
+"the current owner calls ``RequestOwnershipTransfer`` transition with the "
+"new owner address as its only explicit parameter;"
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:226
+msgid "the new owner calls ``ConfirmOwnershipTransfer``."
+msgstr ""
+
+#: ../scilla-tips-and-tricks.rst:228
+msgid ""
+"Until the ownership transition is finalized, the current owner can abort "
+"it by calling ``RequestOwnershipTransfer`` with their own address. A "
+"(redundant) dedicated transition can be added to make it even more "
+"evident to the contract owners and users."
+msgstr ""
+
