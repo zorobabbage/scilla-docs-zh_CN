@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../scilla-trial.rst:4
 msgid "Trying out Scilla"
-msgstr ""
+msgstr "Scilla尝鲜"
 
 #: ../scilla-trial.rst:6
 msgid ""

@@ -27,7 +27,7 @@ msgid ""
 "intermediate-level smart contract language being developed for the "
 "`Zilliqa <https://zilliqa.com>`_ blockchain.  Scilla is designed as a "
 "principled language with smart contract safety in mind."
-msgstr "`Scilla` （即 `Smart Contract Intermediate-Level LAnguage`）是为 `Zilliqa <https://zilliqa.com>`_ 区块链开发的中级智能合约语言。Scilla被设计成一种有原则的语言，并充分考虑了智能合约的安全性。"
+msgstr "`Scilla` （即 `Smart Contract Intermediate-Level LAnguage`）是为 `Zilliqa <https://zilliqa.com>`_ 区块链开发的智能合约中级语言。Scilla是按照原则性语言进行设计的，并且充分考虑了智能合约的安全性。"
 
 #: ../index.rst:21
 msgid ""
@@ -36,7 +36,7 @@ msgid ""
 "directly at the language-level. Furthermore, the principled structure of "
 "Scilla will make applications inherently more secure and amenable to "
 "formal verification."
-msgstr "Scilla在智能合约上强加了一种结构，通过直接在语言级别消除某些已知的漏洞，使应用程序不那么容易受到攻击。此外，Scilla的原则性结构将使应用程序本质上更加安全，并易于接受形式验证。"
+msgstr "Scilla通过在智能合约上强加一种结构，从而可以直接在语言级别消除某些已知漏洞，使应用程序不易被攻击。此外，Scilla的原则性结构设计将使应用程序从根源上解决安全问题，而且这种设计更易于接受形式验证。"
 
 #: ../index.rst:26
 msgid ""
@@ -48,7 +48,7 @@ msgid ""
 "been successfully applied previously to implement certified (i.e., fully "
 "mechanically verified) compilers, concurrent and distributed "
 "applications, including blockchains among others."
-msgstr "该语言正在与语义形式化以及将其嵌入 `Coq证明助手 <https://coq.inria.fr/>`_ （一种用于对程序属性进行机械化证明的先进工具）一起开发。Coq基于高级的依赖类型理论，并以大量的数学库为特征。它之前已经成功应用于实现认证(即完全机械验证)编译器、并发和分布式应用程序，其中就包括区块链等。"
+msgstr "该语言与语义形式化以及将其嵌入 `Coq证明助手 <https://coq.inria.fr/>`_ （一种用于对程序属性进行机械化证明的先进工具）进行着并行开发。Coq是基于高级的依赖类型理论，并以大量的数学库为其特征。在此之前，Coq已经成功应用于实现认证(即完全机械验证)编译器、并发和分布式应用程序，其中就包括区块链等。"
 
 #: ../index.rst:35
 msgid ""
@@ -57,11 +57,11 @@ msgid ""
 "idea of sharding to validate transactions in parallel. Zilliqa has an "
 "intrinsic token named `Zilling` (ZIL for short) that are required to run "
 "smart contracts on Zilliqa."
-msgstr "`Zilliqa` 是一个被设计为可扩展的，Scilla合约在其上运行的基础区块链平台。它采用分片的思想进行并行事务验证。Zilliqa有一个名为 `Zilling` （简称ZIL）的内置通证，此通证需要在Zilliqa上运行智能合约。"
+msgstr "`Zilliqa` 是一个具有可扩展性的，Scilla合约在其上运行的基础区块链平台。它采用分片的思想进行并行事务验证。Zilliqa有一个名为 `Zilling` （简称ZIL）的内置通证，此通证需要在Zilliqa上运行智能合约。"
 
 #: ../index.rst:42
 msgid "Development Status"
-msgstr ""
+msgstr "发展现状"
 
 #: ../index.rst:44
 msgid ""
@@ -70,79 +70,79 @@ msgid ""
 "currently comes with an interpreter binary that has been integrated into "
 "two Scilla-specific web-based IDEs. :ref:`trial-label` presents the "
 "features of the two IDEs."
-msgstr ""
+msgstr "Scilla正在积极的研究和开发中，因此本文档中描述的部分规范可能会发生变化。Scilla目前附带了一个解释器二进制文件，已集成到两个Scilla特定的基于web的IDE中。  :ref:`trial-label`  展示了这两个ide的特性。"
 
 #: ../index.rst:51
 msgid "Resources"
-msgstr ""
+msgstr "相关资源"
 
 #: ../index.rst:53
 msgid ""
 "There are several resources to learn about Scilla and Zilliqa. Some of "
 "these are given below:"
-msgstr ""
+msgstr "有关Scilla和Zilliqa的学习资料有不少，下面列了一些经常会用到的："
 
 #: ../index.rst:67
 msgid "**Scilla**"
-msgstr ""
+msgstr "**Scilla**"
 
 #: ../index.rst:58
 msgid "`Scilla Design Paper <https://ilyasergey.net/papers/scilla-oopsla19.pdf>`_"
-msgstr ""
+msgstr "`Scilla设计论文 <https://ilyasergey.net/papers/scilla-oopsla19.pdf>`_"
 
 #: ../index.rst:60
 msgid ""
 "`Scilla Slides  "
 "<https://drive.google.com/file/d/10gIef8jeoQ2h9kYInvU3s0i5B6Z9syGB/view>`_"
-msgstr ""
+msgstr "`Scilla幻灯片（资源丢失，等待官方更新）  <https://drive.google.com/file/d/10gIef8jeoQ2h9kYInvU3s0i5B6Z9syGB/view>`_"
 
 #: ../index.rst:62
 msgid "`Scilla Language Grammar <https://docs.zilliqa.com/scilla-grammar.pdf>`_"
-msgstr ""
+msgstr "`Scilla语言基础语法 <https://docs.zilliqa.com/scilla-grammar.pdf>`_"
 
 #: ../index.rst:65
 msgid ""
 "`Scilla Design Story Piece by Piece: Part 1 (Why do we need a new "
 "language?) <https://blog.zilliqa.com/scilla-design-story-piece-by-piece-"
 "part-1-why-do-we-need-a-new-language-27d5f14ae661>`_"
-msgstr ""
+msgstr "`Scilla设计背后的故事之为什么我们需要一门新语言 <https://www.china-zil.com/news/%e6%99%ba%e8%83%bd%e5%90%88%e7%ba%a6%e8%af%ad%e8%a8%80scilla%e7%9a%84%e8%ae%be%e8%ae%a1%e6%95%85%e4%ba%8b%ef%bc%88%e6%90%ac%e7%a0%96%ef%bc%89/>`_"
 
 #: ../index.rst:76
 msgid "**Zilliqa**"
-msgstr ""
+msgstr "**Zilliqa**"
 
 #: ../index.rst:70
 msgid ""
 "`The Zilliqa Design Story Piece by Piece: Part 1 (Network Sharding) "
 "<https://blog.zilliqa.com/https-blog-zilliqa-com-the-zilliqa-design-"
 "story-piece-by-piece-part1-d9cb32ea1e65>`_"
-msgstr ""
+msgstr "`Zilliqa设计背后的故事之网络分片（一） <https://blog.zilliqa.com/https-blog-zilliqa-com-the-zilliqa-design-story-piece-by-piece-part1-d9cb32ea1e65>`_"
 
 #: ../index.rst:71
 msgid ""
 "`The Zilliqa Design Story Piece by Piece: Part 2 (Consensus Protocol) "
 "<https://blog.zilliqa.com/the-zilliqa-design-story-piece-by-piece-part-2"
 "-consensus-protocol-e38f6bf566e3>`_"
-msgstr ""
+msgstr "`Zilliqa设计背后的故事之共识协议（二） <https://blog.zilliqa.com/the-zilliqa-design-story-piece-by-piece-part-2-consensus-protocol-e38f6bf566e3>`_"
 
 #: ../index.rst:72
 msgid ""
 "`The Zilliqa Design Story Piece by Piece: Part 3 (Making Consensus "
 "Efficient) <https://blog.zilliqa.com/the-zilliqa-design-story-piece-by-"
 "piece-part-3-making-consensus-efficient-7a9c569a8f0e>`_"
-msgstr ""
+msgstr "`Zilliqa设计背后的故事之效率共识（三） <https://blog.zilliqa.com/the-zilliqa-design-story-piece-by-piece-part-3-making-consensus-efficient-7a9c569a8f0e>`_"
 
 #: ../index.rst:73
 msgid "`Technical Whitepaper <https://docs.zilliqa.com/whitepaper.pdf>`_"
-msgstr ""
+msgstr "`技术白皮书 <https://docs.zilliqa.com/whitepaper.pdf>`_"
 
 #: ../index.rst:74
 msgid ""
 "`The Not-So-Short Zilliqa Technical FAQ "
 "<https://docs.zilliqa.com/techfaq.pdf>`_"
-msgstr ""
+msgstr "`不是那么长的Zilliqa技术答疑 <https://docs.zilliqa.com/techfaq.pdf>`_"
 
 #: ../index.rst:79
 msgid "Contents"
-msgstr "内容"
+msgstr "目录"
 
