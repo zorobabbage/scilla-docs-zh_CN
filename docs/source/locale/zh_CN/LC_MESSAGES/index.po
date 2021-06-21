@@ -27,7 +27,7 @@ msgid ""
 "intermediate-level smart contract language being developed for the "
 "`Zilliqa <https://zilliqa.com>`_ blockchain.  Scilla is designed as a "
 "principled language with smart contract safety in mind."
-msgstr "`Scilla` (即 `Smart Contract Intermediate-Level LAnguage`)是为 `Zilliqa <https://zilliqa.com>`_ 区块链开发的中级智能合约语言。Scilla被设计成一种有原则的语言，并充分考虑了智能合约的安全性。"
+msgstr "`Scilla` （即 `Smart Contract Intermediate-Level LAnguage`）是为 `Zilliqa <https://zilliqa.com>`_ 区块链开发的中级智能合约语言。Scilla被设计成一种有原则的语言，并充分考虑了智能合约的安全性。"
 
 #: ../index.rst:21
 msgid ""
@@ -36,7 +36,7 @@ msgid ""
 "directly at the language-level. Furthermore, the principled structure of "
 "Scilla will make applications inherently more secure and amenable to "
 "formal verification."
-msgstr ""
+msgstr "Scilla在智能合约上强加了一种结构，通过直接在语言级别消除某些已知的漏洞，使应用程序不那么容易受到攻击。此外，Scilla的原则性结构将使应用程序本质上更加安全，并易于接受形式验证。"
 
 #: ../index.rst:26
 msgid ""
@@ -48,7 +48,7 @@ msgid ""
 "been successfully applied previously to implement certified (i.e., fully "
 "mechanically verified) compilers, concurrent and distributed "
 "applications, including blockchains among others."
-msgstr ""
+msgstr "该语言正在与语义形式化以及将其嵌入 `Coq证明助手 <https://coq.inria.fr/>`_ (一种用于对程序属性进行机械化证明的先进工具)一起开发。Coq基于高级的依赖类型理论，并以大量的数学库为特征。它之前已经成功应用于实现认证(即完全机械验证)编译器、并发和分布式应用程序，其中就包括区块链等。"
 
 #: ../index.rst:35
 msgid ""
@@ -57,7 +57,7 @@ msgid ""
 "idea of sharding to validate transactions in parallel. Zilliqa has an "
 "intrinsic token named `Zilling` (ZIL for short) that are required to run "
 "smart contracts on Zilliqa."
-msgstr ""
+msgstr "`Zilliqa` ，是一个被设计为可扩展的，Scilla合约运行的基础区块链平台。它采用分片的思想进行并行事务验证。Zilliqa有一个名为 `Zilling`(简称ZIL)的内置通证，此通证需要在Zilliqa上运行智能合约。"
 
 #: ../index.rst:42
 msgid "Development Status"
