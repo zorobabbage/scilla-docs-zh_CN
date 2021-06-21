@@ -1,0 +1,3 @@
+[submodule "scilla-docs-en"]
+	path = scilla-docs-en
+	url = git@github.com:Zilliqa/scilla-docs.git
