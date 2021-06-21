@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../index.rst:7
 msgid "Scilla"
-msgstr ""
+msgstr "Scilla"
 
 #: ../index.rst:16
 msgid ""
@@ -27,7 +27,7 @@ msgid ""
 "intermediate-level smart contract language being developed for the "
 "`Zilliqa <https://zilliqa.com>`_ blockchain.  Scilla is designed as a "
 "principled language with smart contract safety in mind."
-msgstr ""
+msgstr "`Scilla`(即`Smart Contract Intermediate-Level LAnguage`)是为`Zilliqa <https://zilliqa.com>` _ 区块链开发的中级智能合约语言。Scilla被设计成一种有原则的语言，并充分考虑了智能合约的安全性。"
 
 #: ../index.rst:21
 msgid ""
