@@ -130,7 +130,7 @@ msgid ""
 "`The Zilliqa Design Story Piece by Piece: Part 3 (Making Consensus "
 "Efficient) <https://blog.zilliqa.com/the-zilliqa-design-story-piece-by-"
 "piece-part-3-making-consensus-efficient-7a9c569a8f0e>`_"
-msgstr "`Zilliqa设计背后的故事之效率共识（三） <https://blog.zilliqa.com/the-zilliqa-design-story-piece-by-piece-part-3-making-consensus-efficient-7a9c569a8f0e>`_"
+msgstr "`Zilliqa设计背后的故事之共识效率（三） <https://blog.zilliqa.com/the-zilliqa-design-story-piece-by-piece-part-3-making-consensus-efficient-7a9c569a8f0e>`_"
 
 #: ../index.rst:73
 msgid "`Technical Whitepaper <https://docs.zilliqa.com/whitepaper.pdf>`_"
