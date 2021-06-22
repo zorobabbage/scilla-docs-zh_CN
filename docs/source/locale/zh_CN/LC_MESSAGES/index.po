@@ -70,7 +70,7 @@ msgid ""
 "currently comes with an interpreter binary that has been integrated into "
 "two Scilla-specific web-based IDEs. :ref:`trial-label` presents the "
 "features of the two IDEs."
-msgstr "Scilla正在积极的研究和开发中，因此本文档中描述的部分规范可能会发生变化。Scilla目前附带了一个解释器二进制文件，已集成到两个Scilla特定的基于web的IDE中。  :ref:`trial-label`  展示了这两个ide的特性。"
+msgstr "Scilla正在积极的研究和开发中，因此本文档中描述的部分规范可能会发生变化。Scilla目前附带了一个解释器二进制文件，已集成到两个Scilla特定的基于web的IDE中。  :ref:`trial-label`  展示了这两个IDE的特性。"
 
 #: ../index.rst:51
 msgid "Resources"

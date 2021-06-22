@@ -24,7 +24,7 @@ on_readthedocs = os.environ.get('READTHEDOCS', None) == 'True'
 # -- Project information -----------------------------------------------------
 
 project = u'scilla中文文档'
-copyright = u'2019, Zilliqa Research'
+copyright = u'2021, Zoro Team'
 author = u'Babbage'
 
 # The short X.Y version
