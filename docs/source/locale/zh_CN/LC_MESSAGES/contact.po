@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../contact.rst:2
 msgid "Contact"
-msgstr ""
+msgstr "联系我们"
 
 #: ../contact.rst:4
 msgid ""
 "Questions? Talk to us on `Discord "
 "<https://discordapp.com/invite/mWp9HdR/>`_."
-msgstr ""
+msgstr "有疑问？欢迎加入 `Discord <https://discordapp.com/invite/mWp9HdR/>`_ 与我们一起探讨。"
 

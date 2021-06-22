@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../scilla-by-example.rst:2
 msgid "Scilla by Example"
-msgstr ""
+msgstr "Scilla实战演练"
 
 #: ../scilla-by-example.rst:6
 msgid "HelloWorld"

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../scilla-tips-and-tricks.rst:4
 msgid "Scilla Tips and Tricks"
-msgstr ""
+msgstr "Scilla注意事项及使用技巧"
 
 #: ../scilla-tips-and-tricks.rst:9
 msgid "Performance"

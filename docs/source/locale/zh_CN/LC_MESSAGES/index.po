@@ -140,7 +140,7 @@ msgstr "`技术白皮书 <https://docs.zilliqa.com/whitepaper.pdf>`_"
 msgid ""
 "`The Not-So-Short Zilliqa Technical FAQ "
 "<https://docs.zilliqa.com/techfaq.pdf>`_"
-msgstr "`不是那么长的Zilliqa技术答疑 <https://docs.zilliqa.com/techfaq.pdf>`_"
+msgstr "`Zilliqa技术答疑 <https://docs.zilliqa.com/techfaq.pdf>`_"
 
 #: ../index.rst:79
 msgid "Contents"

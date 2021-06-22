@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../intro.rst:2
 msgid "Scilla Design Principles"
-msgstr ""
+msgstr "Scilla设计原则"
 
 #: ../intro.rst:4
 msgid ""

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../scilla-checker.rst:2
 msgid "The Scilla checker"
-msgstr ""
+msgstr "Scilla检查器"
 
 #: ../scilla-checker.rst:5
 msgid ""

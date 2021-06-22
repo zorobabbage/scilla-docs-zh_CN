@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../stdlib.rst:2
 msgid "The Scilla Standard Library"
-msgstr ""
+msgstr "Scilla标准库"
 
 #: ../stdlib.rst:5
 msgid ""

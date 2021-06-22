@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../scilla-in-depth.rst:2
 msgid "Scilla in Depth"
-msgstr ""
+msgstr "Scilla深度解析"
 
 #: ../scilla-in-depth.rst:5
 msgid "Structure of a Scilla Contract"

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../interface.rst:5
 msgid "Interpreter Interface"
-msgstr ""
+msgstr "解释器接口"
 
 #: ../interface.rst:7
 msgid ""
