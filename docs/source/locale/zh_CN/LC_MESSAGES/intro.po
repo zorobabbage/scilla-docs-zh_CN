@@ -30,7 +30,7 @@ msgid ""
 "short. These applications have their program and business logic coded in "
 "the form of a smart contract that can be run on a decentralized "
 "blockchain network."
-msgstr "`智能合约` 提供了一种表达区块链计算属性的机制，也就是去中心化的拜占庭容错分布式账本。随着智能合约的出现，构建所谓的 `去中心化应用程序` (简称Dapps)已经成为可能。这些Dapps的程序和业务逻辑以智能合约的形式编码，可以在去中心化的区块链网络上运行。"
+msgstr "`智能合约` 提供了一种表达区块链计算属性的机制，也就是去中心化的拜占庭容错分布式账本。随着智能合约的出现，构建所谓的 `去中心化应用程序` （简称Dapps）已经成为可能。这些Dapps的程序和业务逻辑以智能合约的形式编码，可以在去中心化的区块链网络上运行。"
 
 #: ../intro.rst:11
 msgid ""
@@ -82,7 +82,7 @@ msgid ""
 "been designed to achieve both `expressivity` and `tractability` at the "
 "same time, while enabling formal reasoning about contract behavior by "
 "adopting certain fundamental design principles as described below:"
-msgstr "`Scilla` 是一种全新的(中级)智能合约语言，设计的目的是同时实现表达性和可溯性，同时通过采用某些基本设计原则来实现合约行为的形式推理，具体如下所示:"
+msgstr "`Scilla` 是一种全新的（中级）智能合约语言，设计的目的是同时实现表达性和可溯性，同时通过采用某些基本设计原则来实现合约行为的形式推理，具体如下所示:"
 
 #: ../intro.rst:49
 msgid "**Separation Between Computation and Communication**"
