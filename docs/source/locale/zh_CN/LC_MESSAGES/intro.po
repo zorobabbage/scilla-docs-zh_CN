@@ -30,7 +30,7 @@ msgid ""
 "short. These applications have their program and business logic coded in "
 "the form of a smart contract that can be run on a decentralized "
 "blockchain network."
-msgstr ""
+msgstr "`智能合约` 提供了一种表达区块链计算属性的机制，也就是去中心化的拜占庭容错分布式账本。随着智能合约的出现，构建所谓的 `去中心化应用程序` (简称Dapps)已经成为可能。这些Dapps的程序和业务逻辑以智能合约的形式编码，可以在去中心化的区块链网络上运行。"
 
 #: ../intro.rst:11
 msgid ""
@@ -39,7 +39,7 @@ msgid ""
 "These features of smart contracts have become so popular today that they "
 "now drive real-world economies through applications such as crowdfunding,"
 " games, decentralized exchanges, payment processors among many others."
-msgstr ""
+msgstr "在去中心的网络上运行应用程序消除了对受信任的中心机构或其他应用程序典型的服务器的需求。智能合约的这些特性如今已变得非常流行，它们现在正通过众筹、游戏、去中心化交易所、支付处理器等应用程序推动着现实世界的经济。"
 
 #: ../intro.rst:18
 msgid ""
@@ -52,7 +52,7 @@ msgid ""
 "severe because smart contracts cannot directly be updated due to the "
 "immutable nature of blockchains. It is hence crucial to ensure that smart"
 " contracts that get deployed are safe to run."
-msgstr ""
+msgstr "然而，过去几年的经验表明，智能合约语言的语义话操作实现有着相当微妙的情况，这与合约开发人员头脑中对该语言的直观理解相背离。这种理解上的分歧导致了对智能合约的大量攻击，例如对DAO合约和Parity钱包的攻击等等。由于区块链的不可变特性，智能合约无法直接更新，因此这个问题就变得更加严重。由此可见，确保部署的智能合约能够安全运行是至关重要的。"
 
 #: ../intro.rst:28
 msgid ""
@@ -62,7 +62,7 @@ msgid ""
 "improving the readability and safety of smart contracts. Moreover, with "
 "formal methods, it becomes possible to produce rigorous guarantees about "
 "the behavior of a contract."
-msgstr ""
+msgstr "在其他领域，验证和模型检查等形式方法已被证明在提高软件系统的安全性方面是卓有成效的，因此探索它们在提高智能合约的可读性和安全性方面的适用性就是很自然的事情了。此外，通过形式方法，可以对合约的行为作出严格的保证。"
 
 #: ../intro.rst:35
 msgid ""
@@ -74,7 +74,7 @@ msgid ""
 "scripting language occupies the `simpler` end of the spectrum and does "
 "not handle stateful-objects. On the `expressive` side of the spectrum is "
 "a Turing-complete language such as Solidity."
-msgstr ""
+msgstr "然而，对现有语言（如Solidity）应用形式验证工具并不是一项简单的任务，因为图灵完备语言具有典型的极端表达能力。实际上，在使语言更易于理解和易于接受形式验证以及使其更具表达性之间存在一种取舍。例如，比特币的脚本语言选择了更简单的处理方式，即不处理状态对象。而在表达性方面则是图灵完备语言，如Solidity。"
 
 #: ../intro.rst:44
 msgid ""
@@ -82,11 +82,11 @@ msgid ""
 "been designed to achieve both `expressivity` and `tractability` at the "
 "same time, while enabling formal reasoning about contract behavior by "
 "adopting certain fundamental design principles as described below:"
-msgstr ""
+msgstr "`Scilla` 是一种全新的(中级)智能合约语言，设计的目的是同时实现表达性和可溯性，同时通过采用某些基本设计原则来实现合约行为的形式推理，具体如下所示:"
 
 #: ../intro.rst:49
 msgid "**Separation Between Computation and Communication**"
-msgstr ""
+msgstr "**计算和通信分离**"
 
 #: ../intro.rst:51
 msgid ""
@@ -101,11 +101,11 @@ msgid ""
 "blockchain-wide interactions (i.e., sending/receiving funds and "
 "messages), thus providing a clean reasoning mechanism about contract "
 "composition and invariants."
-msgstr ""
+msgstr "Scilla中的合约被构造为一种自动通信机制：合约中的每个计算（例如，改变其平衡或计算一个函数的值）都被实现为独立的原子跃迁，也就是说，这种计算不涉及任何第三方。无论何时需要参与（例如，将控制权转移给另一方），这种转换都将通过发送和接收信息的形式以明确的通信方式结束。基于自动化的结构使得从区块链范围的交互（即发送/接收资金和消息）中分离出特定于合约的影响（即转换）成为可能，从而提供了一个关于合约构成和不可变量的清晰推理机制。"
 
 #: ../intro.rst:64
 msgid "**Separation Between Effectful and Pure Computations**"
-msgstr ""
+msgstr "**有效计算和纯计算分离**"
 
 #: ../intro.rst:66
 msgid ""
@@ -121,11 +121,11 @@ msgid ""
 "about contract transitions, such as progress and type preservation, while"
 " also making them amenable to interactive and/or automatic verification "
 "with standalone tools."
-msgstr ""
+msgstr "任何发生在转换内的合约计算都必须终止，并对合约的状态和执行产生可预测的影响。为了实现这一点，Scilla从函数式编程中汲取灵感，在区分纯表达式（例如，具有原始数据类型和映射的表达式）、非纯局部状态操作（例如，读/写合约字段）和区块链映射（例如，读取当前块高度）方面都有显著提高。通过精心设计纯语言和非纯语言之间的交互语义，Scilla保留了许多关于合约转换的基本属性，如进程和类型保存，同时也使它们能够通过独立工具进行交互和/或自动验证。"
 
 #: ../intro.rst:78
 msgid "**Separation Between Invocation and Continuation**"
-msgstr ""
+msgstr "**Invocation和Continuation分离**"
 
 #: ../intro.rst:80
 msgid ""
@@ -133,5 +133,5 @@ msgid ""
 "model, which only allows `tail-calls`, i.e., every call to an external "
 "function (i.e., another contract) has to be done as the absolutely last "
 "instruction."
-msgstr ""
+msgstr "作为自动通信构造合约，它提供了一个只允许尾部调用计算模型，也就是说，每个对外部函数（也就是另一个合约）的调用都必须作为最后一条指令来执行，而且要严格遵守。"
 
