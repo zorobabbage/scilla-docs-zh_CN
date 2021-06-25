@@ -139,8 +139,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'scilla-doc.tex', u'scilla-doc Documentation',
-     u'Amrit Kumar', 'manual'),
+    (master_doc, 'scilla-doc.tex', u'scilla中文文档',
+     u'Babbage', 'manual'),
 ]
 
 
@@ -149,7 +149,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'scilla-doc', u'scilla-doc Documentation',
+    (master_doc, 'scilla-doc', u'scilla中文文档',
      [author], 1)
 ]
 
@@ -160,7 +160,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'scilla-doc', u'scilla-doc Documentation',
+    (master_doc, 'scilla-doc', u'scilla中文文档',
      author, 'scilla-doc', 'One line description of project.',
      'Miscellaneous'),
 ]

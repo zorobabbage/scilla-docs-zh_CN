@@ -94,7 +94,7 @@ msgstr "`Scilla设计论文 <https://ilyasergey.net/papers/scilla-oopsla19.pdf>`
 msgid ""
 "`Scilla Slides  "
 "<https://drive.google.com/file/d/10gIef8jeoQ2h9kYInvU3s0i5B6Z9syGB/view>`_"
-msgstr "`Scilla幻灯片 <https://www.china-zil.com/wp-content/uploads/2021/06/scilla_slides.pdf>`_"
+msgstr "`Scilla讲义 <https://www.china-zil.com/wp-content/uploads/2021/06/scilla_slides.pdf>`_"
 
 #: ../index.rst:62
 msgid "`Scilla Language Grammar <https://docs.zilliqa.com/scilla-grammar.pdf>`_"

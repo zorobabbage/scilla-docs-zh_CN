@@ -25,11 +25,11 @@ msgstr "Scilla尝鲜"
 msgid ""
 "Scilla is under active development. You can try out Scilla in the online "
 "IDE."
-msgstr ""
+msgstr "Scilla 目前还正在积极开发中。 但是你可以使用线上 IDE 来编写 Scilla。"
 
 #: ../scilla-trial.rst:10
 msgid "Savant IDE"
-msgstr ""
+msgstr "Savant IDE"
 
 #: ../scilla-trial.rst:12
 msgid ""
@@ -38,7 +38,7 @@ msgid ""
 "environment, the live developer testnet, and the live mainnet. It is "
 "optimized for use in Chrome Web Browser. Neo Savant IDE allows you to "
 "import accounts from external wallets like Ledger or keystore files."
-msgstr ""
+msgstr "`Neo Savant IDE <https://ide.zilliqa.com>`_ 是一个基于 Web 的开发环境，它允许你与模拟测试网环境、开发者测试网和主网进行交互。 另外它针对在 Chrome 浏览器中的使用进行了优化。 Neo Savant IDE 允许你从外部钱包（如 Ledger 或密钥库文件）导入帐户。"
 
 #: ../scilla-trial.rst:17
 msgid ""
@@ -47,7 +47,7 @@ msgid ""
 "environment, you will receive 10,000 $ZIL. While on the developer "
 "testnet, you will receive 300 $ZIL. There are no faucets for the live "
 "mainnet."
-msgstr ""
+msgstr "当钱包成功导入时，IDE 会自动请求水龙头向你支付测试网 $ZIL。 在模拟的测试网环境中，你将获得 10,000 枚 ZIL。 在开发者测试网上，你将获得 300 枚 ZIL。 主网没有水龙头。"
 
 #: ../scilla-trial.rst:22
 msgid ""
@@ -57,17 +57,17 @@ msgid ""
 " and `Zilliqa-JS <https://github.com/Zilliqa/Zilliqa-JavaScript-"
 "Library>`_. To try out the Neo Savant IDE, users need to visit `Neo "
 "Savant IDE <https://ide.zilliqa.com>`_."
-msgstr ""
+msgstr "在使用 `隔离服务器 <https://github.com/Zilliqa/Zilliqa/blob/master/ISOLATED_SERVER_setup.md>`_ 和 `Zilliqa-JS <https://github.com/Zilliqa/Zilliqa-JavaScript-Library>`_ 等工具进行自动化脚本测试之前，Neo Savant IDE 可以充当临时环境。 要试用 Neo Savant IDE，用户需要访问 `Neo Savant IDE <https://ide.zilliqa.com>`_ 。"
 
 #: ../scilla-trial.rst:29
 msgid "Example Contracts"
-msgstr ""
+msgstr "示例合约"
 
 #: ../scilla-trial.rst:31
 msgid ""
 "Savant IDE comes with the following sample smart contracts written in "
 "Scilla:"
-msgstr ""
+msgstr "Savant IDE 附带以下用 Scilla 编写的示例智能合约："
 
 #: ../scilla-trial.rst:33
 msgid ""
@@ -76,7 +76,7 @@ msgid ""
 "is done via  ``setHello (msg: String)``. The contract also provides an "
 "interface ``getHello()`` to allow any account to be  returned with the "
 "welcome message when called."
-msgstr ""
+msgstr "**HelloWorld** ：这是一个简单的合约，允许指定的帐户 ``owner`` 设置欢迎消息。 设置欢迎消息是通过 ``setHello (msg: String)`` 完成的。 该合约还提供了一个接口 ``getHello()`` 以允许任何帐户在调用时返回欢迎消息。"
 
 #: ../scilla-trial.rst:39
 msgid ""
@@ -84,7 +84,7 @@ msgid ""
 "contract can add ``members``. All ``members`` will have read/write access"
 " capability to create OR update books in the inventory with `book title`,"
 " `author`, and `bookID`."
-msgstr ""
+msgstr "**BookStore** ：CRUD 应用程序的演示。 只有合约的 ``owner`` 才能添加 ``members`` 。 所有 ``members`` 都将具有读/写权限，可以使用 `book title` 、 `author` 和 `bookID` 对库存中的书籍进行 OR 操作。"
 
 #: ../scilla-trial.rst:43
 msgid ""
@@ -94,7 +94,7 @@ msgid ""
 "period, the raised money can be sent to a predefined account ``owner`` "
 "via ``GetFunds()``.  Else, if the campaign fails, then contributors can "
 "take back their donations via the transition ``ClaimBack()``."
-msgstr ""
+msgstr "**CrowdFunding** ：Crowdfunding 实现了一个 Kickstarter-style 的众筹活动，用户可以使用 ``Donate()`` 向合约捐赠资金。 如果众筹成功，即在给定时间段内筹集到足够的资金，则可以通过 ``GetFunds()`` 将筹集的资金发送给预定义的帐户 ``owner`` 。 相反，如果众筹失败，则贡献者可以通过名为 ``ClaimBack()`` 的ransition收回他们的捐款。"
 
 #: ../scilla-trial.rst:50
 msgid ""
@@ -103,21 +103,21 @@ msgid ""
 "predefined account. Bidders who don't win can take back their bid using "
 "the transition ``Withdraw()``. The organizer of the auction can claim the"
 " highest bid by invoking the transition ``AuctionEnd()``."
-msgstr ""
+msgstr "**Auction** ：一个简单的公开拍卖合约，投标人可以使用 ``Bid()`` 进行投标，最高中标金额进入预定帐户。 没有获胜的投标人可以使用转换 ``Withdraw()`` 收回他们的投标。 拍卖的组织者可以通过调用名为 ``AuctionEnd()`` 的transition来获取最高出价。"
 
 #: ../scilla-trial.rst:56
 msgid ""
 "**FungibleToken** : ZRC-2 Fungible token standard contract for creating "
 "fungible digital assets such as stablecoins, utility tokens, and loyalty "
 "points."
-msgstr ""
+msgstr "**FungibleToken** ：ZRC-2 同质化通证标准合约，用于创建可替代的数字资产，例如稳定币、实用通证和忠诚度积分。"
 
 #: ../scilla-trial.rst:59
 msgid ""
 "**NonFungible Token** : ZRC-1 Non-fungible token standard contract for "
 "creating unique digital assets such as digital collectibles, music "
 "records, arts, and domains."
-msgstr ""
+msgstr "**NonFungible Token** ：ZRC-1 非同质化代币（即NFT）标准合约，用于创建独特的数字资产，例如数字收藏品、音乐唱片、艺术和域名。"
 
 #: ../scilla-trial.rst:62
 msgid ""
@@ -137,19 +137,19 @@ msgid ""
 "winner and wins a reward. The contract also provides a transition "
 "``Withdraw ()`` to recover funds and send to a specified ``owner`` in "
 "case no player plays the game."
-msgstr ""
+msgstr "**ZilGame** ：一个两人游戏，目标是找到与给定 SHA256 摘要（ ``puzzle`` ）最接近的原像。更具体地说，就是给定摘要 `d` 和两个值 `x` 和 `y`，如果  Distance(SHA-256(x), d) < Distance(SHA-256(y), d)，与 `d` 相比，则称 `x` 比  `y` 更接近原像)，对于一些 `Distance` 函数。游戏分两个阶段进行。在第一阶段，玩家使用名为 ``Play(guess: ByStr32)`` 的transition提交他们的哈希值，即 SHA-256(x) 和 SHA-256(y)。一旦第一个玩家提交了她的哈希值，第二个玩家在限定时间内来提交她的哈希值。如果第二位玩家没有在规定时间内提交她的哈希，那么第一位玩家就可能成为获胜者。在第二阶段，玩家必须使用名为 ``ClaimReward(solution: Int128)`` 的transition来提交相应的值``x`` 或 ``y`` 。提交最接近原像的玩家被宣布为获胜者并获得奖励。该合约还提供了一个名为 ``Withdraw ()`` 的transition以在没有玩家玩游戏的情况下收回资金并发送给指定的 ``owner`` 。"
 
 #: ../scilla-trial.rst:78
 msgid ""
 "**SchnorrTest** : A sample contract to test the generation of a Schnorr "
 "public/private key pairs, signing of a ``msg`` with the private keys, and"
 " verification of the signature."
-msgstr ""
+msgstr "**SchnorrTest** ：一个用于测试 Schnorr 公钥/私钥对的生成、使用私钥对 ``msg`` 进行签名以及验证签名的示例合约。"
 
 #: ../scilla-trial.rst:82
 msgid ""
 "**ECDSATest** : A sample contract to test the generation of a ECDSA "
 "public/private keypairs, signing of a message with the private keys, and "
 "verification of the signature."
-msgstr ""
+msgstr "**ECDSATest** ：一个用于测试 ECDSA 公钥/私钥对的生成、使用私钥对消息进行签名以及验证签名的示例合约。"
 
