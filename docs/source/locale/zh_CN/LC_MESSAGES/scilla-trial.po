@@ -103,7 +103,7 @@ msgid ""
 "predefined account. Bidders who don't win can take back their bid using "
 "the transition ``Withdraw()``. The organizer of the auction can claim the"
 " highest bid by invoking the transition ``AuctionEnd()``."
-msgstr "**Auction** ：一个简单的公开拍卖合约，投标人可以使用 ``Bid()`` 进行投标，最高中标金额进入预定帐户。 没有获胜的投标人可以使用转换 ``Withdraw()`` 收回他们的投标。 拍卖的组织者可以通过调用名为 ``AuctionEnd()`` 的transition来获取最高出价。"
+msgstr "**Auction** ：一个简单的公开拍卖合约，投标人可以使用 ``Bid()`` 进行投标，最高中标金额进入预定帐户。 没有获胜的投标人可以使用名为 ``Withdraw()`` 的transition收回他们的投标。 拍卖的组织者可以通过调用名为 ``AuctionEnd()`` 的transition来获取最高出价。"
 
 #: ../scilla-trial.rst:56
 msgid ""
@@ -137,7 +137,7 @@ msgid ""
 "winner and wins a reward. The contract also provides a transition "
 "``Withdraw ()`` to recover funds and send to a specified ``owner`` in "
 "case no player plays the game."
-msgstr "**ZilGame** ：一个两人游戏，目标是找到与给定 SHA256 摘要（ ``puzzle`` ）最接近的原像。更具体地说，就是给定摘要 `d` 和两个值 `x` 和 `y`，如果  Distance(SHA-256(x), d) < Distance(SHA-256(y), d)，与 `d` 相比，则称 `x` 比  `y` 更接近原像)，对于一些 `Distance` 函数。游戏分两个阶段进行。在第一阶段，玩家使用名为 ``Play(guess: ByStr32)`` 的transition提交他们的哈希值，即 SHA-256(x) 和 SHA-256(y)。一旦第一个玩家提交了她的哈希值，第二个玩家在限定时间内来提交她的哈希值。如果第二位玩家没有在规定时间内提交她的哈希，那么第一位玩家就可能成为获胜者。在第二阶段，玩家必须使用名为 ``ClaimReward(solution: Int128)`` 的transition来提交相应的值``x`` 或 ``y`` 。提交最接近原像的玩家被宣布为获胜者并获得奖励。该合约还提供了一个名为 ``Withdraw ()`` 的transition以在没有玩家玩游戏的情况下收回资金并发送给指定的 ``owner`` 。"
+msgstr "**ZilGame** ：一个两人游戏，目标是找到与给定 SHA256 摘要（ ``puzzle`` ）最接近的原像。更具体地说，就是对于一些 `Distance` 函数，给定摘要 `d` 和两个值 `x` 和 `y`，如果  Distance(SHA-256(x), d) < Distance(SHA-256(y), d)，与 `d` 相比，则称 `x` 比  `y` 更接近原像。游戏分两个阶段进行：在第一阶段，玩家使用名为 ``Play(guess: ByStr32)`` 的transition提交他们的哈希值，即 SHA-256(x) 和 SHA-256(y)。一旦第一个玩家提交了她的哈希值，第二个玩家则必须在限定时间内来提交她的哈希值。如果第二位玩家没有在规定时间内提交她的哈希，那么第一位玩家就可能成为获胜者；在第二阶段，玩家必须使用名为 ``ClaimReward(solution: Int128)`` 的transition来提交相应的值 ``x`` 或 ``y`` ，提交的哈希值最接近原像的玩家被宣布为获胜者并获得奖励。该合约还提供了一个名为 ``Withdraw ()`` 的transition以在没有玩家玩游戏的情况下收回资金并发送给指定的 ``owner`` 。"
 
 #: ../scilla-trial.rst:78
 msgid ""
