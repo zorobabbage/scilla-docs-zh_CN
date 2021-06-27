@@ -29,7 +29,7 @@ msgstr ""
 msgid ""
 "We start off by writing a classical ``HelloWorld.scilla`` contract with "
 "the following  specification:"
-msgstr ""
+msgstr "首先，我们来编写具有以下规范的经典 ``HelloWorld.scilla`` 合约："
 
 #: ../scilla-by-example.rst:12
 msgid ""
@@ -38,7 +38,7 @@ msgid ""
 " the sense that once initialized during contract deployment, its value "
 "cannot be changed. ``owner`` will be of type ``ByStr20`` (a hexadecimal "
 "Byte String representing a 20 byte address)."
-msgstr ""
+msgstr "此合约中有一个不可变的合约参数 ``owner`` ，由合约的创建者初始化。 该参数是不可变的，即意味着一旦在合约部署期间进行初始化，其值就无法更改。其中 ``owner`` 是 ``ByStr20`` 类型（表示 20 字节地址的十六进制字节字符串）。"
 
 #: ../scilla-by-example.rst:18
 msgid ""
@@ -46,7 +46,7 @@ msgid ""
 "initialized to ``\"\"``. Mutability here refers to the possibility of "
 "modifying the value of a variable even after the contract has been "
 "deployed."
-msgstr ""
+msgstr "此合约中有一个 ``String`` 类型的可变字段 ``welcome_msg`` 且被初始化为 ``\"\"`` 。 此处的可变性是指，即使在部署合约后也可以修改变量的值。"
 
 #: ../scilla-by-example.rst:22
 msgid ""
@@ -54,17 +54,17 @@ msgid ""
 "through an interface ``setHello``. The interface takes a ``msg`` (of type"
 " ``String``) as input and  allows the ``owner`` to set the value of "
 "``welcome_msg`` to ``msg``."
-msgstr ""
+msgstr "``owner`` 且 **只有她** 才能够通过接口 ``setHello`` 修改``welcome_msg`` 。 该接口将 ``msg``（字符串类型）作为输入，并允许 ``owner`` 将 ``welcome_msg`` 的值设置为 ``msg`` 。"
 
 #: ../scilla-by-example.rst:27
 msgid ""
 "It should have an interface ``getHello`` that welcomes any caller with "
 "``welcome_msg``. ``getHello`` will not take any input."
-msgstr ""
+msgstr "此合约有一个接口 ``getHello`` ，允许任何带有 ``welcome_msg`` 的调用者调用。此外 ``getHello`` 不会接受任何输入。"
 
 #: ../scilla-by-example.rst:32
 msgid "Defining a Contract, its Immutable Parameters and Mutable Fields"
-msgstr ""
+msgstr "定义合约、不可变参数和可变字段"
 
 #: ../scilla-by-example.rst:34
 msgid ""
@@ -72,7 +72,7 @@ msgid ""
 "scope of the contract. The keyword is followed by the name of the "
 "contract which will be ``HelloWorld`` in our example. So, the following "
 "code fragment declares a ``HelloWorld`` contract."
-msgstr ""
+msgstr "我们将使用关键字 ``contract`` 来作为声明一个合约的开始。 关键字后跟合约的名称，而在我们的示例中就是 ``HelloWorld`` 。 综上，以下代码片段声明了一个 ``HelloWorld`` 合约。"
 
 #: ../scilla-by-example.rst:46
 msgid ""
@@ -81,7 +81,7 @@ msgid ""
 "``contract`` keyword is part of the contract declaration. In other words,"
 " there is no explicit keyword to declare the end of the contract "
 "definition."
-msgstr ""
+msgstr "在目前的实现中，一个 Scilla 合约只能包含一个单一的合约声明，因此任何跟在 ``contract`` 关键字之后的代码都是合约声明的一部分。 换句话说，没有明确的关键字来声明合约定义的结束。"
 
 #: ../scilla-by-example.rst:53
 msgid ""
@@ -92,7 +92,7 @@ msgid ""
 "Immutable parameters are separated by ``,``. As per the specification, "
 "the contract will have only one immutable parameter ``owner`` of type "
 "``ByStr20`` and hence the following code fragment."
-msgstr ""
+msgstr "声明合约后，接下来是其不可变参数的声明，其代码块由 ``()`` 包裹。 每个不可变参数都通过以下方式声明： ``vname: vtype`` ，其中 ``vname`` 是参数名称，``vtype`` 是参数类型。 不可变参数由 ``,`` 分隔。 根据规范，合约将只有一个 ``ByStr20`` 类型的不可变参数 ``owner`` ，具体参考以下代码片段。"
 
 #: ../scilla-by-example.rst:66
 msgid ""
@@ -103,18 +103,18 @@ msgid ""
 "``HelloWorld`` contract has one mutable field ``welcome_msg`` of type "
 "``String`` initialized to ``\"\"``. This yields the following code "
 "fragment:"
-msgstr ""
+msgstr "合约中的可变字段通过关键字 ``field`` 声明。 每个可变字段以下列方式声明： ``field vname : vtype = init_val`` ，其中 ``vname`` 是字段名称，``vtype`` 是它的类型，``init_val`` 是字段必须被初始化的值。 ``HelloWorld`` 合约有一个 ``String`` 类型的可变字段``welcome_msg`` ，且被初始化为 ``\"\"`` 。 具体实现参考以下代码片段："
 
 #: ../scilla-by-example.rst:78
 msgid ""
 "At this stage, our ``HelloWorld.scilla`` contract will have the following"
 " form that includes the contract name, its immutable parameters and "
 "mutable fields:"
-msgstr ""
+msgstr "在此阶段，我们的 ``HelloWorld.scilla`` 合约将具有以下形式，其中包括合约名称、不可变参数和可变字段："
 
 #: ../scilla-by-example.rst:92
 msgid "Defining Interfaces `aka` Transitions"
-msgstr ""
+msgstr "定义接口即Transitions"
 
 #: ../scilla-by-example.rst:94
 msgid ""
@@ -124,7 +124,7 @@ msgid ""
 "functions or methods to be \"interrupted\" by a thread running in "
 "parallel, but Scilla won't let a transition to be interrupted ensuring "
 "there is no so-called reentrancy issues."
-msgstr ""
+msgstr "像 ``setHello`` 这样的接口在 Scilla 中被称为 `transitions` 。 Transitions类似于其他语言中的函数或方法。 然而，他们有一个重要的区别，大多数语言允许它们的函数或方法被并行运行的线程\"中断\" ，但 Scilla 不会让transitions被中断，以此来确保不会出现所谓的重入问题。"
 
 #: ../scilla-by-example.rst:104
 msgid ""
@@ -135,7 +135,7 @@ msgid ""
 "new state. Check the `wikipedia entry "
 "<https://en.wikipedia.org/wiki/Transition_system>`_ to read more about "
 "transition systems."
-msgstr ""
+msgstr "术语 `transition` 来自 Scilla 中的底层计算模型，它遵循通信自动机。 Scilla 中的合约是具有某种状态的自动机。 自动机的状态可以使用 `transition` 来更改，该 `transition` 采用先前状态和输入并产生新状态。 访问 `维基百科条目 <https://en.wikipedia.org/wiki/Transition_system>`_ 以阅读有关 `transition` 系统的更多信息。"
 
 #: ../scilla-by-example.rst:111
 msgid ""
@@ -147,14 +147,14 @@ msgid ""
 "the following format: ``vname : vtype``.  According to the specification,"
 " ``setHello`` takes only one parameter of name ``msg`` of type "
 "``String``.  This yields the following code fragment:"
-msgstr ""
+msgstr "使用关键字 ``transition`` 声明一个 `transition` 。 使用关键字 ``end`` 声明 `transition` 代码块的结束。 ``transition`` 关键字后跟 `transition` 名称，在我们的示例中为 ``setHello`` 。 然后是 ``()`` 内的输入参数。 每个输入参数由 ``,`` 分隔，并以以下格式声明：  ``vname : vtype`` 。 根据规范， ``setHello`` 只接受一个 ``String`` 类型的名为 ``msg`` 的参数。具体参照以下代码片段："
 
 #: ../scilla-by-example.rst:123
 msgid ""
 "What follows the transition signature is the body of the transition. Code"
 " for the first transition ``setHello (msg :  String)`` to set "
 "``welcome_msg`` is given below:"
-msgstr ""
+msgstr "transition 声明之后是 transition 的主体部分。 下面给出了第一次transition的代码，此代码为调用 ``setHello (msg :  String)`` 以设置 ``welcome_msg`` ："
 
 #: ../scilla-by-example.rst:144
 msgid ""
