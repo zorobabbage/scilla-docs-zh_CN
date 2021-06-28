@@ -54,7 +54,7 @@ msgid ""
 "through an interface ``setHello``. The interface takes a ``msg`` (of type"
 " ``String``) as input and  allows the ``owner`` to set the value of "
 "``welcome_msg`` to ``msg``."
-msgstr "``owner`` 且 **只有她** 才能够通过接口 ``setHello`` 修改``welcome_msg`` 。 该接口将 ``msg``（字符串类型）作为输入，并允许 ``owner`` 将 ``welcome_msg`` 的值设置为 ``msg`` 。"
+msgstr "``owner`` 且 **只有她** 才能够通过接口 ``setHello`` 修改 ``welcome_msg`` 。 该接口将 ``msg`` （  ``String`` 类型）作为输入，并允许 ``owner`` 将 ``welcome_msg`` 的值设置为 ``msg`` 。"
 
 #: ../scilla-by-example.rst:27
 msgid ""
@@ -103,7 +103,7 @@ msgid ""
 "``HelloWorld`` contract has one mutable field ``welcome_msg`` of type "
 "``String`` initialized to ``\"\"``. This yields the following code "
 "fragment:"
-msgstr "合约中的可变字段通过关键字 ``field`` 声明。 每个可变字段以下列方式声明： ``field vname : vtype = init_val`` ，其中 ``vname`` 是字段名称，``vtype`` 是它的类型，``init_val`` 是字段必须被初始化的值。 ``HelloWorld`` 合约有一个 ``String`` 类型的可变字段``welcome_msg`` ，且被初始化为 ``\"\"`` 。 具体实现参考以下代码片段："
+msgstr "合约中的可变字段通过关键字 ``field`` 声明。 每个可变字段以下列方式声明： ``field vname : vtype = init_val`` ，其中 ``vname`` 是字段名称，``vtype`` 是它的类型，``init_val`` 是字段必须被初始化的值。 ``HelloWorld`` 合约有一个 ``String`` 类型的可变字段 ``welcome_msg`` ，且被初始化为 ``\"\"`` 。 具体实现参考以下代码片段："
 
 #: ../scilla-by-example.rst:78
 msgid ""
@@ -135,7 +135,7 @@ msgid ""
 "new state. Check the `wikipedia entry "
 "<https://en.wikipedia.org/wiki/Transition_system>`_ to read more about "
 "transition systems."
-msgstr "术语 `transition` 来自 Scilla 中的底层计算模型，它遵循通信自动机。 Scilla 中的合约是具有某种状态的自动机。 自动机的状态可以使用 `transition` 来更改，该 `transition` 采用先前状态和输入并产生新状态。 访问 `维基百科条目 <https://en.wikipedia.org/wiki/Transition_system>`_ 以阅读有关 `transition` 系统的更多信息。"
+msgstr "术语 `transition` 来自 Scilla 中的底层计算模型，它遵循通信自动机。 Scilla 中的合约是具有某种状态的自动机。 自动机的状态可以使用 `transition` 来更改，该 `transition` 采用先前状态和输入并产生新的状态。 访问 `维基百科条目 <https://en.wikipedia.org/wiki/Transition_system>`_ 以阅读有关 `transition` 系统的更多信息。"
 
 #: ../scilla-by-example.rst:111
 msgid ""
@@ -154,7 +154,7 @@ msgid ""
 "What follows the transition signature is the body of the transition. Code"
 " for the first transition ``setHello (msg :  String)`` to set "
 "``welcome_msg`` is given below:"
-msgstr "transition 声明之后是 transition 的主体部分。 下面给出了第一次transition的代码，此代码为调用 ``setHello (msg :  String)`` 以设置 ``welcome_msg`` ："
+msgstr "transition 声明之后是 transition 的主体部分。 下面给出了第一个transition的代码段，此代码段为调用 ``setHello (msg :  String)`` 以设置 ``welcome_msg`` ："
 
 #: ../scilla-by-example.rst:144
 msgid ""
