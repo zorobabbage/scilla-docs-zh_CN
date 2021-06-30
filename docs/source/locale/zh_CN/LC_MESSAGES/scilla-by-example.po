@@ -258,7 +258,7 @@ msgstr "和前面的例子一样，合约随后会触发一个 code 值为  ``se
 
 #: ../scilla-by-example.rst:241
 msgid "Libraries"
-msgstr "库文件"
+msgstr "库定义"
 
 #: ../scilla-by-example.rst:243
 msgid ""
@@ -274,7 +274,7 @@ msgid ""
 "The library may include utility functions and program constants using the"
 " ``let ident = expr`` construct. In our example the library will only "
 "include the definition of error codes:"
-msgstr "该库可能包含使用 ``let ident = expr`` 定义的效用函数和程序常量。 在我们的示例中，库将仅包含错误代码的定义："
+msgstr "该库可能包含使用 ``let ident = expr`` 定义的效用函数和程序常量。 在我们的示例中，库定义的部分只包含错误代码的定义："
 
 #: ../scilla-by-example.rst:263
 msgid "At this stage, our contract fragment will have the following form:"
@@ -320,11 +320,11 @@ msgstr "合约一旦在网络上部署，就无法更改。 因此需要指定�
 msgid ""
 "The Scilla version of the contract is declared using the keyword "
 "``scilla_version``:"
-msgstr ""
+msgstr "合约的 Scilla 版本是使用关键字 ``scilla_version`` 声明的："
 
 #: ../scilla-by-example.rst:332
 msgid "The version declaration must appear before any library or contract code."
-msgstr "合约的 Scilla 版本是使用关键字 ``scilla_version`` 声明的："
+msgstr "版本声明必须出现在任何库或合约代码之前。"
 
 #: ../scilla-by-example.rst:337 ../scilla-by-example.rst:658
 #: ../scilla-by-example.rst:1720
@@ -335,7 +335,7 @@ msgstr "代码完整示例"
 msgid ""
 "The complete contract that implements the desired specification is given "
 "below, where we have added comments using the ``(* *)`` construct:"
-msgstr "下面给出了实现所需规范的完整合约，其中我们使用  ``(* *)``  结构添加了注释："
+msgstr "下面给出了实现所需规范的完整合约，其中我们使用  ``(* *)``  结构添来添加注释："
 
 #: ../scilla-by-example.rst:392
 msgid "A Second Example: Crowdfunding"
