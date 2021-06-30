@@ -163,7 +163,7 @@ msgid ""
 "order to compare two addresses, we are using the function ``eq`` defined "
 "as a ``builtin`` operator. The operator returns a Boolean value ``True`` "
 "or ``False``."
-msgstr ""
+msgstr "首先，使用第 2 行中的指令 ``builtin eq owner _sender`` 来检查 transition 的调用者是否与  ``owner`` 相等。为了比较两个地址，我们使用定义为函数 ``eq`` 的 ``builtin`` 运算符。 该运算符返回布尔值 ``True`` 或 ``False`` 。"
 
 #: ../scilla-by-example.rst:152
 msgid ""
@@ -171,14 +171,14 @@ msgid ""
 "These special variables are often prefixed by ``_``. For instance, "
 "``_sender`` in Scilla refers to the account address that called the "
 "current contract."
-msgstr ""
+msgstr "Scilla 内部定义了一些具有特殊语义的变量。 这些特殊变量通常以  ``_`` 为前缀。 例如，Scilla 中的 ``_sender`` 是指调用当前合约的帐户地址。"
 
 #: ../scilla-by-example.rst:156
 msgid ""
 "Depending on the output of the comparison, the transition takes a "
 "different path declared using `pattern matching`, the syntax of which is "
 "given in the fragment below."
-msgstr ""
+msgstr "根据比较的结果，transition 通过不同的分支来进行模式匹配，其语法如下面的代码片段所示。"
 
 #: ../scilla-by-example.rst:167
 msgid ""
@@ -188,24 +188,24 @@ msgid ""
 "``expr_1``.  Otherwise, if ``expr`` evaluates to a value matching "
 "``pattern_2``, then the next expression to be evaluated will be "
 "``expr_2``."
-msgstr ""
+msgstr "上面的代码检查 ``expr`` 的计算结果是否与 ``pattern_1`` 或  ``pattern_2`` 匹配。 如果 ``expr`` 的计算结果与 ``pattern_1`` 匹配，那么接下来要执行的表达式将是 ``expr_1`` 。 否则，如果 ``expr`` 的计算结果与 ``pattern_2`` 匹配，那么接下来要执行的表达式就是 ``expr_2`` 。"
 
 #: ../scilla-by-example.rst:174
 msgid ""
 "Hence, the following code block implements an ``if-then-else`` "
 "instruction:"
-msgstr ""
+msgstr "因此，以下代码块实现了类似于 ``if-then-else`` 的指令："
 
 #: ../scilla-by-example.rst:185
 msgid "The Caller is Not the Owner"
-msgstr ""
+msgstr "调用者不是所有者"
 
 #: ../scilla-by-example.rst:187
 msgid ""
 "In case the caller is different from ``owner``, the transition takes the "
 "``False`` branch and the contract emits an event using the instruction "
 "``event``."
-msgstr ""
+msgstr "如果调用者与 ``owner`` 不同，则 transition 会进入 ``False`` 分支，即合约使用指令 ``event`` 来触发一个事件。"
 
 #: ../scilla-by-example.rst:191
 msgid ""
@@ -213,11 +213,11 @@ msgid ""
 "see. If a user uses a client application to invoke a transition on a "
 "contract, the client application can listen for events that the contract "
 "may emit, and alert the user."
-msgstr ""
+msgstr "事件是指存储在区块链上供所有人查看的信号。 如果用户使用客户端应用程序调用合约的 transition，客户端应用程序就可以监听合约可能触发的事件，并提醒用户。"
 
 #: ../scilla-by-example.rst:196
 msgid "More concretely, the output event in this case is:"
-msgstr ""
+msgstr "更具体地说，这种情况下的事件代码如下："
 
 #: ../scilla-by-example.rst:202
 msgid ""
@@ -225,7 +225,7 @@ msgid ""
 " ``;`` inside a pair of curly braces ``{}``. An event must contain the "
 "compulsory field ``_eventname``, and may contain other fields such as the"
 " ``code`` field in the example above."
-msgstr ""
+msgstr "一个事件由许多 ``vname : value`` 对组成，并由 ``;`` 分隔。 在一对花括号 ``{}`` 内。 一个事件必须包含必填字段  ``_eventname`` ，同时也可以包含其他字段，例如上面示例中的  ``code``  字段。"
 
 #: ../scilla-by-example.rst:209
 msgid ""
@@ -233,32 +233,32 @@ msgid ""
 " emits the event, but any name can be chosen. However, it is recommended "
 "that you name the events in a way that makes it easy to see which part of"
 " the code emitted the event."
-msgstr ""
+msgstr "在我们的示例中，我们选择使用 transition 的名称来命名事件的名称，但时你可以选择任何其他名称。 不过呢，还是建议你以易读性为标准来命名，即使用执行事件的那部分代码的名称来命名事件。"
 
 #: ../scilla-by-example.rst:219
 msgid "The Caller is the Owner"
-msgstr ""
+msgstr "调用者是所有者"
 
 #: ../scilla-by-example.rst:221
 msgid ""
 "In case the caller is ``owner``, the contract allows the caller to set "
 "the value of the mutable field ``welcome_msg`` to the input parameter "
 "``msg``. This is done through the following instruction:"
-msgstr ""
+msgstr "如果调用者是 ``owner`` ，则合约允许调用者将可变字段 ``welcome_msg`` 的值设置为输入参数 ``msg`` 。 这些是通过以下指令完成的："
 
 #: ../scilla-by-example.rst:233
 msgid "Writing to a mutable field is done using the operator ``:=``."
-msgstr ""
+msgstr "给可变字段赋值是使用运算符 ``:=`` 完成的。"
 
 #: ../scilla-by-example.rst:236
 msgid ""
 "And as in the previous case, the contract then emits an event with the "
 "code ``set_hello_code``."
-msgstr ""
+msgstr "和前面的例子一样，合约随后会触发一个 code 值为  ``set_hello_code`` 的事件。"
 
 #: ../scilla-by-example.rst:241
 msgid "Libraries"
-msgstr ""
+msgstr "库文件"
 
 #: ../scilla-by-example.rst:243
 msgid ""
@@ -267,22 +267,22 @@ msgid ""
 "manipulation. A library is declared in the preamble of a contract using "
 "the keyword ``library`` followed by the name of the library. In our "
 "current example a library declaration would look as follows:"
-msgstr ""
+msgstr "Scilla 合约会有一些辅助库，它们声明合约的纯功能组件，即没有状态操作的组件。 使用关键字 ``library`` 然后跟上库名称，就完成了在合约的开始部分中库的声明。 在我们当前的示例中，库声明如下所示："
 
 #: ../scilla-by-example.rst:254
 msgid ""
 "The library may include utility functions and program constants using the"
 " ``let ident = expr`` construct. In our example the library will only "
 "include the definition of error codes:"
-msgstr ""
+msgstr "该库可能包含使用 ``let ident = expr`` 定义的效用函数和程序常量。 在我们的示例中，库将仅包含错误代码的定义："
 
 #: ../scilla-by-example.rst:263
 msgid "At this stage, our contract fragment will have the following form:"
-msgstr ""
+msgstr "到这里为止，我们的合约片段会变成下面这个样子："
 
 #: ../scilla-by-example.rst:293
 msgid "Adding Another Transition"
-msgstr ""
+msgstr "增加另一个 Transition"
 
 #: ../scilla-by-example.rst:295
 msgid ""
@@ -290,23 +290,23 @@ msgid ""
 "applications to know what the ``welcome_msg`` is. The declaration is "
 "similar to ``setHello (msg : String)`` except that ``getHello()`` does "
 "not take a parameter."
-msgstr ""
+msgstr "我们现在可以增加第二个 transition  ``getHello()`` ，它允许客户端应用程序知道 ``welcome_msg`` 是什么。 声明与 ``setHello (msg : String)`` 类似，只是 ``getHello()`` 不带参数。"
 
 #: ../scilla-by-example.rst:310
 msgid ""
 "Reading from a local mutable field, i.e., a field defined in the current "
 "contract, is done using the operator ``<-``."
-msgstr ""
+msgstr "读取到本地可变字段（即将当前合约中定义的字段读取到本地）是使用运算符 ``<-`` 完成的。"
 
 #: ../scilla-by-example.rst:312
 msgid ""
 "In the ``getHello()`` transition, we will first read from a mutable "
 "field, and then we construct and emit the event."
-msgstr ""
+msgstr "在 transition  ``getHello()``  中，我们将首先从可变字段中读取，然后构造并触发事件。"
 
 #: ../scilla-by-example.rst:317
 msgid "Scilla Version"
-msgstr ""
+msgstr "Scilla 版本号"
 
 #: ../scilla-by-example.rst:319
 msgid ""
@@ -314,7 +314,7 @@ msgid ""
 "It is therefore necessary to specify which version of Scilla the contract"
 " is written in, so as to ensure that the behaviour of the contract does "
 "not change even if changes are made to the Scilla specification."
-msgstr ""
+msgstr "合约一旦在网络上部署，就无法更改。 因此需要指定合约是用哪个版本的 Scilla 编写的，以确保即使对 Scilla 规范进行更改，合约的行为也不会改变。"
 
 #: ../scilla-by-example.rst:325
 msgid ""
@@ -324,18 +324,18 @@ msgstr ""
 
 #: ../scilla-by-example.rst:332
 msgid "The version declaration must appear before any library or contract code."
-msgstr ""
+msgstr "合约的 Scilla 版本是使用关键字 ``scilla_version`` 声明的："
 
 #: ../scilla-by-example.rst:337 ../scilla-by-example.rst:658
 #: ../scilla-by-example.rst:1720
 msgid "Putting it All Together"
-msgstr ""
+msgstr "代码完整示例"
 
 #: ../scilla-by-example.rst:339
 msgid ""
 "The complete contract that implements the desired specification is given "
 "below, where we have added comments using the ``(* *)`` construct:"
-msgstr ""
+msgstr "下面给出了实现所需规范的完整合约，其中我们使用  ``(* *)``  结构添加了注释："
 
 #: ../scilla-by-example.rst:392
 msgid "A Second Example: Crowdfunding"
