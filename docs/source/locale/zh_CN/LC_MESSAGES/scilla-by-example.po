@@ -338,8 +338,8 @@ msgid ""
 msgstr "下面给出了实现所需规范的完整合约，其中我们使用  ``(* *)``  结构添来添加注释："
 
 #: ../scilla-by-example.rst:392
-msgid "A Second Example: Crowdfunding"
-msgstr ""
+msgid "例二: 众筹"
+msgstr "在本节中，我们展示了一个运行众筹活动的稍微复杂的合约。 在众筹活动中，项目所有者希望通过社区捐款筹集资金。"
 
 #: ../scilla-by-example.rst:394
 msgid ""
@@ -356,7 +356,7 @@ msgid ""
 "(``goal``) without which the project can not be started. The contract "
 "hence has three immutable parameters ``owner``, ``max_block`` and "
 "``goal``."
-msgstr ""
+msgstr "假设所有者（ ``owner`` ）希望一直运行该活动，直到在区块链（ ``max_block`` ）上达到某个预定的区块高度。 所有者还希望提高最低数量的 QA（ ``goal`` ），否则项目将无法启动。 因此，合约具有三个不可变参数 ``owner`` 、 ``max_block`` 和``goal`` 。"
 
 #: ../scilla-by-example.rst:405
 msgid ""
@@ -364,7 +364,7 @@ msgid ""
 "that point we wish to add a sanity check that the ``goal`` is a strictly "
 "positive amount. If the contract is accidentally initialised with a "
 "``goal`` of 0, then the contract should not be deployed."
-msgstr ""
+msgstr "不可变参数会在部署合约时提供。 在这一点上，我们希望添加一个合理性检查，其中  ``goal``  必须是一个严格意义上的正数。 如果合约中的  ``goal``  意外地以 0 值进行初始化，则该合约就不会被部署。"
 
 #: ../scilla-by-example.rst:410
 msgid ""
