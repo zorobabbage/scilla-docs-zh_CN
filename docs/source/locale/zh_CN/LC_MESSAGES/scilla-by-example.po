@@ -338,15 +338,15 @@ msgid ""
 msgstr "下面给出了实现所需规范的完整合约，其中我们使用  ``(* *)``  结构添来添加注释："
 
 #: ../scilla-by-example.rst:392
-msgid "例二: 众筹"
-msgstr "在本节中，我们展示了一个运行众筹活动的稍微复杂的合约。 在众筹活动中，项目所有者希望通过社区捐款筹集资金。"
+msgid "A Second Example: Crowdfunding"
+msgstr "示例二: 众筹"
 
 #: ../scilla-by-example.rst:394
 msgid ""
 "In this section, we present a slightly more involved contract that runs a"
 " crowdfunding campaign. In a crowdfunding campaign, a project owner "
 "wishes to raise funds through donations from the community."
-msgstr ""
+msgstr "在本节中，我们展示了一个运行众筹活动的稍微复杂的合约。 在众筹活动中，项目所有者希望通过社区捐款筹集资金。"
 
 #: ../scilla-by-example.rst:398
 msgid ""
@@ -356,7 +356,7 @@ msgid ""
 "(``goal``) without which the project can not be started. The contract "
 "hence has three immutable parameters ``owner``, ``max_block`` and "
 "``goal``."
-msgstr "假设所有者（ ``owner`` ）希望一直运行该活动，直到在区块链（ ``max_block`` ）上达到某个预定的区块高度。 所有者还希望提高最低数量的 QA（ ``goal`` ），否则项目将无法启动。 因此，合约具有三个不可变参数 ``owner`` 、 ``max_block`` 和``goal`` 。"
+msgstr "假设所有者（ ``owner`` ）希望一直运行该活动，直到在区块链（ ``max_block`` ）上达到某个预定的区块高度。 所有者还希望提高最低数量的 QA（ ``goal`` ），否则项目将无法启动。 因此，合约具有三个不可变参数 ``owner`` 、 ``max_block`` 和 ``goal`` 。"
 
 #: ../scilla-by-example.rst:405
 msgid ""
@@ -373,7 +373,7 @@ msgid ""
 "``_balance`` field of type ``Uint128``, which is initialised to 0 when "
 "the contract is deployed, and which holds the amount of QA in the "
 "contract's account on the blockchain."
-msgstr ""
+msgstr "到目前为止，捐赠给该活动的总金额存储在字段 ``_balance`` 中。Scilla中的任何合约都有一个隐式的 ``_balance`` 字段，类型为  ``Uint128`` ，在合同部署时初始化为0，它包含了区块链上合约账户中QA的数量。"
 
 #: ../scilla-by-example.rst:416
 msgid ""
@@ -381,11 +381,11 @@ msgid ""
 "stipulated time. In case the campaign is unsuccessful, the donations are "
 "returned to the project backers who contributed during the campaign. The "
 "backers are supposed to ask for refund explicitly."
-msgstr ""
+msgstr "如果所有者能在规定的时间内达到目标，则视为众筹成功。如果众筹失败，捐款将返还给在竞选期间捐款的项目支持者。并且需要支持者有明确要求退款的操作。"
 
 #: ../scilla-by-example.rst:421
 msgid "The contract maintains two mutable fields:"
-msgstr ""
+msgstr "合约包含两个可变字段："
 
 #: ../scilla-by-example.rst:423
 msgid ""
@@ -395,14 +395,14 @@ msgid ""
 "``Emp`` (empty) map. The map enables the contract to register a donor, "
 "prevent multiple donations and to refund back the money if the campaign "
 "does not succeed."
-msgstr ""
+msgstr "``backers`` ：从贡献者地址（类型为 ``ByStr20`` 的值）到贡献金额的字段映射，用类型为 ``Uint128`` 的值表示。 由于最初没有支持者，因此此映射被初始化为 ``Emp``（即空）映射。 该映射使合约能够注册捐赠者，以此防止重复捐赠并在活动失败时可以退还资金。"
 
 #: ../scilla-by-example.rst:430
 msgid ""
 "``funded``:  a Boolean flag initialized to ``False`` that indicates "
 "whether the owner has already transferred the funds after the end of the "
 "campaign."
-msgstr ""
+msgstr "``funded`` ：一个布尔值的标志，初始化为 ``False`` ，指所有者是否已经在活动结束后转移了资金。"
 
 #: ../scilla-by-example.rst:434
 msgid ""
@@ -411,17 +411,17 @@ msgid ""
 "**only the owner** to claim the donated amount and transfer it to "
 "``owner`` and ``ClaimBack()`` that allows contributors to claim back "
 "their donations in case the campaign is not successful."
-msgstr ""
+msgstr "该合约包含三个 transitions ： ``Donate ()`` 允许任何人为众筹活动捐款， ``GetFunds ()`` **仅允许所有者**提取捐赠金额并将其转账给 ``owner``  ，以及 ``ClaimBack()`` 允许贡献者在活动不成功时取回他们的捐款 。"
 
 #: ../scilla-by-example.rst:441
 msgid "Sanity check for contract parameters"
-msgstr ""
+msgstr "合约参数的合理性检查"
 
 #: ../scilla-by-example.rst:443
 msgid ""
 "To ensure that the ``goal`` is a strictly positive amount, we use a "
 "`contract constraint`:"
-msgstr ""
+msgstr "为了确保  ``goal``  是一个严格的正数，我们使用了一个合约约束："
 
 #: ../scilla-by-example.rst:453
 msgid ""
@@ -429,38 +429,38 @@ msgid ""
 "during contract deployment and the contract only gets deployed if the "
 "result of evaluation is ``True``. This ensures that the contract cannot "
 "be deployed with a ``goal`` of 0 by mistake."
-msgstr ""
+msgstr "上面 ``with`` 和 ``=>`` 之间的布尔表达式在合约部署期间进行判断，只有判断结果为 ``True`` 时才会部署合约。 这确保了合约不会被错误地将 ``goal`` 的值以 0 的进行部署。"
 
 #: ../scilla-by-example.rst:460
 msgid "Reading the Current Block Number"
-msgstr ""
+msgstr "读取当前区块高度"
 
 #: ../scilla-by-example.rst:462
 msgid ""
 "The deadline is given as a block number, so to check whether the deadline"
 " has passed, we must compare the deadline against the current block "
 "number."
-msgstr ""
+msgstr "截止日期以区块高度给出，因此要检查是否已过截止日期，我们必须将截止日期与当前区块高度进行比较。"
 
 #: ../scilla-by-example.rst:466
 msgid "The current block number is read as follows:"
-msgstr ""
+msgstr "当前块高度读取如下："
 
 #: ../scilla-by-example.rst:472
 msgid ""
 "Block numbers have a dedicated type ``BNum`` in Scilla, so as to not "
 "confuse them with regular unsigned integers."
-msgstr ""
+msgstr "区块高度在 Scilla 中有一个专用类型  ``BNum``  ，以免将它们与常规无符号整数混淆。"
 
 #: ../scilla-by-example.rst:477
 msgid ""
 "Reading data from the blockchain is done using the operator ``<- &``. "
 "Blockchain data cannot be updated directly from the contract."
-msgstr ""
+msgstr "从区块链读取数据是使用运算符  ``<- &`` 完成的。 且区块链数据不能直接从合约中更新。"
 
 #: ../scilla-by-example.rst:483
 msgid "Reading and Updating the Current Balance"
-msgstr ""
+msgstr "读取以及更新当前余额"
 
 #: ../scilla-by-example.rst:485
 msgid ""
@@ -468,18 +468,18 @@ msgid ""
 "parameter ``goal`` when the contract is deployed. To check whether the "
 "target have been met, we must compare the total amount raised to the "
 "target."
-msgstr ""
+msgstr "在部署合约时，活动的目标由所有者在不可变参数  ``goal``  中指定。 要检查是否达到目标，我们必须将筹集的总额与目标进行比较。"
 
 #: ../scilla-by-example.rst:490
 msgid ""
 "The amount of QA raised is stored in the contract's account on the "
 "blockchain, and can be accessed through the implicitly declared "
 "``_balance`` field as follows:"
-msgstr ""
+msgstr "QA 筹集的金额存储在区块链上的合约账户中，可以通过隐式声明的 ``_balance`` 字段访问，如下所示："
 
 #: ../scilla-by-example.rst:498
 msgid "Money is represented as values of type ``Uint128``."
-msgstr ""
+msgstr "Money 表示为 ``Uint128`` 类型的值。"
 
 #: ../scilla-by-example.rst:502
 msgid ""
@@ -488,18 +488,18 @@ msgid ""
 " by accepting money from incoming messages (using the instruction "
 "``accept``), or by explicitly transferring money to other account (using "
 "the instruction ``send`` as explained below)."
-msgstr ""
+msgstr "像任何其他合约字段一样， ``_balance``  字段是使用运算符 ``<-`` 读取的。 但是， ``_balance`` 字段只能通过接受来自传入 messages 的资金（使用指令 ``accept`` ）或通过明确地将资金转移到其他帐户（使用如下所述的  ``send``  指令）来更新。"
 
 #: ../scilla-by-example.rst:511
 msgid "Sending Messages"
-msgstr ""
+msgstr "发送 Messages"
 
 #: ../scilla-by-example.rst:513
 msgid ""
 "In Scilla, there are two ways that transitions can transmit data. One way"
 " is through events, as covered in the previous example. The other is "
 "through the sending of messages using the instruction ``send``."
-msgstr ""
+msgstr "在 Scilla 中， transitions 可以通过两种方式传输数据。 一种方法是通过 events ，如前一个示例中所述。 另一种是通过使用指令  ``send`` 发送 messages。"
 
 #: ../scilla-by-example.rst:517
 msgid ""
@@ -507,13 +507,13 @@ msgid ""
 "invoke transitions on another smart contract, or to transfer money to "
 "user accounts. On the other hand, events are dispatched signals that "
 "smart contracts can use to transmit data to client applications."
-msgstr ""
+msgstr "``send``  用于向其他帐户发送 messages，以便调用另一个智能合约上的 transitions，或者将资金转移到用户帐户。 另一方面， events 是智能合约可以用来将数据传输到客户端应用程序的分派信号。"
 
 #: ../scilla-by-example.rst:522
 msgid ""
 "To construct a message we use a similar syntax as when constructing "
 "events:"
-msgstr ""
+msgstr "要定义 message，我们可以使用与定义 events 时类似的语法："
 
 #: ../scilla-by-example.rst:529
 msgid ""
