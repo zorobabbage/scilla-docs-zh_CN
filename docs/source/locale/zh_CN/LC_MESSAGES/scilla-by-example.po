@@ -522,7 +522,7 @@ msgid ""
 "blockchain address (of type ``ByStr20``) that the message is to be sent "
 "to, and the ``_amount`` message field is the number of QA to be "
 "transferred to that account."
-msgstr ""
+msgstr "message 必须包含必填的 message 字段 ``_tag`` 、``_recipient`` 和 ``_amount`` 。 ``_recipient`` 字段是消息要发送到的区块链地址（类型为 ``ByStr20`` ）， ``_amount`` 字段是要转移到该帐户的 QA 数量。"
 
 #: ../scilla-by-example.rst:534
 msgid ""
@@ -531,7 +531,7 @@ msgid ""
 "``_recipient`` address. If ``_recipient`` is the address of a user "
 "account then the value of ``_tag`` is ignored, hence for simplicity we "
 "put ``\"\"`` here."
-msgstr ""
+msgstr "``_tag`` 字段的值表示的是要部署在 ``_recipient`` 地址的合约调用的 transition（  ``String`` 类型）的名称。 如果 ``_recipient`` 是用户帐户的地址，则忽略 ``_tag`` 的值，因此为简单起见，我们这里定义为空， 即 ``\"\"`` 。"
 
 #: ../scilla-by-example.rst:541
 msgid ""
@@ -540,7 +540,7 @@ msgid ""
 "transition name as per `ZRC-5 "
 "<https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-5.md>`_, i.e. "
 "``AddFunds``."
-msgstr ""
+msgstr "为了能够同时退还合约和用户帐户（对于使用钱包合约进行捐赠的支持者非常有用），请使用 `ZRC-5 <https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-5.md>`_ 中的标准 transition 名称，如 ``AddFunds`` 。"
 
 #: ../scilla-by-example.rst:547
 msgid ""
@@ -548,7 +548,7 @@ msgid ""
 "fields, such as ``code`` above. However, if the message recipient is a "
 "contract, the additional fields must have the same names and types as the"
 " parameters of the transition being invoked on the recipient contract."
-msgstr ""
+msgstr "除了必填字段之外，message 还可以包含其他字段，例如上面的代码所示。 但是，如果 message 的接收者是合约，则附加字段的名称和类型必须与在接收者合约上调用的 transition 参数相同。"
 
 #: ../scilla-by-example.rst:553
 msgid ""
@@ -556,17 +556,17 @@ msgid ""
 "list of messages as a parameter. Since we will only ever send one message"
 " at a time in the crowdfunding contract, we define a library function "
 "``one_msg`` to construct a list consisting of one message:"
-msgstr ""
+msgstr "发送 message 是使用 ``send`` 指令完成的，该指令将 messages 列表作为参数。 由于我们在众筹合约中一次只会发送一条 message，因此我们定义了一个库函数 ``one_msg`` 来构造一个由 message 组成的列表："
 
 #: ../scilla-by-example.rst:566
 msgid ""
 "To send out a message, we first construct the message, insert it into a "
 "list, and send it:"
-msgstr ""
+msgstr "要发送 message，我们首先构造 message，并将其插入列表，然后发送："
 
 #: ../scilla-by-example.rst:577
 msgid "Procedures"
-msgstr ""
+msgstr "Procedures"
 
 #: ../scilla-by-example.rst:579
 msgid ""
@@ -576,7 +576,7 @@ msgid ""
 "the contract's transitions. Procedures also help divide the contract code"
 " into separate, self-contained pieces which are easier to read and reason"
 " about individually."
-msgstr ""
+msgstr "Scilla 合约的 transitions 通常需要执行相同的小指令序列。为了防止代码重复，合约可以定义许多 procedures，这些 procedures 可以通过合约的 transitions 调用。procedures 还有助于将合约代码分成独立的、自包含的部分，这些部分更容易阅读和单独推理。"
 
 #: ../scilla-by-example.rst:586
 msgid ""
@@ -584,7 +584,7 @@ msgid ""
 "procedure is declared using the keyword ``end``. The ``procedure`` "
 "keyword is followed by the transition name, then the input parameters "
 "within ``()``, and then the statements of the procedure."
-msgstr ""
+msgstr "使用关键字 ``procedure`` 来声明 procedure。procedure 的结束使用关键字 ``end`` 声明。 ``procedure`` 关键字后面是 transition 名称，然后是  ``()`` 中的输入参数，然后是 procedure 的语句。"
 
 #: ../scilla-by-example.rst:591
 msgid ""
@@ -594,7 +594,7 @@ msgid ""
 "non-error event indicating a successful donation. Since much of the event"
 " issuing code is identical, we decide to define a procedure "
 "``DonationEvent`` which is responsible for issuing the correct event:"
-msgstr ""
+msgstr "在我们的示例中，名为 ``Donate``  的 transition 将在三种情况下触发一个 event ：如果捐赠在截止日期之后发生，则触发一个错误 event ；如果捐赠者以前捐赠过，则触发另一个错误 event；由于大部分 event 触发代码是相同的，我们决定定义一个名为 ``DonationEvent``  的 procedure，负责发出正确的 event："
 
 #: ../scilla-by-example.rst:613
 msgid ""
