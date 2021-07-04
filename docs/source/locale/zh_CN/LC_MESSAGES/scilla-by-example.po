@@ -610,13 +610,13 @@ msgid ""
 "``DonationSuccess`` event is issued. Otherwise, if the donation failed, "
 "then a ``DonationFailure`` event is issued with the error code that was "
 "passed as the second argument to the procedure."
-msgstr ""
+msgstr "procedure 会对参数  ``failure``  进行  ``match``  。如果捐赠没有失败，错误代码将被忽略，并触发一个名为 ``DonationSuccess`` 的 event。否则，如果捐赠失败，则触发一个名为 ``DonationFailure`` 的 event，该 event 带有作为 procedure 的第二个参数进行传递的错误代码。"
 
 #: ../scilla-by-example.rst:623
 msgid ""
 "The following code shows how to invoke the ``DonationEvent`` procedure "
 "with the arguments ``True`` and ``0``:"
-msgstr ""
+msgstr "下面的代码展示了如何使用参数 ``True`` 和 ``0`` 调用名为  ``DonationEvent``  的procedure："
 
 #: ../scilla-by-example.rst:635
 msgid ""
@@ -624,7 +624,7 @@ msgid ""
 "available to a procedure even though the procedure is invoked by a "
 "transition rather than by an incoming message. It is not necessary to "
 "pass these special parameters as arguments to the procedure."
-msgstr ""
+msgstr "特殊参数  ``_sender`` 、 ``_origin`` 和 ``_amount`` 对 procedure 是可用的，即使 procedure 是由 transition 而不是由传入消息调用的。没有必要将这些特殊参数作为实参传递给 procedure。"
 
 #: ../scilla-by-example.rst:642
 msgid ""
@@ -633,7 +633,7 @@ msgid ""
 "procedure). However, procedures are different from library functions in "
 "that library functions cannot access the contract state, and procedures "
 "cannot return a value."
-msgstr ""
+msgstr "procedures 与库函数相似，它们可以从任何 transition 中调用(只要 transition 是在 procedures 之后定义的)。但是两者也有不同之处，标准库函数不能访问合约状态，procedures 不能有返回值。"
 
 #: ../scilla-by-example.rst:648
 msgid ""
@@ -642,7 +642,7 @@ msgid ""
 "outgoing messages. However, procedures cannot be invoked from the "
 "blockchain layer. Only transitions may be invoked from outside the "
 "contract, so procedures can be viewed as private transitions."
-msgstr ""
+msgstr "procedures 与 transitions 有点类似，因为它们都可以访问和更改合约状态，以及读取传入消息和发送传出消息。但是，procedures 不能在链上调用，只能从合约外部调用 transitions，因此 procedures 可以被视为私有 transitions。"
 
 #: ../scilla-by-example.rst:660
 msgid "The complete crowdfunding contract is given below."
@@ -650,7 +650,7 @@ msgstr ""
 
 #: ../scilla-by-example.rst:851
 msgid "A Third Example: A Simple Token Exchange"
-msgstr ""
+msgstr "示例三：代币转换"
 
 #: ../scilla-by-example.rst:853
 msgid ""
