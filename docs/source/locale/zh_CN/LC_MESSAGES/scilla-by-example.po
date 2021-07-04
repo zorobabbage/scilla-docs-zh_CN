@@ -601,7 +601,7 @@ msgid ""
 "The procedure takes two arguments: A ``Bool`` indicating whether the "
 "donation failed, and an error code indicating the type of failure if a "
 "failure did indeed occur."
-msgstr ""
+msgstr "该 procedure 接受两个参数： 一个 ``Bool`` 类型，代表捐赠是否失败；一个代表当失败发生时，失败类型的错误代码。"
 
 #: ../scilla-by-example.rst:617
 msgid ""
