@@ -646,7 +646,7 @@ msgstr "procedures 与 transitions 有点类似，因为它们都可以访问和
 
 #: ../scilla-by-example.rst:660
 msgid "The complete crowdfunding contract is given below."
-msgstr ""
+msgstr "完整的众筹合约代码如下"
 
 #: ../scilla-by-example.rst:851
 msgid "A Third Example: A Simple Token Exchange"
@@ -659,11 +659,11 @@ msgid ""
 "states. As our example application we choose a simplified token exchange "
 "contracts in which users can place offers of swapping one type of "
 "fungible tokens for another type."
-msgstr ""
+msgstr "在第三个例子中，我们来看一下用 Scilla 编写的合约是如何通过相互传递消息和读取彼此的状态来进行交互的。作为我们的示例应用程序，我们选择了一个简化的代币转换合约，其中用户可以将一种类型的同质化代币交换为另一种类型。"
 
 #: ../scilla-by-example.rst:860
 msgid "Fungible Tokens"
-msgstr ""
+msgstr "同质化代币"
 
 #: ../scilla-by-example.rst:862
 msgid ""
@@ -672,7 +672,7 @@ msgid ""
 "indistinguishable from any other US $1 bank note (for the purposes of "
 "using the bank note to pay for goods, services, or other tokens, at "
 "least)."
-msgstr ""
+msgstr "回想一下，同质化代币是指与其他相同类型的代币难以区分的代币。例如，1美元钞票与任何其他1美元钞票没有区别(至少在用于支付商品、服务或其他代币时没有区别)。"
 
 #: ../scilla-by-example.rst:868
 msgid ""
@@ -684,22 +684,22 @@ msgid ""
 "example. We will not go into detail about how the token contract works, "
 "but only point out a few important aspects that will be needed in order "
 "to implement the token exchange."
-msgstr ""
+msgstr "`Zilliqa 合约参考库 <https://github.com/Zilliqa/ZRC>`_ 提供了常用合约类型的规范和参考实现， `ZRC2 <https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-2.md>`_ 标准为同质化代币指定了一个标准，我们将在本例中使用它。我们不会详细讨论代币合约是如何工作的，只是指出实现代币转换所需的几个重要方面。"
 
 #: ../scilla-by-example.rst:879
 msgid "Exchange Specification"
-msgstr ""
+msgstr "转换规范"
 
 #: ../scilla-by-example.rst:881
 msgid "We want our simple exchange to support the following functionality:"
-msgstr ""
+msgstr "我们希望我们的简单转换支持以下功能："
 
 #: ../scilla-by-example.rst:883
 msgid ""
 "The exchange has a number of listed tokens that can be freely swapped "
 "with each other. Each listed token is identified by its token code (e.g.,"
 " \"USD\" for US dollars)."
-msgstr ""
+msgstr "该交易所有许多上市的代币，这些代币可以彼此自由转换。每个列出的代币都由其代币代简称标识(例如，“USD”表示美元)。"
 
 #: ../scilla-by-example.rst:887
 msgid ""
@@ -707,7 +707,7 @@ msgid ""
 " is in charge of approving token contracts, and listing them on the "
 "exchange. The administrator may pass the administrator role on to someone"
 " else."
-msgstr ""
+msgstr "交易所应该始终有一个管理员。管理员负责批准代币合约，并将其在交易所上市。管理员可以将管理员角色传递给其他人。"
 
 #: ../scilla-by-example.rst:892
 msgid ""
@@ -715,7 +715,7 @@ msgid ""
 "specifies which token he wants to sell and how many of them he is "
 "offering, and which token he wants to buy and how many he wants in "
 "return. The contract keeps track of every active (unmatched) order."
-msgstr ""
+msgstr "任何用户都可以在交易所下单。为了下单，用户指定他想要出售哪个代币，他提供多少代币，他想购买哪个代币，以及他想要多少代币作为回报。该合约跟踪每一个活跃的（不匹配的）订单。"
 
 #: ../scilla-by-example.rst:898
 msgid ""
@@ -723,13 +723,13 @@ msgid ""
 "checks that the user actually has those tokens to sell. If he does, then "
 "the exchange claims those tokens and holds on to them until the order is "
 "matched."
-msgstr ""
+msgstr "当用户试图下单出售一些代币时，交易所会检查用户是否确实有这些代币要出售。如果他确实有，那么交易所就会索取这些代币并持有它们，直到订单匹配为止。"
 
 #: ../scilla-by-example.rst:903
 msgid ""
 "Any user can match an active order on the exchange. To match an order, "
 "the user specifies which order to match."
-msgstr ""
+msgstr "任何用户都可以匹配交易所的活跃订单。为了匹配到订单，用户必须明确指定要匹配的订单。"
 
 #: ../scilla-by-example.rst:906
 msgid ""
@@ -739,7 +739,7 @@ msgid ""
 "was placed to the order matcher, and transfers the tokens that the order "
 "placer wants to buy from the order matcher to the order placer. After the"
 " tokens have been transferred the exchange deletes the fulfilled order."
-msgstr ""
+msgstr "当用户试图匹配订单时，交易所会检查该用户是否确实拥有订单发布者想要购买的代币。如果他确实有，那么交易所就会将订单下发时所要求的代币转移到订单匹配器，并将下单者想要从订单匹配器购买的代币转移给他。在代币被转移之后，交易所会删除已完成的订单。"
 
 #: ../scilla-by-example.rst:914
 msgid ""
@@ -749,11 +749,11 @@ msgid ""
 "matching of orders, securing the exchange against abuse, fees for trading"
 " on the exchange, etc.. We encourage the reader to implement additional "
 "features as a way to familiarise themselves even further with Scilla."
-msgstr ""
+msgstr "为了使示例简洁，我们的交易所将不支持下架代币、取消订单、限时订单、订单排序以便订单匹配器获得尽可能好的交易、订单的部分匹配、确保交易所不被滥用、交易手续费等。我们鼓励读者通过实现未实现的功能来进一步熟悉 Scilla。"
 
 #: ../scilla-by-example.rst:924
 msgid "The Administrator Role"
-msgstr ""
+msgstr "管理员角色"
 
 #: ../scilla-by-example.rst:926
 msgid ""
