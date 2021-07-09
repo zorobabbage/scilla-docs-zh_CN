@@ -339,7 +339,7 @@ msgstr "下面给出了实现所需规范的完整合约，其中我们使用  `
 
 #: ../scilla-by-example.rst:392
 msgid "A Second Example: Crowdfunding"
-msgstr "示例二: 众筹"
+msgstr "示例二：众筹"
 
 #: ../scilla-by-example.rst:394
 msgid ""
@@ -650,7 +650,7 @@ msgstr "完整的众筹合约代码如下"
 
 #: ../scilla-by-example.rst:851
 msgid "A Third Example: A Simple Token Exchange"
-msgstr "示例三：代币转换"
+msgstr "示例三：代币交易"
 
 #: ../scilla-by-example.rst:853
 msgid ""
@@ -688,7 +688,7 @@ msgstr "`Zilliqa 合约参考库 <https://github.com/Zilliqa/ZRC>`_ 提供了常
 
 #: ../scilla-by-example.rst:879
 msgid "Exchange Specification"
-msgstr "转换规范"
+msgstr "交易规范"
 
 #: ../scilla-by-example.rst:881
 msgid "We want our simple exchange to support the following functionality:"
@@ -762,7 +762,7 @@ msgid ""
 " mutable field ``admin`` to keep track of the current administrator, and "
 "initialise it to an ``initial_admin``, which is given as an immutable "
 "parameter:"
-msgstr ""
+msgstr "交易所必须始终有管理员，包括首次部署时。 管理员可能会随着时间的推移而改变，因此我们定义了一个可变字段 ``admin`` 来跟踪当前管理员，并将其初始化为  ``initial_admin`` ，它作为一个不可变参数给出："
 
 #: ../scilla-by-example.rst:941
 msgid ""
@@ -772,7 +772,7 @@ msgid ""
 "when that byte string is interpreted as an address on the network, the "
 "address must be `in use`, and the contents at that address must satisfy "
 "whatever is between the ``with`` and ``end`` keywords."
-msgstr ""
+msgstr "``admin`` 字段的类型是 ``ByStr20 with end`` ，这是一种地址类型。 正如在前面的例子中， ``ByStr20`` 是长度为 20 的字符串类型，但我们现在要添加额外的要求，当该字符串被解释为网络上的地址时，该地址必须在使用中，并且该地址处的内容必须满足  ``with`` 和 ``end`` 关键字之间的任何内容。"
 
 #: ../scilla-by-example.rst:949
 msgid ""
@@ -781,14 +781,14 @@ msgid ""
 "a user or by another contract - otherwise Scilla will not accept it as "
 "having a legal address type. (We will go into more detail about address "
 "types when the exchange interacts with the listed token contracts.)"
-msgstr ""
+msgstr "在这种情况下， ``with`` 和 ``end`` 之间没有任何内容，因此我们没有额外的要求。 但是，该地址必须由用户或其他合约使用 - 否则 Scilla 将不接受其具有合法地址类型。 （当交易所与列出的代币合约交互时，我们将更详细地介绍地址类型。）"
 
 #: ../scilla-by-example.rst:956
 msgid ""
 "Multiple transitions will need to check that the ``_sender`` is the "
 "current ``admin``, so let us define a procedure that checks that that is "
 "the case:"
-msgstr ""
+msgstr "有多个 transition 需要检查 ``_sender`` 是否为当前的  ``admin`` ，因此让我们定义一个 procedure 来检查这种情况："
 
 #: ../scilla-by-example.rst:974
 msgid ""
@@ -796,13 +796,13 @@ msgid ""
 "and whichever transition called this procedure can continue. If the "
 "``_sender`` is someone else, however, the procedure throws an `exception`"
 " causing the current transaction to be aborted."
-msgstr ""
+msgstr "如果 ``_sender`` 是当前管理员，则什么也不会发生，调用此 procedure 的任何 transition 都可以继续。 但是，如果``_sender`` 是其他人，则该 procedure 会引发异常，从而导致当前事务中止。"
 
 #: ../scilla-by-example.rst:979
 msgid ""
 "We want the administrator to be able to pass on the administrator role to"
 " someone else, so we define our first transition ``SetAdmin`` as follows:"
-msgstr ""
+msgstr "我们希望管理员能够将管理员角色传递给其他人，因此我们定义我们的第一个 transition ``SetAdmin`` ，如下："
 
 #: ../scilla-by-example.rst:991
 msgid ""
@@ -810,11 +810,11 @@ msgid ""
 "exception is thrown then the sender is indeed the current administrator, "
 "and is thus allowed to pass on the administrator role on to someone else."
 " The new admin must once again be an address that is in use."
-msgstr ""
+msgstr "transition 会应用 procedure ``CheckSenderIsAdmin`` ，如果没有抛出异常，则发送者确实是当前管理员，因此允许将管理员角色传递给其他人。 新管理员必须同样是正在使用的地址。"
 
 #: ../scilla-by-example.rst:999
 msgid "Intermezzo: Transferring Tokens On Behalf Of The Token Owner"
-msgstr ""
+msgstr "Intermezzo：代表代币所有者转移代币"
 
 #: ../scilla-by-example.rst:1001
 msgid ""
