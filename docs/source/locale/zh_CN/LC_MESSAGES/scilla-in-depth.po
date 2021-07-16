@@ -23,7 +23,7 @@ msgstr "Scilla深度解析"
 
 #: ../scilla-in-depth.rst:5
 msgid "Structure of a Scilla Contract"
-msgstr ""
+msgstr "Scilla 合约结构"
 
 #: ../scilla-in-depth.rst:8
 msgid ""
