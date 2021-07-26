@@ -650,7 +650,7 @@ msgstr "完整的众筹合约代码如下"
 
 #: ../scilla-by-example.rst:851
 msgid "A Third Example: A Simple Token Exchange"
-msgstr "示例三：代币交易"
+msgstr "示例三：代币交易所"
 
 #: ../scilla-by-example.rst:853
 msgid ""
@@ -820,27 +820,27 @@ msgstr "Intermezzo：代表代币所有者转移代币"
 msgid ""
 "Before we continue adding features to our exchange we must first look at "
 "how token contracts transfer tokens between users."
-msgstr ""
+msgstr "在我们继续向我们的交易所添加功能之前，我们必须首先了解代币合约如何在用户之间转移代币。"
 
 #: ../scilla-by-example.rst:1004
 msgid ""
 "The ZRC2 token standard defines a field ``balances`` which keeps track of"
 " how many tokens each user has:"
-msgstr ""
+msgstr "ZRC2 代币标准定义了一个字段 ``balances`` 来跟踪每个用户拥有多少代币："
 
 #: ../scilla-by-example.rst:1011
 msgid ""
 "However, this is not particularly useful for our exchange, because the "
 "token contract won't allow the exchange to transfer tokens belonging to "
 "someone other than the exchange itself."
-msgstr ""
+msgstr "然而，这对我们的交易所并不是特别有用，因为代币合约不允许交易所转移属于交易所本身以外的其他人的代币。"
 
 #: ../scilla-by-example.rst:1015
 msgid ""
 "Instead, the ZRC2 standard defines a field ``allowances``, which a user "
 "who owns tokens can use to allow another user partial access to the "
 "owner's tokens:"
-msgstr ""
+msgstr "相反的，ZRC2 标准定义了另一个字段 ``allowances`` ，拥有令牌的用户可以使用它来允许另一个用户部分访问所有者的令牌："
 
 #: ../scilla-by-example.rst:1023
 msgid ""
