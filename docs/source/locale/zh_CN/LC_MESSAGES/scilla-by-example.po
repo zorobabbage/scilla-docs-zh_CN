@@ -850,7 +850,7 @@ msgid ""
 "Bob to spend 100 of Alice's tokens as if they were his own. (Alice can of"
 " course withdraw the allowance, as long as Bob hasn't yet spent the "
 "tokens)."
-msgstr ""
+msgstr "例如，如果 Alice 给了 Bob 100 个代币的配额，那么代币合约中的  ``allowances``  映射将包含值 ``allowances[<address of Alice>][<address of Bob>] = 100`` 。这会允许 Bob 使用这 100 个 Alice 的代币，就像使用他自己的一样。 （Alice 当然可以提取配额，只要 Bob 还没有花掉这些代币）。"
 
 #: ../scilla-by-example.rst:1030
 msgid ""
@@ -859,7 +859,7 @@ msgid ""
 "can then place the order, and the exchange can check that the allowance "
 "is sufficient. The exchange then transfers the tokens to its own account "
 "for holding until the order is matched."
-msgstr ""
+msgstr "在用户下订单之前，用户应该向交易所提供他想要出售的代币额度以支付订单。 然后用户才可以下订单，同时交易所会检查配额是否足够。 然后交易所会将代币转移到自己的账户中持有，直到订单匹配为止。"
 
 #: ../scilla-by-example.rst:1036
 msgid ""
@@ -869,38 +869,38 @@ msgid ""
 "the allowance is sufficent. The exchange then transfers those tokens to "
 "the user who placed the order, and transfers to the matching user the "
 "tokens that it transferred to itself when the order was placed."
-msgstr ""
+msgstr "类似地，在用户匹配订单之前，用户应该向交易所提供下单者想要购买的代币的配额。 然后用户才可以匹配订单，同时交易所会检查配额是否足够。 然后，交易所将这些代币转移给下订单的用户，并将代币转移给匹配的用户，这些转移的代币就是在下订单时转移给自己的那些。"
 
 #: ../scilla-by-example.rst:1044
 msgid ""
 "In order to check the current allowance that a user has given to the "
 "exchange, we will need to specify the ``allowances`` field in the token "
 "address type. We do this as follows:"
-msgstr ""
+msgstr "为了检查用户提供给交易所的当前配额，我们需要在代币地址类型中指定 ``allowances`` 字段。 我们会像下面这样做："
 
 #: ../scilla-by-example.rst:1052
 msgid ""
 "As with the ``admin`` field we require that the address is in use. "
 "Additionally, the requirements between ``with`` and ``end`` must also be "
 "satisfied:"
-msgstr ""
+msgstr "与 ``admin`` 字段一样，我们要求地址正在使用中。 此外，还必须满足 ``with`` 和 ``end`` 之间的要求："
 
 #: ../scilla-by-example.rst:1056
 msgid ""
 "The keyword ``contract`` specifies that the address must be in use by a "
 "contract, and not by a user."
-msgstr ""
+msgstr "关键字 ``contract`` 指定：地址必须由合约使用，而不是由用户使用。"
 
 #: ../scilla-by-example.rst:1059
 msgid ""
 "The keyword ``field`` specifies that the contract in question must "
 "contain a mutable field with the specified name and of the specified "
 "type."
-msgstr ""
+msgstr "关键字 ``field`` 指定：相关合约必须包含具有指定名称和指定类型的可变字段。"
 
 #: ../scilla-by-example.rst:1065
 msgid "Listing a New Token"
-msgstr ""
+msgstr "上架新币"
 
 #: ../scilla-by-example.rst:1067
 msgid ""
