@@ -907,13 +907,13 @@ msgid ""
 "The exchange keeps track of its listed tokens, i.e., which tokens are "
 "allowed to be traded on the exchange. We do this by defining a map from "
 "the token code (a ``String``) to the address of the token."
-msgstr ""
+msgstr "交易所跟踪其上市代币，即允许在交易所交易哪些代币。 我们通过定义从代币代码（ ``String`` ）到代币地址的映射来实现这一点。"
 
 #: ../scilla-by-example.rst:1081
 msgid ""
 "Only the administrator is allowed to list new tokens, so we leverage the "
 "``CheckSenderIsAdmin`` procedure again here."
-msgstr ""
+msgstr "只有允许管理员上架新代币，因此我们在这里再次利用 procedure ``CheckSenderIsAdmin`` 。"
 
 #: ../scilla-by-example.rst:1084
 msgid ""
@@ -921,7 +921,7 @@ msgid ""
 "code from the previously listed tokens. For this purpose we define a "
 "procedure ``CheckIsTokenUnlisted`` to check whether a token code is "
 "defined as a key in the ``listed_tokens`` map. :"
-msgstr ""
+msgstr "此外，我们只想上架与之前上架的代币具有不同代币代码的代币。 为此，我们定义了一个 procedure ``CheckIsTokenUnlisted`` 来检查代币代码是否被定义为 ``listed_tokens`` 映射中的键。 ："
 
 #: ../scilla-by-example.rst:1126
 msgid ""
@@ -929,7 +929,7 @@ msgid ""
 "which unconditionally throws an exception. This will be useful later when"
 " we later write the transition for placing orders, because we will need "
 "to check that the tokens involved in the order are listed."
-msgstr ""
+msgstr "这次我们定义了一个辅助 procedure ``ThrowListingStatusException`` ，它无条件地抛出异常。 这将在我们稍后编写用于下订单的 transition 时有用，因为我们需要检查订单中涉及的代币是否已上架。"
 
 #: ../scilla-by-example.rst:1131
 msgid ""
@@ -937,17 +937,17 @@ msgid ""
 "due to the fact that Scilla requires all values to be named before they "
 "are used in computations. Defining constants in library code prevents us "
 "from cluttering the transition code with constant definitions:"
-msgstr ""
+msgstr "我们还在合约的库中定义了常量 ``false`` 。 这是因为 Scilla 要求所有值在用于计算之前都必须命名。 在库代码中定义常量可以防止我们用常量定义混淆 transition 代码："
 
 #: ../scilla-by-example.rst:1143
 msgid ""
 "With the helper procedures in place we are now ready to define the "
 "``ListToken`` transition as follows:"
-msgstr ""
+msgstr "有了帮助 procedure ，我们现在可以定义 transition ``ListToken`` 了，如下所示："
 
 #: ../scilla-by-example.rst:1161
 msgid "Placing an Order"
-msgstr ""
+msgstr "下单"
 
 #: ../scilla-by-example.rst:1163
 msgid ""
@@ -955,7 +955,7 @@ msgid ""
 "the token he wants to sell, and the token code and amount he wants to "
 "buy. We invoke the ``ThrowListingStatusException`` procedure if any of "
 "the token codes are unlisted:"
-msgstr ""
+msgstr "要下订单，用户必须指定他想要出售的代币代码和数量，以及他想要购买的代币代码和数量。 如果没有代币代码上架，我们将调用 procedure ``ThrowListingStatusException`` 过程："
 
 #: ../scilla-by-example.rst:1194
 msgid ""
@@ -963,7 +963,7 @@ msgid ""
 " a sufficient allowance to the exchange. We will need a similar check "
 "when another user matches the order, so we define a helper procedure "
 "``CheckAllowance`` to perform the check:"
-msgstr ""
+msgstr "如果两个代币都上架了，我们必须首先检查用户是否为交易所提供了足够的配额。 当另一个用户匹配订单时，我们将需要类似的检查，因此我们定义了一个帮助 procedure ``CheckAllowance`` 来执行检查："
 
 #: ../scilla-by-example.rst:1208
 msgid ""
@@ -973,14 +973,14 @@ msgid ""
 "given by a special immutable field ``_this_address``, so we want to "
 "remote read the value of ``allowances[_sender][_this_address]`` in the "
 "token contract."
-msgstr ""
+msgstr "为了执行检查，我们需要远程读取代币合约中的配额字段。 我们对  ``_sender`` 给交易所的配额感兴趣，其地址由一个特殊的不可变字段 ``_this_address`` 给出，所以我们想远程读取代币合约中的配额 ``allowances[_sender][_this_address]`` 的值。"
 
 #: ../scilla-by-example.rst:1215
 msgid ""
 "Remote reads in Scilla are performed using the operator ``<- &``, and we "
 "use ``.`` notation to specify the contract that we want to remote read "
 "from. The entire statement for the remote read is therefore as follows:"
-msgstr ""
+msgstr "Scilla 中的远程读取是使用运算符 ``<- &`` 执行的，我们使用 ``.`` 指定我们要远程读取的合约的符号。 因此，远程读取的整个语句如下："
 
 #: ../scilla-by-example.rst:1224
 msgid ""
@@ -990,20 +990,20 @@ msgid ""
 " tokens, and if the result is ``None`` the user has not supplied an "
 "allowance at all. We therefore need to pattern-match the result to get "
 "the actual allowance:"
-msgstr ""
+msgstr "就像我们执行本地读取映射一样，从远程映射读取的结果是一个可选值。 如果对于  ``v``  计算结果为 ``Some v`` ，则用户向交易所提供了 ``v`` 代币的配额，如果结果为 ``None`` ，则用户根本没有提供配额。 因此，我们需要对结果进行模式匹配以获得实际的配额："
 
 #: ../scilla-by-example.rst:1239
 msgid ""
 "Once again, we define the constant ``zero = Uint128 0`` in the contract "
 "library for convenience."
-msgstr ""
+msgstr "为方便起见，我们再次在合约库中定义常量 ``zero = Uint128 0`` 。"
 
 #: ../scilla-by-example.rst:1242
 msgid ""
 "We can now compare the actual allowance to the allowance we are "
 "expecting, and throw an exception if the actual allowance is "
 "insufficient:"
-msgstr ""
+msgstr "我们现在可以将实际配额与我们期望的配额进行比较，如果实际配额不足，则抛出异常："
 
 #: ../scilla-by-example.rst:1255
 msgid ""
@@ -1013,7 +1013,7 @@ msgid ""
 "use the function we must import ``IntUtils`` into the contract, which is "
 "done immediately after the ``scilla_version`` preamble, and before the "
 "contract library definitions:"
-msgstr ""
+msgstr "函数 ``uint128_le`` 是一个实用函数，它对 ``Uint128`` 类型的值执行小于或等于比较。 该函数是在标准库的 ``IntUtils`` 部分定义的，所以为了使用该函数，我们必须将 ``IntUtils`` 导入合约，这部分定义在 ``scilla_version`` 之后，合约库定义之前："
 
 #: ../scilla-by-example.rst:1272
 msgid ""
@@ -1021,7 +1021,7 @@ msgid ""
 "``ThrowInsufficientAllowanceException`` to throw an exception if the "
 "allowance is insufficient, so the ``CheckAllowance`` procedure ends up "
 "looking as follows:"
-msgstr ""
+msgstr "我们还利用辅助 procedure ``ThrowInsufficientAllowanceException`` 在配额不足时抛出异常，因此 procedure ``CheckAllowance`` 最终如下所示："
 
 #: ../scilla-by-example.rst:1334
 msgid ""
@@ -1032,28 +1032,28 @@ msgid ""
 "opposed to ``Transfer`` which transfers funds from the sender's own token"
 " balance rather than from the sender's allowance of someone else's "
 "balance."
-msgstr ""
+msgstr "如果用户给了交易所足够的额度，交易所可以向代币合约发送消息，以便从交易所自己的余额中转移代币。 我们需要在代币合约上调用的 transition 称为 ``TransferFrom`` ，而不是 ``Transfer`` ，后者从发送者自己的代币余额中转移资金，而不是从发送者允许的其他人余额中转移资金。"
 
 #: ../scilla-by-example.rst:1342
 msgid ""
 "Since the message will look much like the messages that we need when an "
 "order is matched, we generate the message using helper functions in the "
 "contract library (we will also need a new constant ``true``):"
-msgstr ""
+msgstr "由于消息看起来很像订单匹配时我们需要的消息，因此我们使用合约库中的辅助函数生成消息（我们还需要一个新的常量 ``true`` ）："
 
 #: ../scilla-by-example.rst:1422
 msgid ""
 "Finally, we need to store the new order, so that users may match the "
 "order in the future. For this we define a new type ``Order``, which holds"
 " all the information needed when eventually the order is matched:"
-msgstr ""
+msgstr "最后，我们需要存储新订单，以便用户将来可以匹配订单。 为此，我们定义了一个新类型 ``Order`` ，它包含最终匹配订单时所需的所有信息："
 
 #: ../scilla-by-example.rst:1436
 msgid ""
 "A value of type ``Order`` is given by the type constructor ``Order``, a "
 "token address and an amount of tokens to sell, and a token address and an"
 " amount of tokens to buy."
-msgstr ""
+msgstr "``Order`` 类型的值由类型构造函数 ``Order`` 、代币地址和要出售的代币数量以及代币地址和要购买的代币数量给出。"
 
 #: ../scilla-by-example.rst:1440
 msgid ""
@@ -1061,7 +1061,7 @@ msgid ""
 "``Uint128``) to ``Order``, which represents the currently active orders. "
 "Additionally, we will need a way to generate a unique order number, so "
 "we'll define a field which holds the next order number to use:"
-msgstr ""
+msgstr "我们现在需要一个包含从订单号（类型为 ``Uint128`` ）到 ``Order`` 的映射的字段，它表示当前活动的订单。 此外，我们将需要一种生成唯一订单号的方法，因此我们将定义一个字段来保存要使用的下一个订单号："
 
 #: ../scilla-by-example.rst:1452
 msgid ""
@@ -1071,7 +1071,7 @@ msgid ""
 "constant ``one = Uint128 1``) so that it is ready for the next order to "
 "be placed. We will put that in a helper procedure ``AddOrder``, and add a"
 " call to the procedure in the ``PlaceOrder`` transition:"
-msgstr ""
+msgstr "要添加新订单，我们需要生成一个新订单号，将生成的订单号和新订单存储在 ``active_orders`` 映射中，最后增加 ``next_order_no`` 字段（使用库常量 ``one = Uint128 1`` ），以便为生成下一个订单。 我们将把它放在一个辅助 procedure ``AddOrder`` 中，并在 transition ``PlaceOrder`` 中添加一个对该 procedure 的调用："
 
 #: ../scilla-by-example.rst:1505
 msgid ""
@@ -1085,7 +1085,7 @@ msgid ""
 "specify transitions that can handle both callbacks - if we don't, then "
 "the callbacks will not be recognised, causing the entire ``PlaceOrder`` "
 "transaction to fail."
-msgstr ""
+msgstr "``PlaceOrder`` 现在已经完成，但还缺少一件事。 ZRC2 代币标准规定，当执行 transition ``TransferFrom`` 时，代币将消息发送给接收者和 ``_sender`` （称为发起者），以此来通知他们传输成功。 这些通知称为回调。 由于我们的交易所在卖出代币上执行 transition ``TransferFrom`` ，并且由于交易所是这些代币的接收者，我们需要指定可以处理这两个回调的 transition ——如果我们不这样做，那么回调将不会被识别，从而导致整个 ``PlaceOrder`` 交易失败。"
 
 #: ../scilla-by-example.rst:1516
 msgid ""
@@ -1096,7 +1096,7 @@ msgid ""
 "contract in the first example in this section, then the tokens would be "
 "locked forever because the ``HelloWorld`` contract is incapable of doing "
 "anything with the tokens."
-msgstr ""
+msgstr "代币合约通知代币转移的接收者，因为此类通知增加了额外的保护措施，以防止将代币转移到无法处理代币所有权的合约的风险。 例如，如果有人在本节的第一个示例中将代币转移到 ``HelloWorld`` 合约，那么代币将被永久锁定，因为  ``HelloWorld`` 合约无法对代币进行任何操作。"
 
 #: ../scilla-by-example.rst:1524
 msgid ""
@@ -1108,31 +1108,31 @@ msgid ""
 " which throws an exception if the exchange is involved in a token "
 "transfer that it itself did not initiate, and invoke that procedure from "
 "all callback transitions:"
-msgstr ""
+msgstr "我们的交易所只能处理有活跃订单的代币，但原则上没有什么可以阻止用户不下订单就向交易所转账，所以我们需要确保交易所只涉及代币自己发起的转账。 因此，我们定义了一个 procedure ``CheckInitiator`` ，如果交换涉及它本身没有启动的代币传输，它会抛出异常，并从所有回调 transition 中调用该 procedure ："
 
 #: ../scilla-by-example.rst:1566
 msgid "Matching an Order"
-msgstr ""
+msgstr "匹配订单"
 
 #: ../scilla-by-example.rst:1568
 msgid ""
 "For the ``MatchOrder`` transition we can leverage many of the helper "
 "functions and procedures defined in the previous section."
-msgstr ""
+msgstr "对于 transition ``MatchOrder`` ，我们可以利用上一节中定义的许多辅助函数和 procedure 。"
 
 #: ../scilla-by-example.rst:1571
 msgid ""
 "The user specifies an order he wishes to match. We then look up the order"
 " number in the ``active_orders`` map, and throw an exception if the order"
 " is not found:"
-msgstr ""
+msgstr "用户指定他希望匹配的订单。 然后我们在 ``active_orders`` 映射中查找订单号，如果找不到订单则抛出异常："
 
 #: ../scilla-by-example.rst:1590
 msgid ""
 "In order to match the order, the matcher has to provide sufficient "
 "allowance of the buy token. This is checked by the ``CheckAllowance`` "
 "procedure we defined earlier, so we simply reuse that procedure here:"
-msgstr ""
+msgstr "为了匹配订单，匹配者必须提供足够的买入代币额度。 这是由我们之前定义的 procedure ``CheckAllowance`` 检查的，因此我们在这里简单地重用该 procedure ："
 
 #: ../scilla-by-example.rst:1611
 msgid ""
@@ -1142,13 +1142,13 @@ msgid ""
 "``Transfer`` message on the sell token, transferring the tokens held by "
 "the exchange to the order matcher. Once again, we define helper functions"
 " to generate the messages:"
-msgstr ""
+msgstr "我们现在需要生成两条转账消息：一条消息是买入代币上的 ``TransferFrom`` 消息，将匹配者的配额转移给下订单的用户，另一条消息是卖出代币上的 ``Transfer`` 消息，将被持有的代币转移到订单匹配器。 同样的，我们定义辅助函数来生成消息："
 
 #: ../scilla-by-example.rst:1670
 msgid ""
 "Since the order has now been matched, it should no longer be listed as an"
 " active order, so we delete the entry in ``active_orders``:"
-msgstr ""
+msgstr "由于订单现在已经匹配，所以不应再将其列为活动订单，因此我们删除 ``active_orders`` 中的条目："
 
 #: ../scilla-by-example.rst:1694
 msgid ""
@@ -1156,7 +1156,7 @@ msgid ""
 "additional callback transition. When placing an order we executed a "
 "``TransferFrom`` transition, but now we also execute a ``Transfer`` "
 "transition, which gives rise to a different callback:"
-msgstr ""
+msgstr "transition ``MatchOrder`` 到此就结束了，但我们需要定义一个额外的回调 transition。 下订单时，我们执行了 transition ``TransferFrom`` ，但现在我们也执行 transition ``Transfer`` ，这会产生不同的回调："
 
 #: ../scilla-by-example.rst:1710
 msgid ""
@@ -1167,17 +1167,17 @@ msgid ""
 "user performs a ``Transfer`` with the exchange as the recipient, because "
 "the recipient callback won't have a matching transition on the exchange, "
 "causing the entire transfer transaction to fail."
-msgstr ""
+msgstr "请注意，我们不需要指定处理从 transition ``Transfer`` 中接收代币的 transition，因为交易所永远不会将自己作为接收者执行 ``Transfer`` 。 通过完全不定义回调 transition，我们还处理了用户以交易所作为接收方进行转账的情况，因为接收方回调在交易所上不会有匹配的 transition，这将导致整个转账交易失败。"
 
 #: ../scilla-by-example.rst:1722
 msgid "We now have everything in place to specify the entire contract:"
-msgstr ""
+msgstr "我们现在已经准备好指定整个合约的一切："
 
 #: ../scilla-by-example.rst:2027
 msgid ""
 "As mentioned in the introduction we have kept the exchange simplistic in "
 "order to keep the focus on Scilla features."
-msgstr ""
+msgstr "正如介绍中提到的，我们保持交流简单化，以保持对 Scilla 功能的关注。"
 
 #: ../scilla-by-example.rst:2030
 msgid ""
@@ -1186,5 +1186,5 @@ msgid ""
 "orders, orders with expiry time, prioritising orders so that the order "
 "matcher gets the best deal possible, partial matching of orders, securing"
 " the exchange against abuse, fees for trading on the exchange, etc.."
-msgstr ""
+msgstr "为了进一步熟悉 Scilla，我们鼓励读者添加其他功能，例如取消代币上市、取消订单、有到期时间的订单、以便订单匹配器获得最佳交易的优先订单、订单的部分匹配、反对滥用的交易保护、交易所交易费用等。"
 
