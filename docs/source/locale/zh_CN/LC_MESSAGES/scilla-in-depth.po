@@ -29,13 +29,13 @@ msgstr "Scilla 合约结构"
 msgid ""
 "The general structure of a Scilla contract is given in the code fragment "
 "below:"
-msgstr ""
+msgstr "Scilla 合约的一般结构在下面的代码片段中给出："
 
 #: ../scilla-in-depth.rst:10
 msgid ""
 "The contract starts with the declaration of ``scilla_version``, which "
 "indicates which major Scilla version the contract uses."
-msgstr ""
+msgstr "合约以 ``scilla_version`` 的声明开始，它指明合约使用的 Scilla 主版本号。"
 
 #: ../scilla-in-depth.rst:13
 msgid ""
@@ -43,7 +43,7 @@ msgid ""
 "mathematical functions, e.g., a function to compute the Boolean ``AND`` "
 "of two bits, or a function computing the factorial of a given natural "
 "number."
-msgstr ""
+msgstr "然后是一个包含纯数学函数的 ``library`` 声明，例如，一个计算两位布尔 ``AND`` 的函数，或一个计算给定自然数阶乘的函数。"
 
 #: ../scilla-in-depth.rst:18
 msgid ""
