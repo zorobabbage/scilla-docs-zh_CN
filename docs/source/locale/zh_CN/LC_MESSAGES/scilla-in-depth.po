@@ -345,13 +345,13 @@ msgid ""
 "public interface of the contract, and may not be invoked by sending a "
 "message to the contract. The only way to invoke a procedure is to call it"
 " from a transition or from another procedure."
-msgstr ""
+msgstr "procedure 是另一种定义合约状态的方法，现在合约的状态可能会改变，但与 transition 相反，procedure 不是合约公共接口的一部分，并且不能通过向合约发送消息来调用。 调用 procedure 的唯一方法是从 transition 或从另一个 procedure 调用它。"
 
 #: ../scilla-in-depth.rst:324
 msgid ""
 "Procedures are defined with the keyword ``procedure`` followed by the "
 "parameters to be passed. The definition ends with the ``end`` keyword."
-msgstr ""
+msgstr "procedure 是用关键字 ``procedure`` 定义的，后跟要传递的参数。 定义以 ``end`` 关键字结束。"
 
 #: ../scilla-in-depth.rst:337
 msgid ""
@@ -360,19 +360,19 @@ msgid ""
 "possible to invoke a procedure from transition or procedure defined "
 "earlier in the contract, nor is it possible for a procedure to call "
 "itself recursively."
-msgstr ""
+msgstr "一旦定义了 procedure，就可以从合约文件其余部分的 transition 和 procedure 中调用它。 但是不能从合约中之前定义的 transition 或 procedure 中调用它，procedure 也不能递归调用自身。"
 
 #: ../scilla-in-depth.rst:343
 msgid ""
 "Procedures are invoked using the name of the procedure followed by the "
 "actual arguments to the procedure:"
-msgstr ""
+msgstr "使用 procedure 名称后跟 procedure 的实际参数来调用 procedure："
 
 #: ../scilla-in-depth.rst:352
 msgid ""
 "All arguments must be supplied when the procedure is invoked. A procedure"
 " does not return a result."
-msgstr ""
+msgstr "调用 procedure  时必须提供所有参数。 procedure 不返回结果。"
 
 #: ../scilla-in-depth.rst:358
 msgid ""
@@ -380,7 +380,7 @@ msgid ""
 "``_amount`` are implicitly passed to all the procedures that a transition"
 " calls. There is therefore no need to declare those parameters explicitly"
 " when defining a procedure."
-msgstr ""
+msgstr "隐式 transition  参数 ``_sender`` 、``_origin`` 和 ``_amount`` 被隐式传递给 transition  调用的所有 procedure。 因此，在定义 procedure 时无需显式声明这些参数。"
 
 #: ../scilla-in-depth.rst:365
 msgid ""
@@ -388,17 +388,17 @@ msgid ""
 " access a map, it is therefore necessary to either make the procedure "
 "directly access the contract field containing the map, or use a library "
 "function to perform the necessary computations on the map."
-msgstr ""
+msgstr "procedure 参数不能是（或包含）映射。 如果一个 procedure  需要访问一个映射，就必须让该 procedure  直接访问包含该映射的合约字段，或者使用库函数在映射上执行必要的计算。"
 
 #: ../scilla-in-depth.rst:373
 msgid "Expressions"
-msgstr ""
+msgstr "表达式"
 
 #: ../scilla-in-depth.rst:375
 msgid ""
 "`Expressions` handle pure operations. Scilla contains the following types"
 " of expressions:"
-msgstr ""
+msgstr "表达式处理纯操作。 Scilla 包含以下类型的表达式："
 
 #: ../scilla-in-depth.rst:377
 msgid ""
@@ -406,7 +406,7 @@ msgid ""
 "of ``x`` to ``f`` is **global** and extends to the end of the contract. "
 "The following code fragment defines a constant ``one`` whose values is "
 "``1`` of type ``Int32`` throughout the contract."
-msgstr ""
+msgstr "``let x = f`` ：在合约中把 ``f`` 命名为 ``x``。 ``x`` 到 ``f`` 的绑定是全局的，并延伸到合约结束。 以下代码片段定义了一个常量 ``one`` ，其值在整个合约中都是 ``Int32`` 类型的 ``1`` 。"
 
 #: ../scilla-in-depth.rst:386
 msgid ""
@@ -415,7 +415,7 @@ msgid ""
 "example binds the value of ``one`` to ``1`` of type ``Int32`` and ``two``"
 " to ``2`` of type ``Int32`` in the expression ``builtin add one two``, "
 "which adds ``1`` to ``2`` and hence evaluates to ``3`` of type ``Int32``."
-msgstr ""
+msgstr "``let x = f in expr`` ：将 ``f`` 绑定到表达式 ``expr`` 中的名称 ``x`` 。 这里的绑定对 ``expr`` 来说仅仅是 **local** 。 以下示例将 ``Int32` 类型的 ``1`` 的值绑定到 ``one`` 以及将 ``Int32` 类型的 ``2`` 的值绑定到 ``two``并使用内置表达式 ``builtin add one two`` 计算，该表达式将 ``1`` 与 ``2`` 相加，因此计算结果为 ``Int32` 类型的 ``3``。"
 
 #: ../scilla-in-depth.rst:399
 msgid ""
@@ -423,17 +423,17 @@ msgid ""
 "each entry has the following form: ``b : x``. Here ``b`` is an identifier"
 " and ``x`` a variable, whose value is bound to the identifier in the "
 "message."
-msgstr ""
+msgstr "``{ <entry>_1 ; <entry>_2 ... }`` ：消息或事件表达式，其中每个条目具有以下形式： ``b : x`` 。 这里 ``b`` 是一个标识符， ``x`` 是一个变量，其值绑定到消息中的标识符。"
 
 #: ../scilla-in-depth.rst:404
 msgid ""
 "``fun (x : T) => expr`` : A function that takes an input ``x`` of type "
 "``T`` and returns the value to which expression ``expr`` evaluates."
-msgstr ""
+msgstr "``fun (x : T) => expr`` ：一个函数，它接受类型为 ``T`` 的输入 ``x`` 并返回表达式 ``expr`` 求值结果。"
 
 #: ../scilla-in-depth.rst:407
 msgid "``f x`` : Apply the function ``f`` to the parameter ``x``."
-msgstr ""
+msgstr "``f x`` ：将函数 ``f`` 应用于参数 ``x`` 。"
 
 #: ../scilla-in-depth.rst:409
 msgid ""
@@ -441,13 +441,13 @@ msgid ""
 "type and returns the value to which expression ``expr`` evaluates. These "
 "are typically used to build library functions. See the implementation of "
 "fst_ for an example."
-msgstr ""
+msgstr "``tfun 'T => expr`` ：一个类型函数，它将 ``'T`` 作为参数类型并返回表达式 ``expr` 求值结果。 这些通常用于构建库函数。 有关示例，请参阅 fst_ 的实现。"
 
 #: ../scilla-in-depth.rst:415
 msgid ""
 "Shadowing of type variables is not currently allowed. E.g. ``tfun 'T => "
 "tfun 'T => expr`` is not a valid expression."
-msgstr ""
+msgstr "当前不允许隐藏类型变量。 例如。 ``tfun 'T => tfun 'T => expr`` 不是有效的表达式。"
 
 #: ../scilla-in-depth.rst:418
 msgid ""
@@ -456,11 +456,11 @@ msgid ""
 "variable of ``x`` to ``T``. Type applications are typically used when a "
 "library function is about to be applied. See the example application of "
 "fst_ for an example."
-msgstr ""
+msgstr "``@x T`` ：将类型函数 ``x`` 应用于类型 ``T`` 。这通过将 ``x`` 的第一个类型变量实例化为 ``T`` 来专门化类型函数 ``x`` 。类型应用程序通常在即将应用库函数时使用。 有关示例，请参阅 fst_ 的示例应用程序。"
 
 #: ../scilla-in-depth.rst:424
 msgid "``builtin f x``: Apply the built-in function ``f`` on ``x``."
-msgstr ""
+msgstr "``builtin f x`` ：在 ``x`` 上应用内置函数 ``f`` 。"
 
 #: ../scilla-in-depth.rst:426
 msgid ""
@@ -473,7 +473,7 @@ msgid ""
 "subvalues. A variable matches anything, and binds the variable to the "
 "value it matches in the expression of that clause. A wildcard matches "
 "anything, but the value is then ignored."
-msgstr ""
+msgstr "``match`` 表达式：将绑定变量与模式匹配并判断该子句中的表达式。  ``match``表达式类似于 OCaml 中的 ``match`` 表达式。 要匹配的模式可以是带有子模式、变量或通配符 ``_`` 的 ADT 构造函数（请参阅 ADTs_ ）。 如果子模式匹配相应的子值，则 ADT 构造函数模式匹配使用相同构造函数构造的值。 变量匹配任何内容，并将变量绑定到它在该子句的表达式中匹配的值。 通配符匹配任何内容，但随后会忽略该值。"
 
 #: ../scilla-in-depth.rst:449
 msgid ""
@@ -482,11 +482,11 @@ msgid ""
 "be reachable, i.e., for each pattern there must be a legal (type-safe) "
 "value of ``x`` that matches that pattern, and which does not match any "
 "pattern preceding it."
-msgstr ""
+msgstr "模式匹配必须是详尽的，即 ``x`` 的每个合法（类型安全）值都必须与模式匹配。 此外，每个模式都必须是可达的，即对于每个模式，必须有一个合法（类型安全）的 ``x`` 值与该模式匹配，并且不匹配它之前的任何模式。"
 
 #: ../scilla-in-depth.rst:456
 msgid "Statements"
-msgstr ""
+msgstr "语句"
 
 #: ../scilla-in-depth.rst:458
 msgid ""
