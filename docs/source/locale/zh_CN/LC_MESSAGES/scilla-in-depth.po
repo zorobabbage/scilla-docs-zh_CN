@@ -585,30 +585,30 @@ msgstr "通信"
 msgid ""
 "A contract can communicate with other contract and user accounts through "
 "the ``send`` instruction:"
-msgstr ""
+msgstr "一个合约可以通过 ``send`` 指令与其他合约和用户账户进行通信："
 
 #: ../scilla-in-depth.rst:541
 msgid "``send msgs`` : Send a list of messages ``msgs``."
-msgstr ""
+msgstr "``send msgs``：发送 ``msgs`` 消息列表。"
 
 #: ../scilla-in-depth.rst:543
 msgid ""
 "The following code snippet defines a ``msg`` with four entries ``_tag``, "
 "``_recipient``, ``_amount`` and ``param``."
-msgstr ""
+msgstr "以下代码片段定义了一条 ``msg``，其中包含四个条目 ``_tag``、``_recipient``、``_amount`` 和 ``param``。"
 
 #: ../scilla-in-depth.rst:551
 msgid ""
 "A message passed to ``send`` must contain the mandatory fields ``_tag``, "
 "``_recipient`` and ``_amount``."
-msgstr ""
+msgstr "传递给 ``send`` 的消息必须包含必填字段 ``_tag``、``_recipient`` 和 ``_amount``。"
 
 #: ../scilla-in-depth.rst:554
 msgid ""
 "The ``_recipient`` field (of type ``ByStr20``) is the blockchain address "
 "that the message is to be sent to, and the ``_amount`` field (of type "
 "``Uint128``) is the number of QA to be transferred to that account."
-msgstr ""
+msgstr "``_recipient`` 字段（``ByStr20`` 类型）是消息要发送到的区块链地址，``_amount`` 字段（``Uint128`` 类型）是要转移到该帐户的 QA 数量。"
 
 #: ../scilla-in-depth.rst:559
 msgid ""
@@ -617,7 +617,7 @@ msgid ""
 "value of the ``_tag`` field is the name of the transition that is to be "
 "invoked on the recipient contract. If the recipient is a user account, "
 "the ``_tag`` field is ignored."
-msgstr ""
+msgstr "``_tag`` 字段（``String`` 类型）仅在 ``_recipient`` 字段的值为合约地址时使用。 在这种情况下，``_tag`` 字段的值是要在接收方合约上调用的 transition 的名称。 如果收件人是用户帐户，则忽略 ``_tag`` 字段。"
 
 #: ../scilla-in-depth.rst:567
 msgid ""
@@ -626,7 +626,7 @@ msgid ""
 "<https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-5.md>`_, i.e. "
 "``AddFunds``. Please make sure to check if a contract to which you intend"
 " to send funds is implemented in adherence with ZRC-5 convention."
-msgstr ""
+msgstr "为了能够将资金从合约转移到合约和用户账户，请使用 `ZRC-5<https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-5.md>`_  中的标准 transition 名称，即 ``AddFunds``。 请务必检查您打算向其发送资金的合约是否符合 ZRC-5 公约。"
 
 #: ../scilla-in-depth.rst:573
 msgid ""
@@ -635,11 +635,11 @@ msgid ""
 "recipient is a contract, the additional fields must have the same names "
 "and types as the parameters of the transition being invoked on the "
 "recipient contract."
-msgstr ""
+msgstr "除了必填字段之外，消息还可以包含其他字段（任何类型），例如上面的 ``param``。 但是，如果消息接收者是合约，则附加字段的名称和类型必须与在接收者合约上调用的 transition 参数相同。"
 
 #: ../scilla-in-depth.rst:579
 msgid "Here's an example that sends multiple messages."
-msgstr ""
+msgstr "这是一个发送多条消息的示例。"
 
 #: ../scilla-in-depth.rst:594
 msgid ""
@@ -647,7 +647,7 @@ msgid ""
 "(including during the execution of the procedures it invokes), but the "
 "messages will not sent onwards until after the transition has finished. "
 "More details can be found in the :ref:`Chain Calls <Chaincalls>` section."
-msgstr ""
+msgstr "transition 可以在执行期间的任何时候执行 ``send``（包括在它调用的 procedure 的执行期间），但是直到 transition 完成后才会继续发送消息。 更多细节可以在 :ref:`链式调用 <Chaincalls>` 部分找到。"
 
 #: ../scilla-in-depth.rst:600
 msgid ""
@@ -656,13 +656,13 @@ msgid ""
 "see. If a user uses a client application invoke a transition on a "
 "contract, the client application can listen for events that the contract "
 "may emit, and alert the user."
-msgstr ""
+msgstr "合约还可以通过发出事件与外界进行通信。 事件是存储在区块链上供所有人查看的信号。 如果用户使用客户端应用程序调用合约上的 transition，则客户端应用程序可以侦听合约可能发出的事件，并提醒用户。"
 
 #: ../scilla-in-depth.rst:606
 msgid ""
 "``event e``: Emit a message ``e`` as an event. The following code emits "
 "an event with name ``e_name``."
-msgstr ""
+msgstr "``event e``：将消息 ``e`` 作为事件发出。 以下代码发出一个名为 ``e_name`` 的事件。"
 
 #: ../scilla-in-depth.rst:614
 msgid ""
@@ -670,7 +670,7 @@ msgid ""
 "type ``String``), and may contain other entries as well. The value of the"
 " ``_eventname`` entry must be a string literal. All events with the same "
 "name must have the same entry names and types."
-msgstr ""
+msgstr "发出的事件必须包含强制字段 ``_eventname``（``String`` 类型），并且还可以包含其他条目。 ``_eventname`` 条目的值必须是字符串文字。 所有具有相同名称的事件必须具有相同的条目名称和类型。"
 
 #: ../scilla-in-depth.rst:621
 msgid ""
@@ -679,11 +679,11 @@ msgid ""
 "it invokes), but the event will not be visible on the blockchain before "
 "the transition has finished. More details can be found in the :ref:`Chain"
 " Calls <Chaincalls>` section."
-msgstr ""
+msgstr "与发送消息一样，transition 可以在执行期间的任何时候（包括在它调用的过程的执行期间）发出事件，但在 transition 完成之前，该事件在区块链上是不可见的。 更多细节可以在 :ref:`链式调用 <Chaincalls>` 部分找到。"
 
 #: ../scilla-in-depth.rst:629
 msgid "Run-time Errors"
-msgstr ""
+msgstr "运行时错误"
 
 #: ../scilla-in-depth.rst:631
 msgid ""
