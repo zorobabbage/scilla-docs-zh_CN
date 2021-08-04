@@ -692,13 +692,13 @@ msgid ""
 "A run-time error causes the transition to terminate abruptly, and the "
 "entire transaction to be aborted. However, gas is still charged up until "
 "the point of the error."
-msgstr ""
+msgstr "transition 在执行过程中可能会遇到运行时错误，例如 out-of-gas 错误、整数溢出或故意抛出的异常。 运行时错误会导致 transition 突然终止，并中止整个事务。 但是gas费用仍旧会被扣除，直到出现错误为止。"
 
 #: ../scilla-in-depth.rst:637
 msgid ""
 "The syntax for throwing an exception is similar to that of events and "
 "messages."
-msgstr ""
+msgstr "抛出异常的语法类似于事件和消息的语法。"
 
 #: ../scilla-in-depth.rst:644
 msgid ""
@@ -706,7 +706,7 @@ msgid ""
 "optional and can be omitted. An empty throw will result in an error that "
 "just conveys the location of where the ``throw`` happened without more "
 "information."
-msgstr ""
+msgstr "与 ``event`` 或 ``send`` 不同， ``throw`` 的参数是可选的，可以省略。 不带参数的抛出异常将导致错误，该错误只会展示发生 ``throw`` 的位置而没有更多信息。"
 
 #: ../scilla-in-depth.rst:650
 msgid ""
@@ -714,66 +714,66 @@ msgid ""
 " entire transaction is aborted, and any state changes in both the current"
 " and other contracts are rolled back. (The state of other contracts may "
 "have changed due to a chain call)."
-msgstr ""
+msgstr "如果在执行 transition 期间发生运行时错误，则整个交易将被中止，并且当前合约和其他合约中的任何状态更改都将回滚。 （其他合约的状态可能因链式调用而发生变化）。"
 
 #: ../scilla-in-depth.rst:655
 msgid "In particular:"
-msgstr ""
+msgstr "特别是："
 
 #: ../scilla-in-depth.rst:657
 msgid ""
 "All transferred funds are returned to their respective senders, even if "
 "an ``accept`` was executed before the error."
-msgstr ""
+msgstr "即使在错误发生之前执行了 ``accept``，所有转移的资金都会返回给各自的发送者。"
 
 #: ../scilla-in-depth.rst:660
 msgid ""
 "The message queue is cleared, so that as yet unprocessed messages will no"
 " longer be sent onwards even if a ``send`` was executed before the error."
-msgstr ""
+msgstr "消息队列被清除，因此即使在错误之前执行了 ``send``，也不会再继续发送尚未处理的消息。"
 
 #: ../scilla-in-depth.rst:664
 msgid ""
 "The event list is cleared, so that no events are emitted even if an "
 "``event`` was executed before the error."
-msgstr ""
+msgstr "事件列表被清除，因此即使在错误之前执行了 ``event``，也不会发出任何事件。"
 
 #: ../scilla-in-depth.rst:667
 msgid ""
 "Gas is still charged for the transaction up until the point the run-time "
 "error occurs."
-msgstr ""
+msgstr "在发生运行时错误之前，仍会为交易收取 Gas 费用。"
 
 #: ../scilla-in-depth.rst:672
 msgid ""
 "Scilla does not have exception handlers. Throwing an exception always "
 "aborts the entire transaction."
-msgstr ""
+msgstr "Scilla 没有异常处理程序。 抛出异常总是会中止整个事务。"
 
 #: ../scilla-in-depth.rst:677
 msgid "Gas consumption in Scilla"
-msgstr ""
+msgstr "Scilla 的 Gas 消耗量"
 
 #: ../scilla-in-depth.rst:679
 msgid ""
 "Deploying contracts and executing transitions in them cost gas. The "
 "detailed cost mechanism is explained `here <https://github.com/Zilliqa"
 "/scilla-docs/tree/master/docs/texsources/gas-costs/gas-doc.pdf>`_."
-msgstr ""
+msgstr "部署合约并在其中执行 transition 会消耗 gas。 `这里  <https://github.com/Zilliqa/scilla-docs/tree/master/docs/texsources/gas-costs/gas-doc.pdf>`_ 解释了详细的成本机制。"
 
 #: ../scilla-in-depth.rst:683
 msgid ""
 "The `Nucleus Wallet <https://dev-wallet.zilliqa.com/calculate>`_ page can"
 " be used to estimate gas costs for some transactions ."
-msgstr ""
+msgstr "`Nucleus 钱包 <https://dev-wallet.zilliqa.com/calculate>`_ 页面可用于估算某些交易的 gas 成本。"
 
 #: ../scilla-in-depth.rst:688
 msgid "Primitive Data Types & Operations"
-msgstr ""
+msgstr "原始数据类型和操作"
 
 #: ../scilla-in-depth.rst:691
 msgid "Integer Types"
-msgstr ""
+msgstr "整数类型"
 
 #: ../scilla-in-depth.rst:693
 msgid ""
@@ -781,11 +781,11 @@ msgid ""
 "bits.  These integer types can be specified with the keywords ``IntX`` "
 "and ``UintX`` where ``X`` can be 32, 64, 128, or 256. For example, the "
 "type of an unsigned integer of 32 bits is ``Uint32``."
-msgstr ""
+msgstr "Scilla 定义了 32、64、128 和 256 位的有符号和无符号整数类型。 这些整数类型可以用关键字 ``IntX`` 和 ``UintX`` 指定，其中 ``X`` 可以是 32、64、128 或 256。例如，32 位无符号整数的类型是 ``Uint32``。"
 
 #: ../scilla-in-depth.rst:698
 msgid "The following code snippet declares a variable of type ``Uint32``:"
-msgstr ""
+msgstr "以下代码片段声明了一个 ``Uint32`` 类型的变量："
 
 #: ../scilla-in-depth.rst:705
 msgid ""
