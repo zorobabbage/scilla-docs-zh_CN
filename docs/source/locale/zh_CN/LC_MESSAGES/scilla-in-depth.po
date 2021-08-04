@@ -492,25 +492,25 @@ msgstr "语句"
 msgid ""
 "Statements in Scilla are operations with effect, and hence not purely "
 "mathematical. Scilla contains the following types of statements:"
-msgstr ""
+msgstr "Scilla 中的语句是有效的运算，因此不是纯粹的数学运算。 Scilla 包含以下类型的语句："
 
 #: ../scilla-in-depth.rst:461
 msgid ""
 "``x <- f`` : Fetch the value of the contract field ``f``, and store it "
 "into the local variable ``x``."
-msgstr ""
+msgstr "``x <- f`` ：获取合约字段 ``f`` 的值，并将其存储到局部变量 ``x`` 中。"
 
 #: ../scilla-in-depth.rst:464
 msgid ""
 "``f := x`` : Update the mutable contract field ``f`` with the value of "
 "``x``. ``x`` may be a local variable, or another contract field."
-msgstr ""
+msgstr "``f := x`` ：用 ``x`` 的值更新可变合约字段 ``f`` 。 ``x`` 可能是一个局部变量，或另一个合约字段。"
 
 #: ../scilla-in-depth.rst:467
 msgid ""
 "``x <- & BLOCKNUMBER`` : Fetch the value of the blockchain state variable"
 " ``BLOCKNUMBER``, and store it into the local variable ``x``."
-msgstr ""
+msgstr "``x <- & BLOCKNUMBER`` ：获取区块链状态变量 ``BLOCKNUMBER`` 的值，并将其存储到局部变量 ``x`` 中。"
 
 #: ../scilla-in-depth.rst:471
 msgid ""
@@ -519,31 +519,31 @@ msgid ""
 "that the type of ``c`` must be an address type containing the field "
 "``f``. See the secion on :ref:`Addresses <Addresses>` for details on "
 "address types."
-msgstr ""
+msgstr "``x <- & c.f`` ：远程获取。 获取地址 ``c`` 处的合约字段 ``f`` 的值，并将其存储到局部变量 ``x`` 中。 请注意， ``c`` 的类型必须是包含字段 ``f`` 的地址类型。 有关地址类型的详细信息，请参阅 :ref:`地址 <Addresses>` 部分。"
 
 #: ../scilla-in-depth.rst:477
 msgid ""
 "``v = e`` : Evaluate the expression ``e``, and assign the value to the "
 "local variable ``v``."
-msgstr ""
+msgstr "``v = e`` ：计算表达式 ``e`` ，并将值赋给局部变量 ``v`` 。"
 
 #: ../scilla-in-depth.rst:480
 msgid ""
 "``p x y z`` : Invoke the procedure ``p`` with the arguments ``x``, ``y`` "
 "and ``z``. The number of arguments supplied must correspond to the number"
 " of arguments the procedure takes."
-msgstr ""
+msgstr "``p x y z`` ：使用参数 ``x``、``y``  和 ``z`` 调用 procedure ``p``。 提供的参数数量必须与 procedure 采用的参数数量相对应。"
 
 #: ../scilla-in-depth.rst:484
 msgid ""
 "``forall ls p`` : Invoke procedure ``p`` for each element in the list "
 "``ls``. ``p`` should be defined to take exactly one argument whose type "
 "is equal to an element of the list ``ls``."
-msgstr ""
+msgstr "``forall ls p`` ：为列表 ``ls`` 中的每个元素调用 procedure ``p``。 ``p`` 应该被定义为只接受一个类型等于列表 ``ls`` 元素的参数。"
 
 #: ../scilla-in-depth.rst:488
 msgid "``match`` : Pattern-matching at statement level:"
-msgstr ""
+msgstr "``match`` ：语句级别的模式匹配："
 
 #: ../scilla-in-depth.rst:507
 msgid ""
@@ -553,33 +553,33 @@ msgid ""
 "accept the money, the money is transferred back to the sender of the "
 "message. Not accepting the incoming amount (when it is non-zero) is not "
 "an error."
-msgstr ""
+msgstr "``accept`` ：接受调用 transition 的消息的 QA。 该金额会自动添加到合约的 ``_balance`` 字段中。 如果消息包含 QA，但调用的 transition 不接受这笔钱，则将钱转回给消息的发送者。 不接受传入金额（当它非零时）不是错误。"
 
 #: ../scilla-in-depth.rst:514
 msgid ""
 "``send`` and ``event`` : Communication with the blockchain. See the next "
 "section for details."
-msgstr ""
+msgstr "``send`` 和 ``event``：与区块链的通信。 有关详细信息，请参阅下一节。"
 
 #: ../scilla-in-depth.rst:517
 msgid ""
 "In-place map operations : Operations on contract fields of type ``Map``. "
 "See the Maps_ section for details."
-msgstr ""
+msgstr "原位映射操作：对 ``Map`` 类型的合约字段的操作。 有关详细信息，请参阅 Maps_ 部分。"
 
 #: ../scilla-in-depth.rst:520
 msgid "A sequence of statements must be separated by semicolons ``;``:"
-msgstr ""
+msgstr "语句序列必须用分号分隔 ``;``："
 
 #: ../scilla-in-depth.rst:531
 msgid ""
 "Notice that the final statement does not have a trailing ``;``, since "
 "``;`` is used to separate statements rather than terminate them."
-msgstr ""
+msgstr "请注意，最后的语句没有尾随 ``;``，因为 ``;`` 用于分隔语句而不是终止它们。"
 
 #: ../scilla-in-depth.rst:536
 msgid "Communication"
-msgstr ""
+msgstr "通信"
 
 #: ../scilla-in-depth.rst:538
 msgid ""
