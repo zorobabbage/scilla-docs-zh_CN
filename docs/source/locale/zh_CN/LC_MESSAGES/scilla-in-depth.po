@@ -1060,13 +1060,13 @@ msgstr "``eq a1 a2``: a1 是否等于 a2 ， 返回一个 ``Bool``。"
 
 #: ../scilla-in-depth.rst:846
 msgid "Addresses"
-msgstr ""
+msgstr "地址"
 
 #: ../scilla-in-depth.rst:848
 msgid ""
 "Addresses on the Zilliqa network are strings of 20 bytes, and raw "
 "addresses are therefore represented by values of type ``ByStr20``."
-msgstr ""
+msgstr "Zilliqa 网络上的地址是 20 字节的字符串，因此原始地址由 ``ByStr20`` 类型的值表示。"
 
 #: ../scilla-in-depth.rst:851
 msgid ""
@@ -1076,11 +1076,11 @@ msgid ""
 " address. Address types are written using the form ``ByStr20 with "
 "<address contents> end``, where ``<address contents>`` refers to what the"
 " address contains."
-msgstr ""
+msgstr "此外，Scilla 支持结构化地址类型，即等价于 ``ByStr20`` 的类型，但当被解释为网络上的地址时，会提供有关该地址内容的附加信息。 地址类型使用形式为 ``ByStr20 with <address contents> end``，其中 ``<address contents>`` 指地址包含的内容。"
 
 #: ../scilla-in-depth.rst:858
 msgid "The hierarchy of address types is as follows:"
-msgstr ""
+msgstr "地址类型的层次结构如下："
 
 #: ../scilla-in-depth.rst:860
 msgid ""
@@ -1089,7 +1089,7 @@ msgid ""
 "``ByStr20`` is not regarded as an address type, because it can refer to "
 "any byte string of length 20, whether it is meant to represent an address"
 " or not.)"
-msgstr ""
+msgstr "``ByStr20``：长度为 20 的原始字节字符串。该类型不提供任何关于地址处的内容的保证。 （通常，``ByStr20`` 不被视为地址类型，因为它可以引用任何长度为 20 的字节串，无论它是否表示地址。）"
 
 #: ../scilla-in-depth.rst:866
 msgid ""
@@ -1099,13 +1099,13 @@ msgid ""
 "address is greater than 0. (The balance of an address is the number of Qa"
 " held by the address account. The nonce of an address is the number of "
 "transactions that have been initiated from that address)."
-msgstr ""
+msgstr "``ByStr20 with end``：一个 ``ByStr20``，当解释为网络地址时，指的是一个正在使用的地址。 如果地址包含合约，或者地址的余额或随机数大于 0，则该地址正在使用中。（地址余额是地址帐户持有的 Qa 数量。地址的随机数是从该地址发起的交易数量）。"
 
 #: ../scilla-in-depth.rst:874
 msgid ""
 "``ByStr20 with contract end``: A ``ByStr20`` which, when interpreted as a"
 " network address, refers to the address of a contract."
-msgstr ""
+msgstr "``ByStr20 with contract end``：一个 ``ByStr20``，当解释为网络地址时，指的是合约的地址。"
 
 #: ../scilla-in-depth.rst:877
 msgid ""
@@ -1115,28 +1115,28 @@ msgid ""
 "``t1``, ``f2`` of type ``t2``, and so on. The contract in question may "
 "define more fields than the ones specified in the type, but the fields "
 "specified in the type must be defined in the contract."
-msgstr ""
+msgstr "``ByStr20 with contract field f1 : t1, field f2 : t2, ... end``:  一个 ``ByStr20``，当解释为网络地址时，指的是包含类型为 ``t1`` 的可变字段 ``f1`` 、类型为 ``t2`` 的可变字段 ``f2``  的合约地址， 等等。 有一个问题是合约可以定义比类型中指定的更多的字段，但类型中指定的字段必须在合约中定义。"
 
 #: ../scilla-in-depth.rst:886
 msgid ""
 "All addresses in use, and therefore by extension all contract addresses, "
 "implicitly define a mutable field ``_balance : Uint128``. For user "
 "accounts the ``_balance`` field refers to the account balance."
-msgstr ""
+msgstr "所有使用中的地址，以及因此通过扩展的所有合约地址，都隐式定义了一个可变字段 ``_balance : Uint128``。 对于用户帐户，``_balance`` 字段是指帐户余额。"
 
 #: ../scilla-in-depth.rst:893
 msgid ""
 "Address types specifying immutable parameters or transitions of a "
 "contract are not supported."
-msgstr ""
+msgstr "不支持指定不可变参数或合约 transition 的地址类型。"
 
 #: ../scilla-in-depth.rst:897
 msgid "Address subtyping"
-msgstr ""
+msgstr "地址子类型"
 
 #: ../scilla-in-depth.rst:899
 msgid "The hierarchy of address types defines a subtype relation:"
-msgstr ""
+msgstr "地址类型的层次结构定义了一个子类型关系："
 
 #: ../scilla-in-depth.rst:901
 msgid ""
@@ -1144,13 +1144,13 @@ msgid ""
 "This means that any address type can be used in place of a ``ByStr20``, "
 "e.g., for comparing equality using ``builtin eq``, or as the "
 "``_recipient`` value of a message."
-msgstr ""
+msgstr "任何 ``ByStr20 with ... end`` 的地址类型都是 ``ByStr20`` 的子类型。 这意味着可以使用任何地址类型代替 ``ByStr20``，例如，使用 ``builtin eq`` 比较相等性，或作为消息的 ``_recipient`` 值。"
 
 #: ../scilla-in-depth.rst:906
 msgid ""
 "Any contract address type ``ByStr20 with contract ... end`` is a subtype "
 "of ``ByStr20 with end``."
-msgstr ""
+msgstr "任何 ``ByStr20 with contract ... end`` 的合约地址类型 都是 ``ByStr20 with end`` 的子类型。"
 
 #: ../scilla-in-depth.rst:909
 msgid ""
