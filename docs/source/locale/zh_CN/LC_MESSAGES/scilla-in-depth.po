@@ -415,7 +415,7 @@ msgid ""
 "example binds the value of ``one`` to ``1`` of type ``Int32`` and ``two``"
 " to ``2`` of type ``Int32`` in the expression ``builtin add one two``, "
 "which adds ``1`` to ``2`` and hence evaluates to ``3`` of type ``Int32``."
-msgstr "``let x = f in expr`` ：将 ``f`` 绑定到表达式 ``expr`` 中的名称 ``x`` 。 这里的绑定对 ``expr`` 来说仅仅是 **local** 。 以下示例将 ``Int32` 类型的 ``1`` 的值绑定到 ``one`` 以及将 ``Int32` 类型的 ``2`` 的值绑定到 ``two``并使用内置表达式 ``builtin add one two`` 计算，该表达式将 ``1`` 与 ``2`` 相加，因此计算结果为 ``Int32` 类型的 ``3``。"
+msgstr "``let x = f in expr`` ：将 ``f`` 绑定到表达式 ``expr`` 中的名称 ``x`` 。 这里的绑定对 ``expr`` 来说仅仅是 **local** 。 以下示例将 ``Int32` 类型的 ``1`` 的值绑定到 ``one`` 以及将 ``Int32` 类型的 ``2`` 的值绑定到 ``two`` 并使用内置表达式 ``builtin add one two`` 计算，该表达式将 ``1`` 与 ``2`` 相加，因此计算结果为 ``Int32` 类型的 ``3``。"
 
 #: ../scilla-in-depth.rst:399
 msgid ""
@@ -473,7 +473,7 @@ msgid ""
 "subvalues. A variable matches anything, and binds the variable to the "
 "value it matches in the expression of that clause. A wildcard matches "
 "anything, but the value is then ignored."
-msgstr "``match`` 表达式：将绑定变量与模式匹配并判断该子句中的表达式。  ``match``表达式类似于 OCaml 中的 ``match`` 表达式。 要匹配的模式可以是带有子模式、变量或通配符 ``_`` 的 ADT 构造函数（请参阅 ADTs_ ）。 如果子模式匹配相应的子值，则 ADT 构造函数模式匹配使用相同构造函数构造的值。 变量匹配任何内容，并将变量绑定到它在该子句的表达式中匹配的值。 通配符匹配任何内容，但随后会忽略该值。"
+msgstr "``match`` 表达式：将绑定变量与模式匹配并判断该子句中的表达式。  ``match`` 表达式类似于 OCaml 中的 ``match`` 表达式。 要匹配的模式可以是带有子模式、变量或通配符 ``_`` 的 ADT 构造函数（请参阅 ADTs_ ）。 如果子模式匹配相应的子值，则 ADT 构造函数模式匹配使用相同构造函数构造的值。 变量匹配任何内容，并将变量绑定到它在该子句的表达式中匹配的值。 通配符匹配任何内容，但随后会忽略该值。"
 
 #: ../scilla-in-depth.rst:449
 msgid ""
@@ -670,7 +670,7 @@ msgid ""
 "type ``String``), and may contain other entries as well. The value of the"
 " ``_eventname`` entry must be a string literal. All events with the same "
 "name must have the same entry names and types."
-msgstr "发出的事件必须包含强制字段 ``_eventname``（``String`` 类型），并且还可以包含其他条目。 ``_eventname`` 条目的值必须是字符串文字。 所有具有相同名称的事件必须具有相同的条目名称和类型。"
+msgstr "发出的事件必须包含强制字段 ``_eventname`` （``String`` 类型），并且还可以包含其他条目。 ``_eventname`` 条目的值必须是字符串文字。 所有具有相同名称的事件必须具有相同的条目名称和类型。"
 
 #: ../scilla-in-depth.rst:621
 msgid ""
@@ -793,7 +793,7 @@ msgid ""
 "operation takes two integers ``IntX`` / ``UintX`` (of the same type) as "
 "arguments. Exceptions are ``pow`` whose second argument is always "
 "``Uint32`` and ``isqrt`` which takes in a single ``UintX`` argument."
-msgstr "Scilla 支持以下内置的整数运算。 每个操作都采用两个整数 ``IntX`` / ``UintX``（相同类型）作为参数。 有两个除外，即 ``pow`` 的第二个参数始终是 ``Uint32`` 以及 ``isqrt`` 接受单个 ``UintX` 参数。"
+msgstr "Scilla 支持以下内置的整数运算。 每个操作都采用两个整数 ``IntX`` / ``UintX`` （相同类型）作为参数。 有两个除外，即 ``pow`` 的第二个参数始终是 ``Uint32`` 以及 ``isqrt`` 接受单个 ``UintX`` 参数。"
 
 #: ../scilla-in-depth.rst:710
 msgid "``builtin eq i1 i2`` : Is ``i1`` equal to ``i2``? Returns a ``Bool``."
@@ -831,7 +831,7 @@ msgstr "``builtin rem i1 i2``：``i1`` 除以 ``i2`` 的整数余数。 返回�
 
 #: ../scilla-in-depth.rst:721
 msgid "``builtin lt i1 i2``: Is ``i1`` less than ``i2``? Returns a ``Bool``."
-msgstr "``builtin lt i1 i2``：``i1` 是否小于 ``i2``？ 返回 ``Bool``。"
+msgstr "``builtin lt i1 i2``：``i1`` 是否小于 ``i2``， 返回 ``Bool``。"
 
 #: ../scilla-in-depth.rst:722
 msgid ""
@@ -858,7 +858,7 @@ msgid ""
 "``String`` (that represents a decimal number) value to the result of "
 "``Option UintX`` or ``Option IntX`` type. Returns ``Some res`` if the "
 "conversion succeeded and ``None`` otherwise. The conversion may fail when"
-msgstr "``builtin to_(u)int32/64/128/256``：将 ``UintX`` / ``IntX`` 或 ``String``（表示十进制数）值转换为 ``Option UintX`` 或 ``Option IntX`` 类型的结果。 如果转换成功，则返回 ``Some res``，否则返回 ``None``。 转换可能会在下面这些情况下失败"
+msgstr "``builtin to_(u)int32/64/128/256``：将 ``UintX`` / ``IntX`` 或 ``String`` （表示十进制数）值转换为 ``Option UintX`` 或 ``Option IntX`` 类型的结果。 如果转换成功，则返回 ``Some res``，否则返回 ``None``。 转换可能会在下面这些情况下失败"
 
 #: ../scilla-in-depth.rst:731
 msgid "there is not enough bits to represent the result;"
@@ -949,7 +949,7 @@ msgstr "``builtin to_string x``：将 ``x`` 转换为字符串文字。 ``x`` �
 msgid ""
 "``builtin strlen s`` : Calculate the length of ``s`` (of type "
 "``String``). Returns a ``Uint32``."
-msgstr "``builtin strlen s`` ：计算 ``s``（``String`` 类型）的长度。 返回一个 ``Uint32``。"
+msgstr "``builtin strlen s`` ：计算 ``s`` （``String`` 类型）的长度。 返回一个 ``Uint32``。"
 
 #: ../scilla-in-depth.rst:782
 msgid "``builtin strrev s`` : Returns the reverse of the string ``s``."
@@ -975,7 +975,7 @@ msgid ""
 "string of fixed length ``X``. For instance, ``ByStr20`` is the type of "
 "byte strings of length 20, ``ByStr32`` is the type of byte strings of "
 "length 32, and so on."
-msgstr "Scilla 中的字节字符串使用 ``ByStr`` 和 ``ByStrX` 类型表示，其中 ``X`` 是一个数字。 ``ByStr`` 是指任意长度的字节串，从而对应于任意 ``X``，``ByStrX`` 是指固定长度 ``X`` 的字节串。例如，``ByStr20`` 是长度为20的字节串类型，``ByStr32`` 是长度为32的字节串类型 ， 等等。"
+msgstr "Scilla 中的字节字符串使用 ``ByStr`` 和 ``ByStrX`` 类型表示，其中 ``X`` 是一个数字。 ``ByStr`` 是指任意长度的字节串，从而对应于任意 ``X``，``ByStrX`` 是指固定长度 ``X`` 的字节串。例如，``ByStr20`` 是长度为20的字节串类型，``ByStr32`` 是长度为32的字节串类型 ， 等等。"
 
 #: ../scilla-in-depth.rst:797
 msgid ""
@@ -996,7 +996,7 @@ msgstr "Scilla 支持以下用于计算和转换字节字符串类型的内置�
 msgid ""
 "``builtin to_bystr h`` : Convert a value ``h`` of type ``ByStrX`` (for "
 "some known ``X``) to one of arbitrary length of type ``ByStr``."
-msgstr "``builtin to_bystr h`` ：将 ``ByStrX`` 类型的值 ``h``（对于某些已知的 ``X``）转换为 ``ByStr`` 类型的任意长度之一。"
+msgstr "``builtin to_bystr h`` ：将 ``ByStrX`` 类型的值 ``h`` （对于某些已知的 ``X``）转换为 ``ByStr`` 类型的任意长度之一。"
 
 #: ../scilla-in-depth.rst:813
 msgid ""
@@ -1012,7 +1012,7 @@ msgid ""
 "ByStrX`` in this case: the builtin returns ``Some res`` if the length of "
 "the argument is equal to ``X`` and ``None`` otherwise. E.g. ``builtin "
 "to_bystr42 bs`` returns ``Some bs'`` if the length of ``bs`` is 42."
-msgstr "如果参数 ``h`` 的类型为 ``ByStr``：将任意大小的字节字符串值 ``h``（类型为 ``ByStr``）转换为固定大小的 ``ByStrX`` 类型的字节字符串，长度为 ``X``。在这种情况下，结果为 ``Option ByStrX`` 类型：如果参数的长度等于 ``X``，内置函数返回 ``Some res`` ，否则为 ``None`` 。 例如，如果 ``bs`` 的长度为 42，则 ``builtin to_bystr42 bs`` 返回 ``Some bs'``。"
+msgstr "如果参数 ``h`` 的类型为 ``ByStr``：将任意大小的字节字符串值 ``h`` （类型为 ``ByStr``）转换为固定大小的 ``ByStrX`` 类型的字节字符串，长度为 ``X``。在这种情况下，结果为 ``Option ByStrX`` 类型：如果参数的长度等于 ``X``，内置函数返回 ``Some res`` ，否则为 ``None`` 。 例如，如果 ``bs`` 的长度为 42，则 ``builtin to_bystr42 bs`` 返回 ``Some bs'``。"
 
 #: ../scilla-in-depth.rst:822
 msgid ""
@@ -1022,7 +1022,7 @@ msgid ""
 "case). For instance, ``builtin to_bystr4 x`` (this only typechecks if "
 "``x`` has type ``Uint32``) or ``builtin to_bystr16 x`` (this only "
 "typechecks if ``x`` is of type ``Uint128``)."
-msgstr "如果参数 ``h`` 是 ``Uint(32/64/128/256)`` 类型：将无符号整数转换为它们的大端字节表示，返回一个 ``ByStr(4/8/16/32)`` 值（注意在这个情况下它不是一个可选类型）。 例如，``builtin to_bystr4 x``（仅在 ``x`` 的类型为 ``Uint32`` 时进行类型检查）或 ``builtin to_bystr16 x``（仅在 ``x`` 的类型为 ``Uint128`` 时进行类型检查）。"
+msgstr "如果参数 ``h`` 是 ``Uint(32/64/128/256)`` 类型：将无符号整数转换为它们的大端字节表示，返回一个 ``ByStr(4/8/16/32)`` 值（注意在这个情况下它不是一个可选类型）。 例如，``builtin to_bystr4 x`` （仅在 ``x`` 的类型为 ``Uint32`` 时进行类型检查）或 ``builtin to_bystr16 x`` （仅在 ``x`` 的类型为 ``Uint128`` 时进行类型检查）。"
 
 #: ../scilla-in-depth.rst:829
 msgid ""
