@@ -1259,7 +1259,7 @@ msgstr "针对地址类型验证字节字符串的唯一方法是将其作为不
 
 #: ../scilla-in-depth.rst:1000
 msgid "Remote fetches"
-msgstr ""
+msgstr "远程获取"
 
 #: ../scilla-in-depth.rst:1002
 msgid ""
@@ -1273,7 +1273,7 @@ msgid ""
 "fetch the value of the ``admin`` field, the type of ``c`` must contain "
 "the ``admin`` field as well, e.g, ``ByStr20 with contract field paused : "
 "Bool, field admin : ByStr20 end``"
-msgstr ""
+msgstr "要执行远程获取 ``x <- & c.f``，``c`` 的类型必须是某种声明字段 ``f`` 的地址类型。 例如，如果 ``c`` 的类型为 ``ByStr20 with contract field paused : Bool end``，则可以使用语句 ``x <- & c.paused`` 获取在地址 ``c`` 处 ``paused`` 字段的值，而无法获取 ``c`` 中未声明字段的值（例如，``admin``），即使地址 ``c`` 的合约确实包含字段 ``admin``。 为了能够获取 ``admin`` 字段的值，``c`` 的类型也必须包含 ``admin`` 字段，例如，``ByStr20 with contract field paused : Bool, field admin : ByStr20 end``"
 
 #: ../scilla-in-depth.rst:1013
 msgid ""
@@ -1283,11 +1283,11 @@ msgid ""
 " with remote fetches of map fields, the remote map field must be declared"
 " in the type of ``c``, e.g., ``ByStr20 with contract field m : Map "
 "Uint128 (Map Uint32 Bool) end``."
-msgstr ""
+msgstr "可以使用与本地声明的地图字段相同的方式使用就地操作执行映射字段的远程获取，即 ``x <- & cm[key]``，``x <- & cm[key1][key2]``，``x <- & exists m[key]``  等。与远程获取映射字段一样，远程映射字段必须以 ``c`` 类型声明，例如，``ByStr20 with contract field m : Map Uint128 (Map Uint32 Bool) end``。"
 
 #: ../scilla-in-depth.rst:1020
 msgid "Writing to a remote field is not allowed."
-msgstr ""
+msgstr "不允许写入远程字段。"
 
 #: ../scilla-in-depth.rst:1028
 msgid "Crypto Built-ins"
