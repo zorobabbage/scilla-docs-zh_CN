@@ -1627,59 +1627,59 @@ msgstr "可以使用 ``Emp`` 关键字构造空映射，指定键和值类型作
 
 #: ../scilla-in-depth.rst:1249
 msgid "Block Numbers"
-msgstr ""
+msgstr "区块高度"
 
 #: ../scilla-in-depth.rst:1251
 msgid ""
 "Block numbers have a dedicated type ``BNum`` in Scilla. Variables of this"
 " type are specified with the keyword ``BNum`` followed by an integer "
 "value (for example ``BNum 101``)."
-msgstr ""
+msgstr "区块高度在 Scilla 中有一个专用类型 ``BNum``。 这种类型的变量用关键字 ``BNum`` 指定，后跟一个整数值（例如 ``BNum 101``）。"
 
 #: ../scilla-in-depth.rst:1255
 msgid "Scilla supports the following built-in operations on block numbers:"
-msgstr ""
+msgstr "Scilla 支持以下对区块高度的内置操作："
 
 #: ../scilla-in-depth.rst:1257
 msgid "``eq b1 b2``: Is ``b1`` equal to ``b2``? Returns a ``Bool``."
-msgstr ""
+msgstr "``eq b1 b2``: ``b1`` 是否等于 ``b2``？ 返回一个 ``Bool`` 值。"
 
 #: ../scilla-in-depth.rst:1258
 msgid "``blt b1 b2``: Is ``b1`` less than ``b2``? Returns a ``Bool``."
-msgstr ""
+msgstr "``blt b1 b2``：``b1`` 是否小于 ``b2``？ 返回一个 ``Bool`` 值。"
 
 #: ../scilla-in-depth.rst:1259
 msgid ""
 "``badd b1 i1``: Add ``i1`` of type ``UintX`` to ``b1`` of type ``BNum``. "
 "Returns a ``BNum``."
-msgstr ""
+msgstr "``badd b1 i1``：将 ``UintX`` 类型的 ``i1`` 添加到 ``BNum`` 类型的 ``b1``。 返回一个 ``BNum``。"
 
 #: ../scilla-in-depth.rst:1261
 msgid ""
 "``bsub b1 b2``: Subtract ``b2`` from ``b1``, both of type ``BNum``. "
 "Returns an ``Int256``."
-msgstr ""
+msgstr "``bsub b1 b2``：``b1`` 减去 ``b2``，均为 ``BNum`` 类型。 返回一个 ``Int256``。"
 
 #: ../scilla-in-depth.rst:1265
 msgid "Algebraic Datatypes"
-msgstr ""
+msgstr "代数数据类型"
 
 #: ../scilla-in-depth.rst:1268
 msgid ""
 "An `algebraic datatype` (ADT) is a composite type used commonly in "
 "functional programming. Each ADT is defined as a set of **constructors**."
 " Each constructor takes a set of arguments of certain types."
-msgstr ""
+msgstr "`代数数据类型` (ADT) 是函数式编程中常用的复合类型。 每个 ADT 被定义为一组 **构造函数**。 每个构造函数都接受一组特定类型的参数。"
 
 #: ../scilla-in-depth.rst:1273
 msgid ""
 "Scilla is equipped with a number of built-in ADTs, which are described "
 "below. Additionally, Scilla allows users to define their own ADTs."
-msgstr ""
+msgstr "Scilla 配备了许多内置 ADT，如下所述。 此外，Scilla 允许用户定义他们自己的 ADT。"
 
 #: ../scilla-in-depth.rst:1278
 msgid "Boolean"
-msgstr ""
+msgstr "布尔值"
 
 #: ../scilla-in-depth.rst:1280
 msgid ""
@@ -1687,29 +1687,29 @@ msgid ""
 "has two constructors ``True`` and ``False``, neither of which take any "
 "arguments. Thus the following code fragment constructs a value of type "
 "``Bool`` by using the constructor ``True``:"
-msgstr ""
+msgstr "布尔值使用 ``Bool`` 类型指定。 ``Bool`` ADT 有两个构造函数 ``True`` 和 ``False``，它们都不带任何参数。 因此，以下代码片段使用构造函数 ``True`` 构造了一个 ``Bool`` 类型的值："
 
 #: ../scilla-in-depth.rst:1291
 msgid "Option"
-msgstr ""
+msgstr "可选值"
 
 #: ../scilla-in-depth.rst:1293
 msgid ""
 "Optional values are specified using the type ``Option t``, where ``t`` is"
 " some type. The ``Option`` ADT has two constructors:"
-msgstr ""
+msgstr "可选值使用类型 ``Option t`` 指定，其中 ``t`` 是某种类型。 ``Option`` ADT 有两个构造函数："
 
 #: ../scilla-in-depth.rst:1296
 msgid ""
 "``Some`` represents the presence of a value. The ``Some`` constructor "
 "takes one argument (the value, of type ``t``)."
-msgstr ""
+msgstr "``Some`` 代表一个值的存在。 ``Some`` 构造函数接受一个参数（``t`` 类型的值）。"
 
 #: ../scilla-in-depth.rst:1299
 msgid ""
 "``None`` represents the absence of a value. The ``None`` constructor "
 "takes no arguments."
-msgstr ""
+msgstr "``None`` 表示没有值。 ``None`` 构造函数不接受任何参数。"
 
 #: ../scilla-in-depth.rst:1302
 msgid ""
@@ -1717,48 +1717,48 @@ msgid ""
 "value is an absent string value, constructed using ``None``. The second "
 "value is the ``Int32`` value 10, which, because the value is present, is "
 "constructed using ``Some``:"
-msgstr ""
+msgstr "以下代码片段构造了两个可选值。 第一个值是一个不存在的字符串值，使用 ``None`` 构造。 第二个值是 ``Int32`` 值 10，因为该值存在，所以使用 ``Some`` 构造："
 
 #: ../scilla-in-depth.rst:1316
 msgid ""
 "Optional values are useful for initialising fields where the value is not"
 " yet known:"
-msgstr ""
+msgstr "可选值对于初始化值未知的字段非常有用："
 
 #: ../scilla-in-depth.rst:1323
 msgid ""
 "Optional values are also useful for functions that might not have a "
 "result, such as the ``get`` function for maps:"
-msgstr ""
+msgstr "可选值对于可能没有结果的函数也非常有用，例如映射的 ``get`` 函数："
 
 #: ../scilla-in-depth.rst:1341
 msgid "List"
-msgstr ""
+msgstr "列表"
 
 #: ../scilla-in-depth.rst:1343
 msgid ""
 "Lists of values are specified using the type ``List t``, where ``t`` is "
 "some type. The ``List`` ADT has two constructors:"
-msgstr ""
+msgstr "使用 ``List t`` 类型指定值列表，其中 ``t`` 是某种类型。 ``List`` ADT 有两个构造函数："
 
 #: ../scilla-in-depth.rst:1346
 msgid ""
 "``Nil`` represents an empty list. The ``Nil`` constructor takes no "
 "arguments."
-msgstr ""
+msgstr "``Nil`` 表示一个空列表。 ``Nil`` 构造函数不接受任何参数。"
 
 #: ../scilla-in-depth.rst:1349
 msgid ""
 "``Cons`` represents a non-empty list. The ``Cons`` constructor takes two "
 "arguments: The first element of the list (of type ``t``), and another "
 "list (of type ``List t``) representing the rest of the list."
-msgstr ""
+msgstr "``Cons`` 代表一个非空列表。 ``Cons`` 构造函数接受两个参数：列表的第一个元素（``t`` 类型），以及另一个表示列表其余部分的列表（``List t`` 类型）。"
 
 #: ../scilla-in-depth.rst:1354
 msgid ""
 "All elements in a list must be of the same type ``t``. In other words, "
 "two values of different types cannot be added to the same list."
-msgstr ""
+msgstr "列表中的所有元素都必须属于同一类型 ``t``。 换句话说，不能将两个不同类型的值添加到同一个列表中。"
 
 #: ../scilla-in-depth.rst:1357
 msgid ""
@@ -1768,13 +1768,13 @@ msgid ""
 "the list is constructed backwards by adding the last element, then the "
 "second-to-last element, and so on, so that the final list is ``[11; 10; "
 "2; 1]``:"
-msgstr ""
+msgstr "以下示例显示如何构建 ``Int32`` 值列表。 首先，我们使用 ``Nil`` 构造函数创建一个空列表。 然后我们使用 ``Cons`` 构造函数一一添加其他四个值。 注意列表是如何通过添加最后一个元素，然后是倒数第二个元素，依此类推向后构造的，因此最终列表是 ``[11; 10; 2; 1]``："
 
 #: ../scilla-in-depth.rst:1377
 msgid ""
 "Scilla provides three structural recursion primitives for lists, which "
 "can be used to traverse all the elements of any list:"
-msgstr ""
+msgstr "Scilla 为列表提供了三种结构递归原语，可用于遍历任意列表的所有元素："
 
 #: ../scilla-in-depth.rst:1380
 msgid ""
@@ -1783,7 +1783,7 @@ msgid ""
 " an *accumulator* (which can be thought of as a running total). "
 "``list_foldl`` takes three arguments, which all depend on the two type "
 "variables ``'A`` and ``'B``:"
-msgstr ""
+msgstr "``list_foldl: ('B -> 'A -> 'B) -> 'B -> (List 'A) -> 'B`` ：从前到后递归处理列表中的元素，同时跟踪 *累加器*（ 可以认为是一个累计）。 ``list_foldl`` 接受三个参数，它们都依赖于两个类型变量 ``'A`` 和 ``'B``："
 
 #: ../scilla-in-depth.rst:1386
 msgid ""
@@ -1792,21 +1792,21 @@ msgid ""
 "``'B``). The second argument is the next list element to be processed (of"
 " type ``'A``). The result of the function is the next value of the "
 "accumulator (of type ``'B``)."
-msgstr ""
+msgstr "处理元素的函数。 这个函数有两个参数。 第一个参数是累加器（``'B`` 类型）的当前值。 第二个参数是要处理的下一个列表元素（类型为``'A``）。 该函数的结果是累加器的下一个值（``'B`` 类型）。"
 
 #: ../scilla-in-depth.rst:1392
 msgid "The initial value of the accumulator (of type ``'B``)."
-msgstr ""
+msgstr "累加器的初始值（``'B`` 类型）。"
 
 #: ../scilla-in-depth.rst:1394
 msgid "The list of elements to be processed (of type ``(List 'A)``)."
-msgstr ""
+msgstr "要处理的元素列表（类型 ``(List 'A)``）。"
 
 #: ../scilla-in-depth.rst:1396
 msgid ""
 "The result of applying ``list_foldl`` is the value of the accumulator (of"
 " type ``'B``) when all list elements have been processed."
-msgstr ""
+msgstr "应用 ``list_foldl`` 的结果是所有列表元素都被处理后的累加器（``'B`` 类型）的值。"
 
 #: ../scilla-in-depth.rst:1400
 msgid ""
@@ -1815,7 +1815,7 @@ msgid ""
 "front. Notice also that the processing function takes the list element "
 "and the accumulator in the opposite order from the order in "
 "``list_foldl``."
-msgstr ""
+msgstr "``list_foldr: ('A -> 'B -> 'B) -> 'B -> (List 'A) -> 'B`` : 与 ``list_foldl`` 类似，只是列表元素是从后向前处理的。 另请注意，处理函数以与 ``list_foldl`` 中的顺序相反的顺序获取列表元素和累加器。"
 
 #: ../scilla-in-depth.rst:1406
 msgid ""
@@ -1825,7 +1825,7 @@ msgid ""
 "more general version of the left and right folds, which, by the way, can "
 "be both implemented in terms of it. ``list_foldk`` takes three arguments,"
 " which all depend on the two type variables ``'A`` and ``'B``:"
-msgstr ""
+msgstr "``list_foldk: ('B -> 'A -> ('B -> 'B) -> 'B) -> 'B -> (List 'A) -> 'B`` ：根据 *折叠函数* 递归处理列表中的元素，同时跟踪 *累加器*。 ``list_foldk`` 是左右折叠的更通用版本，顺便说一下，这两个折叠都可以通过它来实现。 ``list_foldk`` 接受三个参数，它们都依赖于两个类型变量 ``'A`` 和 ``'B``："
 
 #: ../scilla-in-depth.rst:1414
 msgid ""
@@ -1839,15 +1839,15 @@ msgid ""
 "call. This is a major difference between ``list_foldk`` and the left and "
 "right folds which process their input lists from the beginning to the end"
 " unconditionally."
-msgstr ""
+msgstr "描述折叠步骤的函数。 这个函数接受三个参数。 第一个参数是累加器（``'B`` 类型）的当前值。 第二个参数是要处理的下一个列表元素（类型为 ``'A``）。 第三个参数表示延迟的递归调用（类型 ``'B -> 'B``）。 该函数的结果是累加器的下一个值（``'B`` 类型）。 如果开发者不调用延迟的递归调用，则计算终止。 这是 ``list_foldk`` 和左右折叠之间的主要区别，左右折叠无条件地从头到尾处理它们的输入列表。"
 
 #: ../scilla-in-depth.rst:1425
 msgid "The initial value of the accumulator ``z`` (of type ``'B``)."
-msgstr ""
+msgstr "累加器 ``z`` 的初始值（``'B`` 类型）。"
 
 #: ../scilla-in-depth.rst:1427
 msgid "The list of elements to be processed (of type ``List 'A``)."
-msgstr ""
+msgstr "要处理的元素列表（类型 ``List 'A``）。"
 
 #: ../scilla-in-depth.rst:1431
 msgid ""
@@ -1858,26 +1858,26 @@ msgid ""
 "instance, when constructing an empty list of optional values of type "
 "``Int32``, one must instantiate the list type using the syntax ``Nil "
 "{(Option Int32)}``."
-msgstr ""
+msgstr "当 ADT 接受类型参数（例如 ``List 'A``），并出现在更大的类型（例如 ``list_foldl`` 的类型）中时，必须使用括号将 ADT 及其参数分组 ``( )``。 即使当 ADT 作为另一个 ADT 的唯一参数出现时也是如此。 例如，当构造类型为 ``Int32`` 的可选值的空列表时，必须使用语法 ``Nil {(Option Int32)}`` 来实例化列表类型。"
 
 #: ../scilla-in-depth.rst:1440
 msgid ""
 "To further illustrate the ``List`` type in Scilla, we show a small "
 "example using ``list_foldl`` to count the number of elements in a list. "
 "For an example of ``list_foldk`` see list_find_."
-msgstr ""
+msgstr "为了进一步说明 Scilla 中的 ``List`` 类型，我们展示了一个使用 ``list_foldl`` 来计算列表中元素数量的小例子。 有关 ``list_foldk`` 的示例，请参阅 list_find_。"
 
 #: ../scilla-in-depth.rst:1460
 msgid ""
 "``list_length`` defines a function that takes a type argument ``'A``, and"
 " a normal (value) argument ``l`` of type ``List 'A``."
-msgstr ""
+msgstr "``list_length`` 定义了一个函数，它接受一个类型参数 ``'A`` 和一个 ``List 'A`` 类型的普通（值）参数 ``l``。"
 
 #: ../scilla-in-depth.rst:1463
 msgid ""
 "``'A`` is a *type variable* which must be instantiated by the code that "
 "intends to use ``list_length``. The type variable is specified in line 2."
-msgstr ""
+msgstr "``'A`` 是一个类型变量，必须由打算使用 ``list_length`` 的代码实例化。 类型变量在第 2 行中指定。"
 
 #: ../scilla-in-depth.rst:1467
 msgid ""
@@ -1886,14 +1886,14 @@ msgid ""
 "type argument to ``list_foldl``, and since we are calculating the length "
 "of the list (a non-negative integer), we pass ``Uint32`` as the "
 "accumulator type."
-msgstr ""
+msgstr "在第 4 行，我们实例化 ``list_foldl`` 的类型。 由于我们正在遍历类型为 ``'A`` 的值的列表，我们将 ``'A`` 作为第一个类型参数传递给 ``list_foldl``，并且由于我们正在计算列表的长度（一个非负整数），我们将 ``Uint32`` 作为累加器类型传递。"
 
 #: ../scilla-in-depth.rst:1473
 msgid ""
 "In line 5 we define the initial value of the accumulator. Since an empty "
 "list has length 0, the initial value of the accumulator is 0 (of type "
 "``Uint32``, to match the accumulator type)."
-msgstr ""
+msgstr "在第 5 行中，我们定义了累加器的初始值。 由于空列表的长度为 0，因此累加器的初始值为 0（类型为 ``Uint32``，以匹配累加器类型）。"
 
 #: ../scilla-in-depth.rst:1477
 msgid ""
@@ -1904,84 +1904,84 @@ msgid ""
 "processed, the accumulator will have been incremented as many times as "
 "there are elements in the list, and hence the final value of the "
 "accumulator will be equal to the length of the list."
-msgstr ""
+msgstr "在第 6-10 行，我们指定了处理函数 ``iter``，它接受当前累加器值 ``z`` 和当前列表元素 ``h``。 在这种情况下，处理函数会忽略列表元素，并将累加器加 1。当列表中的所有元素都被处理后，累加器将增加与列表中元素一样多的次数，因此累加器的最终值将等于列表的长度。"
 
 #: ../scilla-in-depth.rst:1485
 msgid ""
 "In line 12 we apply the type-instantiated version of ``list_foldl`` from "
 "line 4 to the processing function, the initial accumulator, and the list "
 "of values."
-msgstr ""
+msgstr "在第 12 行，我们将第 4 行的 ``list_foldl`` 的类型实例化版本应用于处理函数、初始累加器和值列表。"
 
 #: ../scilla-in-depth.rst:1489
 msgid ""
 "Common utilities for the ``List`` type (including ``list_length``) are "
 "provided in the ``ListUtils`` library as part of the standard library "
 "distribution for Scilla."
-msgstr ""
+msgstr "作为 Scilla 标准库分发的一部分，``ListUtils`` 库中提供了 ``List`` 类型（包括 ``list_length``）的常用实用程序。"
 
 #: ../scilla-in-depth.rst:1496
 msgid "Pair"
-msgstr ""
+msgstr "Pair"
 
 #: ../scilla-in-depth.rst:1499
 msgid ""
 "Pairs of values are specified using the type ``Pair t1 t2``, where ``t1``"
 " and ``t2`` are types. The ``Pair`` ADT has one constructor:"
-msgstr ""
+msgstr "值 Pairs 使用类型 ``Pair t1 t2`` 指定，其中 ``t1`` 和 ``t2`` 是类型。 ``Pair`` ADT 有一个构造函数："
 
 #: ../scilla-in-depth.rst:1502
 msgid ""
 "``Pair`` represents a pair of values. The ``Pair`` constructor takes two "
 "arguments, namely the two values of the pair, of types ``t1`` and ``t2``,"
 " respectively."
-msgstr ""
+msgstr "``Pair`` 代表一对值。 ``Pair`` 构造函数接受两个参数，即 pair 的两个值，分别是 ``t1`` 和 ``t2`` 类型。"
 
 #: ../scilla-in-depth.rst:1508
 msgid ""
 "``Pair`` is both the name of a type and the name of a constructor of that"
 " type. An ADT and a constructor typically only share their names when the"
 " constructor is the only constructor of the ADT."
-msgstr ""
+msgstr "``Pair`` 既是类型的名称，也是该类型构造函数的名称。 ADT 和构造函数通常仅在构造函数是 ADT 的唯一构造函数时共享它们的名称。"
 
 #: ../scilla-in-depth.rst:1512
 msgid ""
 "A ``Pair`` value may contain values of different types. In other words, "
 "``t1`` and ``t2`` need not be the same type."
-msgstr ""
+msgstr "``Pair`` 值可能包含不同类型的值。 换句话说，``t1`` 和 ``t2`` 不需要是相同的类型。"
 
 #: ../scilla-in-depth.rst:1515
 msgid ""
 "Below is an example where we declare a field ``pp`` of type ``Pair String"
 " Uint32``, which we then initialise by constructing a pair consisting of "
 "a value of type ``String`` and a value of type ``Uint32``:"
-msgstr ""
+msgstr "下面是一个例子，我们声明了一个 ``Pair String Uint32`` 类型的字段 ``pp``，然后我们通过构造一个由 ``String`` 类型的值和 ``Uint32`` 类型的值组成的 pair 来初始化它："
 
 #: ../scilla-in-depth.rst:1527
 msgid ""
 "Notice the difference in how we specify the type of the field as ``Pair "
 "A' B'``, and how we specify the types of values given to the constructor "
 "as ``Pair { A' B' }``."
-msgstr ""
+msgstr "请注意我们如何将字段类型指定为 ``Pair A' B'`` 以及如何将提供给构造函数的值类型指定为 ``Pair { A' B' }`` 的不同。"
 
 #: ../scilla-in-depth.rst:1533
 msgid ""
 "We now illustrate how pattern matching can be used to extract the first "
 "element from a ``Pair``. The function ``fst`` shown below is defined in "
 "the ``PairUtils`` library of the Scilla standard library."
-msgstr ""
+msgstr "我们现在说明如何使用模式匹配从 ``Pair`` 中提取第一个元素。 下面显示的函数 ``fst`` 是在 Scilla 标准库的 ``PairUtils`` 库中定义的。"
 
 #: ../scilla-in-depth.rst:1547
 msgid ""
 "To apply ``fst`` to one must first instantiate the type variables ``'A`` "
 "and ``'B``, which is done as follows:"
-msgstr ""
+msgstr "要应用 ``fst`` ，则必须首先实例化类型变量 ``'A`` 和 ``'B``，具体操作如下："
 
 #: ../scilla-in-depth.rst:1556
 msgid ""
 "The value associated with the identifier ``p_fst`` will be the string "
 "``\"Hello\"``."
-msgstr ""
+msgstr "与标识符 ``p_fst`` 关联的值将是字符串 ``\"Hello\"``。"
 
 #: ../scilla-in-depth.rst:1561
 msgid ""
@@ -1989,30 +1989,30 @@ msgid ""
 "define an ADT which is specialised to the particular type of pairs that "
 "is needed in the particular use case. See the section on `User-defined "
 "ADTs`_ below."
-msgstr ""
+msgstr "通常不鼓励使用 ``Pair``。 相反，开发者应该定义一个专门用于特定用例中所需的特定类型 pair 的 ADT。 请参阅下面有关 `User-defined ADTs`_  的部分。"
 
 #: ../scilla-in-depth.rst:1568
 msgid "Nat"
-msgstr ""
+msgstr "Nat"
 
 #: ../scilla-in-depth.rst:1570
 msgid ""
 "Peano numbers are specified using the type ``Nat``. The ``Nat`` ADT has "
 "two constructors:"
-msgstr ""
+msgstr "Peano 数字使用 ``Nat`` 类型指定。 ``Nat`` ADT 有两个构造函数："
 
 #: ../scilla-in-depth.rst:1573
 msgid ""
 "``Zero`` represents the number 0. The ``Zero`` constructor takes no "
 "arguments."
-msgstr ""
+msgstr "``Zero`` 代表数字 0。``Zero`` 构造函数不接受任何参数。"
 
 #: ../scilla-in-depth.rst:1576
 msgid ""
 "``Succ`` represents the successor of another Peano number. The ``Succ`` "
 "constructor takes one argument (of type ``Nat``) which represents the "
 "Peano number that is one less than the current number."
-msgstr ""
+msgstr "``Succ`` 代表另一个 Peano 数的后继者。 ``Succ`` 构造函数接受一个参数（``Nat`` 类型），它表示比当前数小 1 的 Peano 数。"
 
 #: ../scilla-in-depth.rst:1581
 msgid ""
