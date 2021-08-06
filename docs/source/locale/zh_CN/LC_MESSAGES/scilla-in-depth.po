@@ -1291,14 +1291,14 @@ msgstr "不允许写入远程字段。"
 
 #: ../scilla-in-depth.rst:1028
 msgid "Crypto Built-ins"
-msgstr ""
+msgstr "加密内置插件"
 
 #: ../scilla-in-depth.rst:1030
 msgid ""
 "A hash in Scilla is declared using the data type ``ByStr32``. A "
 "``ByStr32`` represents a hexadecimal byte string of 32 bytes (64 "
 "hexadecimal characters). A ``ByStr32`` literal is prefixed with ``0x``."
-msgstr ""
+msgstr "Scilla 中的散列是使用数据类型 ``ByStr32`` 声明的。 一个 ``ByStr32`` 代表一个 32 字节（64 个十六进制字符）的十六进制字节串。 ``ByStr32`` 文字以 ``0x`` 为前缀。"
 
 #: ../scilla-in-depth.rst:1037
 msgid ""
@@ -1306,31 +1306,31 @@ msgid ""
 "cryptographic primitives, including byte sequences. In the description "
 "below, ``Any`` can be of type ``IntX``, ``UintX``, ``String``, "
 "``ByStr20`` or ``ByStr32``."
-msgstr ""
+msgstr "Scilla 支持以下对哈希和其他加密原语（包括字节序列）的内置操作。 在下面的描述中，``Any`` 可以是 ``IntX``、``UintX``、``String``、``ByStr20`` 或 ``ByStr32`` 类型。"
 
 #: ../scilla-in-depth.rst:1042
 msgid ""
 "``builtin eq h1 h2``: Is ``h1`` equal to ``h2``? Both inputs are of the "
 "same type ``ByStrX`` (or both are of type ``ByStr``). Returns a ``Bool``."
-msgstr ""
+msgstr "``builtin eq h1 h2``：``h1`` 是否等于 ``h2``？ 两个输入都是相同类型的 ``ByStrX``（或者都是 ``ByStr`` 类型）。 返回一个布尔值。"
 
 #: ../scilla-in-depth.rst:1045
 msgid ""
 "``builtin sha256hash x`` : Convert ``x`` of ``Any`` type to its SHA256 "
 "hash. Returns a ``ByStr32``."
-msgstr ""
+msgstr "``builtin sha256hash x`` ：将 ``Any`` 类型的 ``x`` 转换为其 SHA256 哈希。 返回一个 ``ByStr32``。"
 
 #: ../scilla-in-depth.rst:1047
 msgid ""
 "``builtin keccak256hash x``: Convert ``x`` of ``Any`` type to its "
 "Keccak256 hash. Returns a ``ByStr32``."
-msgstr ""
+msgstr "``builtin keccak256hash x``：将 ``Any`` 类型的 ``x`` 转换为其 ``Keccak256`` 哈希。 返回一个 ``ByStr32``。"
 
 #: ../scilla-in-depth.rst:1049
 msgid ""
 "``builtin ripemd160hash x``: Convert ``x`` of ``Any`` type to its "
 "RIPEMD-160 hash. Returns a ``ByStr20``."
-msgstr ""
+msgstr "``builtin ripemd160hash x``：将 ``Any`` 类型的 ``x`` 转换为其 RIPEMD-160 哈希。 返回一个 ``ByStr20``。"
 
 #: ../scilla-in-depth.rst:1051
 msgid ""
@@ -1338,34 +1338,34 @@ msgid ""
 "length ``len`` starting from position ``idx``. ``idx`` and ``len`` must "
 "be of type ``Uint32``. Character indices in byte strings start from "
 "``0``.  Returns a ``ByStr`` or fails with a runtime error."
-msgstr ""
+msgstr "``builtin substr h idx len`` ：从位置 ``idx`` 开始提取长度为 ``len`` 的 ``h`` 的子字节串。 ``idx`` 和 ``len`` 必须是 ``Uint32`` 类型。 字节字符串中的字符索引从 ``0`` 开始。返回 ``ByStr`` 或失败（导致运行时错误）。"
 
 #: ../scilla-in-depth.rst:1055
 msgid ""
 "``builtin strrev h`` : Reverse byte string (either ``ByStr`` or "
 "``ByStrX``). Returns a value of the same type as the argument."
-msgstr ""
+msgstr "``builtin strrev h`` ：反向字节字符串（``ByStr`` 或 ``ByStrX``）。 返回与参数类型相同的值。"
 
 #: ../scilla-in-depth.rst:1058
 msgid ""
 "``builtin schnorr_verify pubk data sig`` : Verify a signature ``sig`` of "
 "type ``ByStr64`` against a byte string ``data`` of type ``ByStr`` with "
 "the Schnorr public key ``pubk`` of type ``ByStr33``."
-msgstr ""
+msgstr "``builtin schnorr_verify pubk data sig`` ：使用类型为 ``ByStr33`` 的 Schnorr 公钥 ``pubk`` 对类型为 ``ByStr`` 的字节字符串 ``data`` 验证类型为 ``ByStr64`` 的签名 ``sig``。"
 
 #: ../scilla-in-depth.rst:1062
 msgid ""
 "``builtin schnorr_get_address pubk``: Given a public key of type "
 "``ByStr33``, returns the ``ByStr20`` Zilliqa address that corresponds to "
 "that public key."
-msgstr ""
+msgstr "``builtin schnorr_get_address pubk``：给定一个 ``ByStr33`` 类型的公钥，返回与该公钥对应的 ``ByStr20`` Zilliqa 地址。"
 
 #: ../scilla-in-depth.rst:1065
 msgid ""
 "``builtin ecdsa_verify pubk data sig`` : Verify a signature ``sig`` of "
 "type ``ByStr64`` against a byte string ``data`` of type ``ByStr`` with "
 "the ECDSA public key ``pubk`` of type ``ByStr33``."
-msgstr ""
+msgstr "``builtin ecdsa_verify pubk data sig`` ：使用类型为 ``ByStr33`` 的 ECDSA 公钥 ``pubk`` 验证类型为 ``ByStr64`` 的签名 ``sig`` 与类型为 ``ByStr`` 的字节字符串 ``data``。"
 
 #: ../scilla-in-depth.rst:1069
 msgid ""
@@ -1373,7 +1373,7 @@ msgid ""
 "``ByStr``), having signature ``sig`` (of type ``ByStr64``) and a "
 "``Uint32`` recovery integer ``recid``, whose value is restricted to be 0,"
 " 1, 2 or 3, the uncompressed public key, returning a ``ByStr65`` value."
-msgstr ""
+msgstr "``builtin ecdsa_recover_pk data sig recid`` ：恢复 ``data``（``ByStr`` 类型），同时具有签名 ``sig``（``ByStr64`` 类型）和 ``Uint32`` 类型的恢复整数 ``recid``，其值限制为 0、1、2 或 3，未压缩的公钥，返回一个 ``ByStr65`` 的值。"
 
 #: ../scilla-in-depth.rst:1074
 msgid ""
@@ -1383,7 +1383,7 @@ msgid ""
 "converts it to a raw byte address (`ByStr20`). The return type is "
 "``Option ByStr20``. On success, ``Some addr`` is returned and on invalid "
 "inputs ``None`` is returned."
-msgstr ""
+msgstr "``builtin bech32_to_bystr20 prefix addr``。 内置函数采用 ``String`` 类型的网络特定前缀（``\"zil\"`` / ``\"tzil\"``）和输入 ``bech32`` 字符串（``String`` 类型），如果输入有效，则将其转换为原始字节地址 (ByStr20)。 返回类型是 ``Option ByStr20``。 成功时，返回 ``Some addr`` ，输入无效时返回 ``None``。"
 
 #: ../scilla-in-depth.rst:1079
 msgid ""
@@ -1392,7 +1392,7 @@ msgid ""
 "input ``ByStr20`` address, and if the inputs are valid, converts it to a "
 "bech32 address. The return type is ``Option String``. On success, ``Some "
 "addr`` is returned and on invalid inputs ``None`` is returned."
-msgstr ""
+msgstr "``builtin bystr20_to_bech32 prefix addr``。 内置函数采用 ``String`` 类型的网络特定前缀（``\"zil\"`` / ``\"tzil\"`` ）和输入 ``ByStr20`` 地址，如果输入有效，则将其转换为 ``bech32`` 地址。 返回类型是 ``Option String``。 成功时，返回 ``Some addr`` ，无效输入 返回 ``None`。"
 
 #: ../scilla-in-depth.rst:1083
 msgid ""
@@ -1402,7 +1402,7 @@ msgid ""
 " ``Pair {Bystr32 ByStr32}``. Each scalar component ``ByStr32`` of a point"
 " is a big-endian encoded number. Also see "
 "https://github.com/ethereum/EIPs/blob/master/EIPS/eip-196.md"
-msgstr ""
+msgstr "``builtin alt_bn128_G1_add p1 p2``。 内置函数在 ``alt_bn128`` 曲线上取两个点 ``p1``、``p2``，并返回基础组 G1 中的点的总和。 输入点和结果点都是一个 ``Pair {Bystr32 ByStr32}``。 一个点的每个标量分量 ``ByStr32`` 都是一个大端编码的数字。 另见 https://github.com/ethereum/EIPs/blob/master/EIPS/eip-196.md"
 
 #: ../scilla-in-depth.rst:1088
 msgid ""
@@ -1410,7 +1410,7 @@ msgid ""
 "``alt_bn128`` curve (as described previously), and a scalar ``ByStr32`` "
 "value ``s`` and returns the sum of the point ``p`` taken ``s`` times. The"
 " result is a point on the curve."
-msgstr ""
+msgstr "``builtin alt_bn128_G1_mul p s``。 内置函数取 ``alt_bn128`` 曲线上的一个点 ``p``（如前所述）和一个标量 ``ByStr32`` 的值 ``s`` 并返回点 ``p`` 取 ``s`` 次的总和。 结果是曲线上的一个点。"
 
 #: ../scilla-in-depth.rst:1092
 msgid ""
@@ -1423,11 +1423,11 @@ msgid ""
 "check for equality and returns ``True`` or ``False`` depending on whether"
 " the pairing check succeeds or fails. Also see "
 "https://github.com/ethereum/EIPs/blob/master/EIPS/eip-197.md"
-msgstr ""
+msgstr "``builtin alt_bn128_pairing_product pairs``。 这个内置函数接受一对点的 ``pairs`` 的列表。 每对由 G1 组中的一个点（``Pair {Bystr32 ByStr32}``）作为第一个分量和 G2 组中的一个点（``Pair {Bystr64 ByStr64}``）作为第二个分量。 因此，参数的类型为 ``List {(Pair (Pair ByStr32 ByStr32) (Pair ByStr64 ByStr64)) }``。 该函数在每个点上应用一个配对函数来检查是否相等，并根据配对检查是成功还是失败返回 ``True`` 或 ``False``。 另见 https://github.com/ethereum/EIPs/blob/master/EIPS/eip-197.md"
 
 #: ../scilla-in-depth.rst:1100
 msgid "Maps"
-msgstr ""
+msgstr "映射"
 
 #: ../scilla-in-depth.rst:1103
 msgid ""
