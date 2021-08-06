@@ -1160,7 +1160,7 @@ msgid ""
 "contract field f1 : t21, field f2 : t22, ... end``, provided that ``t11``"
 " is a subtype of ``t21``, ``t12`` is a subtype of ``t22``, and so on for "
 "each field specified in both contract types."
-msgstr ""
+msgstr "任何指定显式字段 ```ByStr20 with contract field f1: t11, field f2: t12, ... end`` 的合约地址类型都是指定这些字段的子集 ``ByStr20 with contract field f1: t21, field f2: t22 , ... end`` 的合约地址类型的子类型，前提是 ``t11`` 是 ``t21`` 的子类型， ``t12`` 是 ``t22`` 的子类型，两种合同类型中指定的每个字段都依此类推。"
 
 #: ../scilla-in-depth.rst:917
 msgid ""
@@ -1168,18 +1168,18 @@ msgid ""
 "t1 t2 ...`` is a subtype of ``S s1 s2 ...`` if ``T`` is the same as "
 "``S``, and ``t1`` is a subtype of ``s1``, ``t2`` is a subtype of ``s2``, "
 "and so on."
-msgstr ""
+msgstr "对于带有 ``List`` 或 ``Option`` 等类型参数的 ADT，如果 ``T`` 与 ``S`` 相同，并且 ``t1`` 是 ``s1`` 的子类型，``t2`` 是 ``s2`` 的子类型，那么 ``T t1 t2 ...`` 是 ``S s1 s2 ...`` 的子类型，以此类推。"
 
 #: ../scilla-in-depth.rst:922
 msgid ""
 "A map with key type ``kt1`` and value type ``vt1`` is a subtype of "
 "another map with key type ``kt2`` and value type ``vt2`` if ``kt1`` is a "
 "subtype of ``kt2`` and ``vt1`` is a subtype of ``vt2``."
-msgstr ""
+msgstr "如果 ``kt1`` 是 ``kt2`` 的子类型且 ``vt1`` 是 ``vt2`` 的子类型，则具有键类型 ``kt1`` 和值类型 ``vt1`` 的映射是具有键类型 ``kt2`` 和值类型 ``vt2`` 的另一个映射的子类型。"
 
 #: ../scilla-in-depth.rst:927
 msgid "Dynamic typecheck of addresses"
-msgstr ""
+msgstr "地址的动态类型检查"
 
 #: ../scilla-in-depth.rst:929
 msgid ""
@@ -1188,20 +1188,20 @@ msgid ""
 "transition parameter and thus not known statically, or because a byte "
 "string refers to an address that does not currently contain a contract, "
 "but which might contain a contract in the future."
-msgstr ""
+msgstr "通常，Scilla 检查器不能完全静态地对地址类型进行类型检查。 例如下面的情况就可能会发生，由于字节字符串是一个 transition 参数，因此不能静态地知道它的值，或者因为字节字符串指的是当前不包含合约但将来可能包含合约的地址。"
 
 #: ../scilla-in-depth.rst:935
 msgid ""
 "For this reason immutable parameters (i.e., contract parameters supplied "
 "when the contract is deployed) and transition parameters of address types"
 " are typechecked dynamically, when the actual byte string is known."
-msgstr ""
+msgstr "出于这个原因，只有当实际字节字符串已知时，不可变参数（即部署合约时提供的合约参数）和地址类型的 transition 参数才可以进行动态类型检查。"
 
 #: ../scilla-in-depth.rst:940
 msgid ""
 "For example, a contract might specify an immutable field ``init_owner`` "
 "as follows:"
-msgstr ""
+msgstr "例如，合约可能会指定一个如下所示的不可变字段 ``init_owner`` ："
 
 #: ../scilla-in-depth.rst:947
 msgid ""
@@ -1211,13 +1211,13 @@ msgid ""
 "in use either by a user or by a contract), then deployment continues, and"
 " ``init_owner`` can be treated as a ``ByStr20 with end`` throughout the "
 "contract."
-msgstr ""
+msgstr "当合约被部署时，作为 ``init_owner`` 提供的字节字符串被查找为区块链上的地址，如果该地址的内容与地址类型匹配（在地址被用户或合约使用的情况下），那么继续部署，并且 ``init_owner`` 可以在整个合约中被视为一个 ``ByStr20 with end``。"
 
 #: ../scilla-in-depth.rst:954
 msgid ""
 "Similarly, a transition might specify a parameter ``token_contract`` as "
 "follows:"
-msgstr ""
+msgstr "类似地，transition 可能指定如下的参数 ``token_contract``："
 
 #: ../scilla-in-depth.rst:965
 msgid ""
@@ -1230,7 +1230,7 @@ msgid ""
 "``token_contract`` can be treated as a ``ByStr20 with contract field "
 "balances : Map ByStr20 Uint128 end`` throughout this transition "
 "invocation."
-msgstr ""
+msgstr "当 transition 被调用时，作为 ``token_contract`` 参数提供的字节字符串被查找为区块链上的地址，如果该地址的内容与地址类型匹配（在地址包含一个具有 ``Map ByStr20 Uint128`` 类型的字段 ``balances`` 的合约的情况下），那么 transition 参数成功初始化，并且 ``token_contract`` 可以在整个转换调用中被视为 ``ByStr20 with contract field balances : Map ByStr20 Uint128 end``。"
 
 #: ../scilla-in-depth.rst:975
 msgid ""
@@ -1241,21 +1241,21 @@ msgid ""
 "considered a run-time error, causing the current transaction to abort. "
 "(For the purposes of dynamic typechecks of immutable fields the "
 "deployment of a contract is considered a transaction)."
-msgstr ""
+msgstr "在任何一种情况下，如果地址的内容与指定的类型不匹配，则动态类型检查不成功，同时会导致部署（对于失败的不可变参数）或 transition 调用（对于 transition 参数）失败。 失败的动态类型检查被视为运行时错误，同时会导致当前事务中止。 （出于对不可变字段的动态类型检查的目的，合约的部署被视为交易）。"
 
 #: ../scilla-in-depth.rst:986
 msgid ""
 "It is not possible to specify a ``ByStr20`` literal and have it "
 "interpreted as an address. In other words, the following code snippet "
 "will result in a static type error:"
-msgstr ""
+msgstr "无法指定 ``ByStr20`` 文字并将其解释为地址。 换句话说，以下代码片段将导致静态类型错误："
 
 #: ../scilla-in-depth.rst:994
 msgid ""
 "The only way for a byte string to be validated against an address type is"
 " to pass it as the value of an immutable field or as a transition "
 "parameter, of the appropriate type."
-msgstr ""
+msgstr "针对地址类型验证字节字符串的唯一方法是将其作为不可变字段的值或作为适当类型的 transition 参数传递。"
 
 #: ../scilla-in-depth.rst:1000
 msgid "Remote fetches"
