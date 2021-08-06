@@ -1439,7 +1439,7 @@ msgid ""
 "``IntX``, ``UintX``, ``ByStrX``, ``ByStr`` or ``BNum``. The type of "
 "values ``vt`` may be any type except a function type, this includes both "
 "builtin and user-defined algebraic datatypes."
-msgstr ""
+msgstr "``Map kt vt`` 类型的值提供了一个键值存储，其中 ``kt`` 是键的类型，``vt`` 是值的类型（在其他一些编程语言中，像 Scilla 的 ``Map`` 这样的数据类型被称为关联数组、符号表或字典）。 映射键 ``kt`` 的类型可以是以下 *基元* 类型中的任意一种：``String``、``IntX``、``UintX``、``ByStrX``、``ByStr`` 或 ``BNum``。 值 ``vt`` 的类型可以是除函数类型之外的任何类型，这包括内置和用户定义的代数数据类型。"
 
 #: ../scilla-in-depth.rst:1111
 msgid ""
@@ -1449,18 +1449,18 @@ msgid ""
 "and a particular trusted user some money limit the trusted user is "
 "allowed to spend on behalf of the account, one can use the following "
 "nested map:"
-msgstr ""
+msgstr "由于不支持复合类型作为映射键类型，因此建模的方式是通过使用诸如一对值与另一个值的关联的 *嵌套* 映射实现的。 例如，如果一个帐户要与一个特定的受信任用户相关联，同时允许受信任用户代表该帐户花费一定的资金限制，可以使用以下嵌套映射："
 
 #: ../scilla-in-depth.rst:1122
 msgid ""
 "The first and the second key are of type ``ByStr20`` and represent "
 "accounts and the trusted users correspondingly. We represent the money "
 "limits with the ``Uint128`` type."
-msgstr ""
+msgstr "第一个和第二个键是 ``ByStr20`` 类型的，分别代表账户和可信用户。 我们用 ``Uint128`` 类型表示资金限制。"
 
 #: ../scilla-in-depth.rst:1126
 msgid "Scilla supports a number of operations on map, which can be categorized as"
-msgstr ""
+msgstr "Scilla 支持多种映射操作，可以归纳为"
 
 #: ../scilla-in-depth.rst:1128
 msgid ""
@@ -1468,7 +1468,7 @@ msgid ""
 "copies, hence they belong to the imperative fragment of Scilla. These "
 "operations are efficient and recommended to use in almost all of the "
 "cases;"
-msgstr ""
+msgstr "*就地* 操作修改字段映射而不制作任何副本，因此它们属于 Scilla 的命令式片段。 这些操作是非常有效的，建议在所有情况下都使用；"
 
 #: ../scilla-in-depth.rst:1131
 msgid ""
@@ -1481,11 +1481,11 @@ msgid ""
 "builtins on a field map one first needs to make a *copy* of the field map"
 " using a command like so: ``map_copy <- field_map``, which results in gas"
 " consumption proportional to the size of ``field_map``."
-msgstr ""
+msgstr "*函数* 映射操作旨在用于纯函数，例如，在设计 Scilla 库时，因为它们从不修改调用它们的原始映射。 这些操作可能会导致显着的性能开销，因为其中一些操作会创建输入映射的新（修改）副本。 在语法上，复制操作都以 ``builtin`` 关键字为前缀（见下文）。 请注意，要在字段映射上调用函数内置函数，首先需要使用如下命令复制字段映射：``map_copy <- field_map``，这会导致 gas 消耗与 field_map 的大小成正比。"
 
 #: ../scilla-in-depth.rst:1143
 msgid "In-place map operations"
-msgstr ""
+msgstr "就地映射操作"
 
 #: ../scilla-in-depth.rst:1145
 msgid ""
@@ -1496,7 +1496,7 @@ msgid ""
 " supported with the syntax ``m[k1][k2][...] := v``. If the intermediate "
 "keys do not exist in the nested maps, they are freshly created along with"
 " the map values they are associated with."
-msgstr ""
+msgstr "``m[k] := v``: *就地* 插入。 将绑定到值 ``v`` 的键 ``k`` 插入到映射 ``m`` 中。 如果 ``m`` 已经包含键 ``k``，则绑定到 ``k`` 的旧值将被映射中的 ``v`` 替换。 ``m`` 必须引用当前合约中的可变字段。 使用语法 ``m[k1][k2][...] := v`` 支持插入嵌套映射。如果嵌套映射中不存在中间键，则将它们连同与其关联的映射值一起重新创建。"
 
 #: ../scilla-in-depth.rst:1154
 msgid ""
@@ -1509,14 +1509,14 @@ msgid ""
 "supported with the syntax ``x <- m[k1][k2][...]``. If one or more of the "
 "intermediate keys do not exist in the corresponding map, the result of "
 "the fetch is ``None``."
-msgstr ""
+msgstr "``x <- m[k]``：*就地* 本地获取。 获取与映射 ``m`` 中的键 ``k`` 关联的值。 ``m`` 必须引用当前合约中的可变字段。 如果 ``k`` 在 ``m`` 中具有关联值 ``v``，则获取的结果为 ``Some v``（请参阅下面的 ``Option`` 类型），否则结果为 ``None``。 在获取之后，结果被绑定到局部变量 ``x``。 使用语法 ``x <- m[k1][k2][...]`` 支持从嵌套映射中获取。 如果对应的映射中不存在一个或多个中间键，则获取的结果为 ``None``。"
 
 #: ../scilla-in-depth.rst:1164
 msgid ""
 "``x <- & c.m[k]``: *In-place* remote fetch. Works in the same way as the "
 "local fetch operation, except that ``m`` must refer to a mutable field in"
 " the contract at address ``c``."
-msgstr ""
+msgstr "``x <- & c.m[k]``：*就地* 远程获取。 除了 ``m`` 必须引用地址 ``c`` 处合约中的可变字段，其他以与本地获取操作相同的方式工作。"
 
 #: ../scilla-in-depth.rst:1168
 msgid ""
@@ -1528,14 +1528,14 @@ msgid ""
 "checks through nested maps is supported with the syntax ``x <- exists "
 "m[k1][k2][...]``. If one or more of the intermediate keys do not exist in"
 " the corresponding map, the result is ``False``."
-msgstr ""
+msgstr "``x <- exists m[k]``：*就地* 本地密钥存在检查。 ``m`` 必须引用当前合约中的可变字段。 如果 ``k`` 在映射 ``m`` 中具有关联值，则检查的结果（``Bool`` 类型）为 ``True``，否则结果为 ``False``。 检查后，结果绑定到局部变量 ``x``。 语法 ``x <- exists m[k1][k2][...]`` 支持通过嵌套映射进行存在检查。 如果对应的映射中不存在一个或多个中间键，则结果为 ``False``。"
 
 #: ../scilla-in-depth.rst:1178
 msgid ""
 "``b <- & exists c.m[k]``: *In-place* remote key existence check. Works in"
 " the same way as the local key existence check, except that ``m`` must "
 "refer to a mutable field in the contract at address ``c``."
-msgstr ""
+msgstr "``b <- & exists c.m[k]``：*就地* 远程密钥存在检查。 除了 ``m`` 必须引用地址 ``c`` 处合约中的可变字段，其他以与本地密钥存在性检查相同的方式工作。"
 
 #: ../scilla-in-depth.rst:1183
 msgid ""
@@ -1548,11 +1548,11 @@ msgid ""
 "``delete m[k1][...][kn-1][kn]``, only the key-value association of ``kn``"
 " is removed. The key-value bindings of ``k1`` to ``kn-1`` will remain in "
 "the map."
-msgstr ""
+msgstr "``delete m[k]``：*就地* 删除。 从映射 ``m`` 中删除键 ``k`` 及其关联值。 标识符 ``m`` 必须引用当前合约中的可变字段。 使用语法 ``delete m[k1][k2][...]`` 支持从嵌套映射中删除。 如果对应的映射中不存在一个或多个中间键，则该操作无效。 请注意，在嵌套删除 ``delete m[k1][...][kn-1][kn]`` 的情况下，仅删除 ``kn`` 的键值关联。 ``k1`` 到 ``kn-1`` 的键值绑定将保留在映射中。"
 
 #: ../scilla-in-depth.rst:1196
 msgid "Functional map operations"
-msgstr ""
+msgstr "函数式映射操作"
 
 #: ../scilla-in-depth.rst:1198
 msgid ""
@@ -1563,7 +1563,7 @@ msgid ""
 "``m`` is unchanged. The ``put`` function is typically used in library "
 "functions. Note that ``put`` makes a copy of ``m`` before inserting the "
 "key-value pair."
-msgstr ""
+msgstr "``builtin put m k v``：将绑定到值 ``v`` 的键 ``k`` 插入到映射 ``m`` 中。 返回一个新映射，它是 ``m`` 的副本，但 ``k`` 与 ``v`` 关联。如果 ``m`` 已经包含键 ``k``，则绑定到 ``k`` 的旧值在结果映射中被 ``v`` 替换。 ``m`` 的值不变。 ``put`` 函数通常用于库函数中。 请注意， ``put`` 在插入键值对之前制作了 ``m`` 的副本。"
 
 #: ../scilla-in-depth.rst:1206
 msgid ""
@@ -1572,14 +1572,14 @@ msgid ""
 "if ``k`` has an associated value ``v`` in ``m``, then the result is "
 "``Some v``, otherwise the result is ``None``. The ``get`` function is "
 "typically used in library functions."
-msgstr ""
+msgstr "``builtin get m k``：获取映射 ``m`` 中与键 ``k`` 关联的值。 返回一个可选值（参见下面的 ``Option`` 类型）——如果 ``k`` 在 ``m`` 中有一个关联值 ``v``，那么结果是 ``Some v``，否则结果是 ``None``。 ``get`` 函数通常用于库函数中。"
 
 #: ../scilla-in-depth.rst:1212
 msgid ""
 "``builtin contains m k``: Is the key ``k`` associated with a value in the"
 " map ``m``?  Returns a ``Bool``. The ``contains`` function is typically "
 "used in library functions."
-msgstr ""
+msgstr "``builtin contains m k``：键 ``k`` 是否与映射 ``m`` 中的值相关联？ 返回一个 ``Bool`` 值。 ``contains`` 函数通常用于库函数中。"
 
 #: ../scilla-in-depth.rst:1216
 msgid ""
@@ -1590,14 +1590,14 @@ msgid ""
 " copy of ``m`` with no indication that ``k`` is missing. The ``remove`` "
 "function is typically used in library functions. Note that ``remove`` "
 "makes a copy of ``m`` before removing the key-value pair."
-msgstr ""
+msgstr "``builtin remove m k``：从映射 ``m`` 中删除键 ``k`` 及其关联值。 返回一个新映射，它是 ``m`` 的副本，但 ``k`` 与值无关。 ``m`` 的值不变。 如果 ``m`` 不包含键 ``k``，则 ``remove`` 函数仅返回 ``m`` 的副本，而不会指示缺少 ``k``。 ``remove`` 函数通常用于库函数中。 请注意，在删除键值对之前，``remove`` 会复制 ``m``。"
 
 #: ../scilla-in-depth.rst:1224
 msgid ""
 "``builtin to_list m``: Convert a map ``m`` to a ``List (Pair kt vt)`` "
 "where ``kt`` and ``vt`` are key and value types, respectively (see the "
 "``List`` type below)."
-msgstr ""
+msgstr "``builtin to_list m``：将映射 ``m`` 转换为 ``List (Pair kt vt)``，其中 ``kt`` 和 ``vt`` 分别是键和值类型（参见下面的 ``List`` 类型）。"
 
 #: ../scilla-in-depth.rst:1228
 msgid ""
@@ -1607,13 +1607,13 @@ msgid ""
 " supported, meaning that getting the size of field maps while avoiding "
 "expensive copying needs some more scaffolding, which you can find out "
 "about in the :ref:`Field map size <field_map_size>` section."
-msgstr ""
+msgstr "``builtin size m``：返回映射 ``m`` 中的绑定数。 结果类型为 ``Uint32``。 调用这个内置函数会消耗少量恒定的 gas 费用。 但是不支持直接在 *字段* 映射上调用它，这意味着在避免昂贵的复制的同时获取字段映射的大小需要更多的脚手架，你可以在 :ref:`字段映射大小 <field_map_size>` 部分找到相关信息。"
 
 #: ../scilla-in-depth.rst:1237
 msgid ""
 "Builtin functions ``put`` and ``remove`` return a new map, which is a "
 "possibly modified copy of the original map. This may affect performance!"
-msgstr ""
+msgstr "内置函数 ``put`` 和 ``remove`` 返回一个新映射，它可能是原始映射的修改副本。 这可能会影响性能！"
 
 #: ../scilla-in-depth.rst:1242
 msgid ""
@@ -1623,7 +1623,7 @@ msgid ""
 "String = Emp Uint128 String`` declares a ``Map`` field with keys of type "
 "``Uint128`` and values of type ``String``, which is initialized to be the"
 " empty map."
-msgstr ""
+msgstr "可以使用 ``Emp`` 关键字构造空映射，指定键和值类型作为其参数。 这是将 ``Map`` 字段初始化为空的方法。 例如``field foomap : Map Uint128  String = Emp Uint128 String`` 声明一个 ``Map`` 字段，其键是 ``Uint128`` 类型，值是 ``String`` 类型，它被初始化为空映射。"
 
 #: ../scilla-in-depth.rst:1249
 msgid "Block Numbers"
