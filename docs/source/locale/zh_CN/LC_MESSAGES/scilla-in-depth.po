@@ -2018,14 +2018,14 @@ msgstr "``Succ`` 代表另一个 Peano 数的后继者。 ``Succ`` 构造函数�
 msgid ""
 "The following code shows how to build the Peano number corresponding to "
 "the integer 3:"
-msgstr ""
+msgstr "下面的代码展示了如何构建对应于整数 3 的 Peano 数："
 
 #: ../scilla-in-depth.rst:1592
 msgid ""
 "Scilla provides two structural recursion primitives for Peano numbers, "
 "which can be used to traverse all the Peano numbers from a given ``Nat`` "
 "down to ``Zero``:"
-msgstr ""
+msgstr "Scilla 为 Peano 数提供了两种结构递归原语，可用于遍历从给定 ``Nat`` 到 ``Zero`` 的所有 Peano 数："
 
 #: ../scilla-in-depth.rst:1596
 msgid ""
@@ -2033,7 +2033,7 @@ msgid ""
 "the succession of numbers from a ``Nat`` down to ``Zero``, while keeping "
 "track of an accumulator. ``nat_fold`` takes three arguments, two of which"
 " depend on the type variable ``'A``:"
-msgstr ""
+msgstr "``nat_fold: ('A -> Nat -> 'A) -> 'A -> Nat -> 'A``：递归处理从 ``Nat`` 到 ``Zero`` 的数字序列，同时跟踪累加器。 ``nat_fold`` 接受三个参数，其中两个取决于类型变量 ``'A``："
 
 #: ../scilla-in-depth.rst:1601
 msgid ""
@@ -2043,21 +2043,21 @@ msgid ""
 " type ``Nat``). Incidentally, the next number to be processed is the "
 "predecessor of the current number being processed. The result of the "
 "function is the next value of the accumulator (of type ``'A``)."
-msgstr ""
+msgstr "处理数字的函数。 这个函数有两个参数。 第一个参数是累加器（``'A`` 类型）的当前值。 第二个参数是下一个要处理的 Peano 数（类型为 ``Nat``）。 顺便说一下，下一个要处理的数字是当前正在处理的数字的前身。 该函数的结果是累加器的下一个值（``'A`` 类型）。"
 
 #: ../scilla-in-depth.rst:1609
 msgid "The initial value of the accumulator (of type ``'A``)."
-msgstr ""
+msgstr "累加器的初始值（``'A`` 类型）。"
 
 #: ../scilla-in-depth.rst:1611
 msgid "The first Peano number to be processed (of type ``Nat``)."
-msgstr ""
+msgstr "要处理的第一个 Peano 数（``Nat`` 类型）。"
 
 #: ../scilla-in-depth.rst:1613
 msgid ""
 "The result of applying ``nat_fold`` is the value of the accumulator (of "
 "type ``'A``) when all Peano numbers down to ``Zero`` have been processed."
-msgstr ""
+msgstr "应用 ``nat_fold`` 的结果是累加器（``'A`` 类型）的值，当所有 Peano 数都被处理到 ``Zero`` 时。"
 
 #: ../scilla-in-depth.rst:1617
 msgid ""
@@ -2067,7 +2067,7 @@ msgid ""
 "``nat_foldk`` is a more general version of the left fold allowing for "
 "early termination. It takes three arguments, two depending on the type "
 "variable ``'A``."
-msgstr ""
+msgstr "``nat_foldk: ('A -> Nat -> ('A ->'A) ->'A) ->'A -> Nat ->'A``：根据 *折叠函数* 递归处理 Peano 数到零，同时跟踪 *累加器*。 ``nat_foldk`` 是左折叠的更通用版本，允许提前终止。 它需要三个参数，两个取决于类型变量 ``'A``。"
 
 #: ../scilla-in-depth.rst:1624
 msgid ""
@@ -2080,29 +2080,29 @@ msgid ""
 "computation *terminates* if the programmer does not invoke the postponed "
 "recursive call. Left folds inevitably process the whole list whereas "
 "``nat_foldk`` can differ in this regard."
-msgstr ""
+msgstr "描述折叠步骤的函数。 这个函数接受三个参数。 第一个参数是累加器（``'A`` 类型）的当前值。 第二个参数是正在处理的 Peano 数的前身（``Nat`` 类型）。 第三个参数表示延迟的递归调用（类型 ``'A -> 'A``）。 该函数的结果是累加器的下一个值（``'A`` 类型）。 如果开发者不调用延迟的递归调用，则计算终止。 左折叠必须处理整个列表，而 ``nat_foldk`` 在这方面可能有所不同。"
 
 #: ../scilla-in-depth.rst:1636
 msgid "The initial value of the accumulator ``z`` (of type ``'A``)."
-msgstr ""
+msgstr "累加器 ``z`` 的初始值（``'A`` 类型）。"
 
 #: ../scilla-in-depth.rst:1638
 msgid "The Peano number to be processed (of type ``Nat``)."
-msgstr ""
+msgstr "要处理的 Peano 数（``Nat`` 类型）。"
 
 #: ../scilla-in-depth.rst:1640
 msgid ""
 "To better understand ``nat_foldk``, we explain how ``nat_eq`` works. "
 "``nat_eq`` checks to see if two Peano numbers are equivalent. Below is "
 "the program, with line numbers and an explanation."
-msgstr ""
+msgstr "为了更好地理解 ``nat_foldk``，我们解释了 ``nat_eq`` 的工作原理。 ``nat_eq`` 检查两个 Peano 数是否相等。 下面是带有行号和解释的具体程序。"
 
 #: ../scilla-in-depth.rst:1662
 msgid ""
 "Line 2 specifies that we take two Peano numbers ``m`` and ``n``. Line 3 "
 "instantiates the type of ``nat_foldk``, we give it ``Nat`` because we "
 "will be passing a ``Nat`` value as the fold accumulator."
-msgstr ""
+msgstr "第 2 行指定我们采用两个 Peano 数 ``m`` 和 ``n``。 第 3 行实例化了 ``nat_foldk`` 的类型，因为我们将传递一个 ``Nat`` 值作为折叠累加器，所以我们给它 ``Nat``。"
 
 #: ../scilla-in-depth.rst:1666
 msgid ""
@@ -2112,7 +2112,7 @@ msgid ""
 "function takes the accumulator ``n`` and ``ignore : Nat`` is the "
 "predecessor of the number being processed which we don't care about in "
 "this particular case."
-msgstr ""
+msgstr "第 4 到 8 行指定了折叠描述，这是 ``nat_foldk`` 通常采用的第一个参数，类型为 ``'A -> Nat -> ('A -> 'A) -> 'A``， 但我们在这种情况下指定了 ``'A`` 是 ``Nat``。 我们的函数采用累加器 ``n`` 并且 ``ignore : Nat`` 是正在处理的数字的前身，在这种特殊情况下我们不关心它。"
 
 #: ../scilla-in-depth.rst:1672
 msgid ""
@@ -2128,7 +2128,7 @@ msgid ""
 "see if our accumulator ended up at ``Zero`` to say if the input numbers "
 "are equal. The last lines, return ``True`` when the result of the fold is"
 " ``Zero`` and ``False`` otherwise as described above."
-msgstr ""
+msgstr "本质上，我们从 ``n`` 开始累积最终结果并最多迭代 ``m`` 次（参见第 10 行），在每个递归步骤（第 4 - 9 行）递减 ``n`` 和 ``m``。 ``m`` 变量隐式递减，因为这就是 ``nat_foldk`` 在幕后工作的方式。 我们使用模式匹配（第 6、7 行）显式地递减 ``n``。 为了继续迭代递减 ``m`` 和 ``n``，我们在第 7 行使用 ``recurse``。如果两个输入数字相等，我们最终将得到等于 0 的累加器 (``n``)。 我们在第 10 行调用累加器的 ``remaining`` 来获取最终值。最后，我们将检查我们的累加器是否最终为 ``Zero``，以判断输入数字是否相等。 如上所述，在最后几行，当折叠结果为 ``Zero`` 时返回 ``True``，否则返回 ``False``。"
 
 #: ../scilla-in-depth.rst:1687
 msgid ""
@@ -2138,24 +2138,24 @@ msgid ""
 "indicate inequality. Any number (e.g. ``Succ Zero``) would do, but to "
 "make the code concise we return the original input number ``m`` because "
 "we know ``iter`` gets called on ``m`` only if it's not zero."
-msgstr ""
+msgstr "在累加器 ``n`` 达到零（第 8 行）而 ``m`` 仍未完全处理的情况下，我们停止迭代（因此该行没有 ``recurse``）并返回一个非零自然数以表示不等式。 任何数字（例如 ``Succ Zero``）都可以，但为了使代码简洁，我们返回原始输入数字 ``m``，因为我们知道只有当 ``m`` 不为零时才会在 ``m`` 上调用 ``iter``。"
 
 #: ../scilla-in-depth.rst:1695
 msgid ""
 "In the symmetrical case when ``m`` reaches zero while the accumulator "
 "``n`` is still strictly positive, we indicate inequality, because "
 "``remaining`` gets this final value of ``n``."
-msgstr ""
+msgstr "因为 ``remaining`` 得到 ``n`` 的最终值，所以在 ``m`` 达到零而累加器 ``n`` 仍然严格为正的对称情况下，我们表示不等式。"
 
 #: ../scilla-in-depth.rst:1700
 msgid "User-defined ADTs"
-msgstr ""
+msgstr "用户自定义 ADT"
 
 #: ../scilla-in-depth.rst:1702
 msgid ""
 "In addition to the built-in ADTs described above, Scilla supports user-"
 "defined ADTs."
-msgstr ""
+msgstr "除了上述内置的 ADT 之外，Scilla 还支持用户自定义 ADT。"
 
 #: ../scilla-in-depth.rst:1705
 msgid ""
@@ -2166,7 +2166,7 @@ msgid ""
 "defined earlier in the same library, or in imported libraries. In "
 "particular, an ADT definition may not refer to itself in an "
 "inductive/recursive manner."
-msgstr ""
+msgstr "ADT 定义可能只出现在程序的库部分：要么出现在合约的库部分，要么出现在导入的库中。 ADT 定义在定义它的整个库的范围内，除了 ADT 定义引用之前在同一库或导入库中定义的其他 ADT 定义。 特别是，ADT 定义可能不会以归纳/递归方式引用自身。"
 
 #: ../scilla-in-depth.rst:1713
 msgid ""
@@ -2174,7 +2174,7 @@ msgid ""
 "number of types which corresponds to the number and types of arguments "
 "that the constructor takes. A constructor may be specified as taking no "
 "arguments."
-msgstr ""
+msgstr "每个 ADT 定义了一组构造函数。 每个构造函数都指定了许多类型，这些类型对应于构造函数采用的参数的数量和类型。 构造函数可以指定为不带参数。"
 
 #: ../scilla-in-depth.rst:1718
 msgid ""
@@ -2184,7 +2184,7 @@ msgid ""
 "- 'Z'). However, a constructor and an ADT may have the same name, as is "
 "the case with the ``Pair`` type whose only constructor is also called "
 "``Pair``."
-msgstr ""
+msgstr "一个合约的 ADT 必须有不同的名称，合约中所有 ADT 的所有构造函数的集合也必须有不同的名称。 ADT 和构造函数名称都必须以大写字母开头（‘A’ - ‘Z’）。 但是，构造函数和 ADT 可能具有相同的名称，就像 ``Pair`` 类型的情况一样，它的唯一构造函数也称为 ``Pair``。"
 
 #: ../scilla-in-depth.rst:1725
 msgid ""
@@ -2194,23 +2194,23 @@ msgid ""
 "player can choose to either move one of his pieces, place a previously "
 "captured piece back onto the board, or resign and award the victory to "
 "the opponent."
-msgstr ""
+msgstr "作为用户定义的 ADT 的示例，请考虑来自实现名为 Shogi 或 Japanese Chess (https://en.wikipedia.org/wiki/Shogi) 的类象棋游戏的合约中的以下类型声明。 当轮到你时，玩家可以选择移动他的一个棋子，将先前捕获的棋子放回棋盘上，或者弃权并将胜利授予对手。"
 
 #: ../scilla-in-depth.rst:1732
 msgid "The pieces of the game can be defined using the following type ``Piece``:"
-msgstr ""
+msgstr "可以使用以下类型 ``Piece`` 定义游戏的棋子："
 
 #: ../scilla-in-depth.rst:1747
 msgid ""
 "Each of the constructors represents a type of piece in the game. None of "
 "the constructors take any arguments."
-msgstr ""
+msgstr "每个构造函数都代表游戏中的一种棋子。每个构造函数都不接受任何参数。"
 
 #: ../scilla-in-depth.rst:1750
 msgid ""
 "The board is represented as a set of squares, where each square has two "
 "coordinates:"
-msgstr ""
+msgstr "棋盘表示为一组方块，其中每个方块有两个坐标："
 
 #: ../scilla-in-depth.rst:1758
 msgid ""
@@ -2219,84 +2219,84 @@ msgid ""
 "constructor. The constructor ``Square`` takes two arguments, both of type"
 " ``Uint32``, which are the coordinates (the row and the column) of the "
 "square on the board."
-msgstr ""
+msgstr "类型 ``Square`` 是一个类型的示例，其中构造函数与类型具有相同的名称。 这通常发生在一个类型只有一个构造函数时。 构造函数 ``Square`` 接受两个参数，都是 ``Uint32`` 类型，它们是棋盘上正方形的坐标（行和列）。"
 
 #: ../scilla-in-depth.rst:1764
 msgid ""
 "Similar to the definition of the type ``Piece``, we can define the type "
 "of direction of movement using a constructor for each of the legal "
 "directions as follows:"
-msgstr ""
+msgstr "与类型 ``Piece`` 的定义类似，我们可以使用构造函数为每个合法方向定义运动方向的类型，如下所示："
 
 #: ../scilla-in-depth.rst:1780
 msgid ""
 "We are now in a position to define the type of possible actions that a "
 "user may choose to perform when in turn:"
-msgstr ""
+msgstr "我们现在可以定义用户在以下情况下可以选择执行的可能操作类型："
 
 #: ../scilla-in-depth.rst:1790
 msgid ""
 "If a player chooses to move a piece, she should use the constructor "
 "``Move``, and provide four arguments:"
-msgstr ""
+msgstr "如果玩家选择移动一个棋子，她应该使用构造函数 ``Move``，并提供四个参数："
 
 #: ../scilla-in-depth.rst:1793
 msgid ""
 "An argument of type ``Square``, indicating the current position of the "
 "piece she wants to move."
-msgstr ""
+msgstr "``Square`` 类型的参数，指示她要移动的棋子的当前位置。"
 
 #: ../scilla-in-depth.rst:1796
 msgid "An argument of type ``Direction``, indicating the direction of movement."
-msgstr ""
+msgstr "``Direction`` 类型的参数，指示移动的方向。"
 
 #: ../scilla-in-depth.rst:1799
 msgid ""
 "An argument of type ``Uint32``, indicating the distance the piece should "
 "move."
-msgstr ""
+msgstr "``Uint32`` 类型的参数，指示棋子应移动的距离。"
 
 #: ../scilla-in-depth.rst:1802
 msgid ""
 "An argument of type ``Bool``, indicating whether the moved piece should "
 "be promoted after being moved."
-msgstr ""
+msgstr "``Bool`` 类型的参数，指示被移动的棋子在被移动后是否应该被提升。"
 
 #: ../scilla-in-depth.rst:1805
 msgid ""
 "If instead the player chooses to place a previously captured piece back "
 "onto the board, she should use the constructor ``Place``, and provide two"
 " arguments:"
-msgstr ""
+msgstr "相反，如果玩家选择将先前捕获的棋子放回棋盘上，她应该使用构造函数 ``Place``，并提供两个参数："
 
 #: ../scilla-in-depth.rst:1809
 msgid ""
 "An argument of type ``Piece``, indicating which piece to place on the "
 "board."
-msgstr ""
+msgstr "``Piece`` 类型的参数，指示将哪一块放置在板上。"
 
 #: ../scilla-in-depth.rst:1812
 msgid ""
 "An argument of type ``Square``, indicating the position the piece should "
 "be placed in."
-msgstr ""
+msgstr "``Square`` 类型的参数，指示棋子应放置的位置。"
 
 #: ../scilla-in-depth.rst:1815
 msgid ""
 "Finally, if the player chooses to resign and award the victory to her "
 "opponent, she should use the constructor ``Resign``. Since ``Resign`` "
 "does not take any arguments, no arguments should be provided."
-msgstr ""
+msgstr "最后，如果玩家选择弃权并将胜利授予她的对手，她应该使用构造函数 ``Resign``。 由于 ``Resign`` 不接受任何参数，因此不应提供任何参数。"
 
 #: ../scilla-in-depth.rst:1819
 msgid ""
 "To check which action a player has chosen we use a match statement or a "
 "match expression:"
-msgstr ""
+msgstr "要检查玩家选择了哪个动作，我们使用 ``match`` 语句或 ``match`` 表达式："
 
 #: ../scilla-in-depth.rst:1839
 msgid "Type identity for user-defined ADTs"
-msgstr ""
+msgstr "用户自定义 ADT 的类型标识"
 
 #: ../scilla-in-depth.rst:1843
 msgid ""
@@ -2305,18 +2305,18 @@ msgid ""
 " in Scilla versions prior to 0.10.0 and which exploit this bug will have "
 "to be rewritten and redeployed, as they will no longer work from version "
 "0.10.0 and onwards."
-msgstr ""
+msgstr "由于 Scilla 实现中的错误，本节中的信息仅适用于 Scilla 0.10.0 及更高版本。 使用 0.10.0 之前的 Scilla 版本编写并发现此错误的合约必须重新编写和重新部署，因为它们将不再适用于 0.10.0 及更高版本。"
 
 #: ../scilla-in-depth.rst:1849
 msgid ""
 "Each type declaration defines a unique type. In particular this means "
 "that even if two libraries both define identical types, the types are "
 "considered different."
-msgstr ""
+msgstr "每个类型声明定义了一个唯一的类型。 特别需要注意的是，这意味着即使两个库都定义了相同的类型，这些类型也被认为是不同的。"
 
 #: ../scilla-in-depth.rst:1853
 msgid "As an example, consider the following two contracts:"
-msgstr ""
+msgstr "例如，思考以下两个合约："
 
 #: ../scilla-in-depth.rst:1896
 msgid ""
@@ -2326,24 +2326,24 @@ msgid ""
 "``Receiving`` transition, because the value sent as the ``param`` message"
 " field has the type ``T`` from ``Contract1``, whereas the type ``T`` from"
 " ``Contract2`` is expected."
-msgstr ""
+msgstr "尽管两个合约都定义了相同的类型 ``T``，但这两种类型在 Scilla 中被认为是不同的。 特别是，这意味着从 ``Contract1`` 发送到 ``Contract2`` 的消息不会触发 transition ``Receiving``，因为作为 ``param`` 消息字段发送的值具有来自 ``Contract1`` 的类型 ``T``，而真正需要的是来自 ``Contract2`` 的类型 ``T``。"
 
 #: ../scilla-in-depth.rst:1903
 msgid ""
 "In order to pass a value of a user-defined ADT as a parameter to a "
 "transition, the type must be defined in a user-defined library, which "
 "both the sending and the receiving contract must import:"
-msgstr ""
+msgstr "为了将用户自定义 ADT 的值作为参数传递给 transition，必须在用户定义的库中定义类型，发送和接收合约都必须导入："
 
 #: ../scilla-in-depth.rst:1955
 msgid ""
 "The section :ref:`user-defined_libraries` has more information on how to "
 "define and use libraries."
-msgstr ""
+msgstr ":ref:`user-defined_libraries` 部分提供了有关如何定义和使用库的更多信息。"
 
 #: ../scilla-in-depth.rst:1959
 msgid "More ADT examples"
-msgstr ""
+msgstr "更多 ADT 示例"
 
 #: ../scilla-in-depth.rst:1961
 msgid ""
@@ -2351,15 +2351,15 @@ msgid ""
 " and describe them in detail. Versions of both the functions described "
 "below can be found in the ``ListUtils`` part of the :doc:`Scilla standard"
 " library <stdlib>`."
-msgstr ""
+msgstr "为了进一步说明如何使用 ADT，我们提供了更多示例并详细描述了它们。 下面描述的两个函数的版本都可以在 :doc:`Scilla标准库 <stdlib>` 的 ``ListUtils`` 部分中找到。"
 
 #: ../scilla-in-depth.rst:1967
 msgid "Computing the Head of a List"
-msgstr ""
+msgstr "计算列表的头部"
 
 #: ../scilla-in-depth.rst:1969
 msgid "The function ``list_head`` returns the first element of a list."
-msgstr ""
+msgstr "函数 ``list_head`` 返回列表的第一个元素。"
 
 #: ../scilla-in-depth.rst:1971
 msgid ""
@@ -2368,13 +2368,13 @@ msgid ""
 "If the list is non-empty, and the first element is ``h``, then "
 "``list_head`` should return ``Some h``. Otherwise, if the list is empty, "
 "``list_head`` should return ``None``."
-msgstr ""
+msgstr "由于列表可能为空，``list_head`` 可能并不总是能够计算结果，因此应该返回 ``Option`` 类型的值。 如果列表非空，并且第一个元素是 ``h``，那么 ``list_head`` 应该返回 ``Some h``。 否则，如果列表为空，``list_head`` 应返回 ``None``。"
 
 #: ../scilla-in-depth.rst:1977
 msgid ""
 "The following code snippet shows the implementation of ``list_head``, and"
 " how to apply it:"
-msgstr ""
+msgstr "以下代码片段显示了 ``list_head`` 的实现以及如何应用它："
 
 #: ../scilla-in-depth.rst:2005
 msgid ""
@@ -2383,7 +2383,7 @@ msgid ""
 "In other words, lines 1-3 specify a function ``list_head`` which can be "
 "instantiated for any type ``'A``, and which takes as an argument a value "
 "of type ``List 'A``."
-msgstr ""
+msgstr "第 2 行指定 ``'A`` 是函数的类型参数，而第 3 行指定 ``l`` 是 ``List 'A`` 类型的（值）参数。 换句话说，第 1-3 行指定了一个函数 ``list_head``，它可以为任何类型 ``'A`` 实例化，并将 ``List 'A`` 类型的值作为参数。"
 
 #: ../scilla-in-depth.rst:2011
 msgid ""
@@ -2395,7 +2395,7 @@ msgid ""
 "constructor ``Nil``. If the list is empty then the match is successful, "
 "and we return the optional value ``None`` indicating that there was no "
 "head element of the list."
-msgstr ""
+msgstr "第 4-9 行中的模式匹配匹配 ``l`` 的值。 在第 5 行，我们匹配列表构造函数 ``Cons h t``，其中 ``h`` 是列表的第一个元素，而 ``t`` 是列表的其余部分。 如果列表不为空，则匹配成功，我们将第一个元素作为可选值返回 ``Some h``。 在第 7 行，我们匹配列表构造函数 ``Nil``。 如果列表为空，则匹配成功，我们返回可选值 ``None`` 表示列表中没有头元素。"
 
 #: ../scilla-in-depth.rst:2020
 msgid ""
@@ -2403,11 +2403,11 @@ msgid ""
 "so that ``list_head`` can be applied to values of type ``List Int32``. "
 "Lines 13-20 build a list of type ``List Int32``, and line 21 invokes the "
 "instantiated ``list_head`` function on the list that was built."
-msgstr ""
+msgstr "第 11 行实例化了 ``Int32`` 类型的 ``list_head`` 函数，以便将 ``list_head`` 应用于 ``List Int32`` 类型的值。 第 13-20 行构建一个 ``List Int32`` 类型的列表，第 21 行在构建的列表上调用实例化的 ``list_head`` 函数。"
 
 #: ../scilla-in-depth.rst:2027
 msgid "Computing a Left Fold"
-msgstr ""
+msgstr "计算左折叠"
 
 #: ../scilla-in-depth.rst:2029
 msgid ""
@@ -2415,7 +2415,7 @@ msgid ""
 "function ``f : 'B -> 'A -> 'B``, accumulator ``z : 'B`` and list ``xs : "
 "List 'A``. This can be implemented as a recursion primitive or a list "
 "utility function."
-msgstr ""
+msgstr "函数 ``list_foldl`` 在给定 ``function f : 'B -> 'A -> 'B``、累加器 ``z : 'B`` 和列表 ``xs : List 'A`` 的情况下返回左折叠的结果。 这可以实现为递归原语或列表实用程序函数。"
 
 #: ../scilla-in-depth.rst:2033
 msgid ""
@@ -2425,7 +2425,7 @@ msgid ""
 " starting with accumulator 0 would be ``((0-1)-2)-3 = -6``. The left fold"
 " is explained in pseudocode below, note that the result is always the "
 "accumulator type."
-msgstr ""
+msgstr "左折叠是累加器 ``z`` 和下一个重复使用 ``f`` 的列表元素 ``x : 'A`` 的递归应用，直到没有更多列表元素为止。 例如，使用从累加器 0 开始的减法在 ``[1,2,3]`` 上的左折叠将是 ``((0-1)-2)-3 = -6``。 左折叠在下面的伪代码中解释，注意结果总是累加器类型。"
 
 #: ../scilla-in-depth.rst:2045
 msgid ""
@@ -2435,7 +2435,7 @@ msgid ""
 "accumulator, next list element and recursive call. The recursive call "
 "will be supplied by the ``list_foldk`` function. An implementation is "
 "explained below."
-msgstr ""
+msgstr "使用 ``list_foldk`` 也可以通过部分应用左折叠描述来实现相同的效果； 这避免了非法的直接递归。 我们的折叠描述 ``left_f : 'B -> 'A -> ('B -> 'B) -> 'B`` 接受参数累加器、下一个列表元素和递归调用。 递归调用将由 ``list_foldk`` 函数提供。 下面将解释一个具体实现。"
 
 #: ../scilla-in-depth.rst:2063
 msgid ""
@@ -2444,7 +2444,7 @@ msgid ""
 "types as arguments ``'A`` and ``'B``. The third line says that we take "
 "some function ``f`` to process the list element and accumulator, as in "
 "paragraph two."
-msgstr ""
+msgstr "我们根据第一段所述，在第 1 行，声明名称和类型签名。 在第二行，我们说该函数采用两种类型作为参数 ``'A`` 和 ``'B``。 如第二段所述，第三行我们使用一些函数 ``f`` 来处理列表元素和累加器。"
 
 #: ../scilla-in-depth.rst:2068
 msgid ""
@@ -2454,13 +2454,13 @@ msgid ""
 ": 'B -> 'A -> ('B -> 'B) -> 'B``. ``left_f`` takes arguments as described"
 " in paragraph two. We calculate the new accumulator ``f z x`` and call it"
 " ``res``. Then we recursively call with the new accumulator."
-msgstr ""
+msgstr "在第 4 行，我们使用 ``f`` 定义折叠描述。 折叠描述不采用函数，而是应该根据某些函数来实现，正如根据类型签名那样，``left_f : 'B -> 'A -> ('B -> 'B) -> 'B``。 ``left_f`` 接受第二段中描述的参数。 我们计算新的累加器 ``f z x`` 并将其称为 ``res``。 然后我们用新的累加器递归调用。"
 
 #: ../scilla-in-depth.rst:2075
 msgid ""
 "On line 7, we instantiate an instance of ``list_foldk`` that has the "
 "right types for the job using a type application."
-msgstr ""
+msgstr "在第 7 行，我们使用类型应用程序实例化一个 ``list_foldk`` 实例，该实例具有适合作业的正确类型。"
 
 #: ../scilla-in-depth.rst:2078
 msgid ""
@@ -2470,11 +2470,11 @@ msgid ""
 " element in the list and respective tail each time. This results in a "
 "function that just needs the user to provide the updated accumulator in "
 "the description."
-msgstr ""
+msgstr "在第 8 行，我们部分应用了带有左折叠描述的 ``folder``。 ``list_foldk`` 的重要之处在于，在调用描述时，它提供对自身的递归调用，每次更改为列表中的下一个元素和相应的尾部。 这导致一个函数只需要用户在描述中提供更新的累加器。"
 
 #: ../scilla-in-depth.rst:2085
 msgid "Computing a Right Fold"
-msgstr ""
+msgstr "计算右折叠"
 
 #: ../scilla-in-depth.rst:2087
 msgid ""
@@ -2482,7 +2482,7 @@ msgid ""
 " function ``f : 'A -> 'B -> 'B``, accumulator ``z : 'B`` and list ``xs : "
 "List 'A``. Like ``list_foldl``, this can be a recursion primitive or a "
 "list utility function."
-msgstr ""
+msgstr "在给定一些函数 ``f : 'A -> 'B -> 'B``、累加器 ``z : 'B`` 和列表 ``xs : List 'A``的情况下，函数 ``list_foldr`` 返回右折叠的结果。 与 ``list_foldl`` 一样，这可以是递归原语或列表实用程序函数。"
 
 #: ../scilla-in-depth.rst:2092
 msgid ""
@@ -2493,7 +2493,7 @@ msgid ""
 "on the list ``[1,2,3]`` with subtraction starting with accumulator 0 "
 "would be equal to ``1-(2-(3-0)) = 2``. It is listed below in pseudocode, "
 "note that the result is always the accumulator type."
-msgstr ""
+msgstr "右折叠类似于左折叠，但在某种程度上是相反的。 右折叠从末尾开始应用一个带有累加器 ``z`` 的函数 ``f``，然后与倒数第二个元素、倒数第三个元素等组合，直到它到达开头。 例如，列表 ``[1,2,3]`` 上的右折叠从累加器 0 开始减法直到等于 ``1-(2-(3-0)) = 2``。下面以伪代码列出，注意结果始终是累加器类型。"
 
 #: ../scilla-in-depth.rst:2106
 msgid ""
@@ -2502,7 +2502,7 @@ msgid ""
 "accumulator ``z : 'B``, next list element ``x : 'A`` and recursive call "
 "``recurse : 'B -> 'B``. The recursive call will be supplied by the "
 "``list_foldk`` function. An implementation is explained below."
-msgstr ""
+msgstr "像以前一样，通过部分应用右折叠描述，可以使用 ``list_foldk`` 实现相同的效果。 折叠描述采用参数累加器 ``z : 'B``，下一个列表元素 ``x : 'A`` 和递归调用 ``recurse : 'B -> 'B``。 递归调用将由 ``list_foldk`` 函数提供。 下面将解释一个具体实现。"
 
 #: ../scilla-in-depth.rst:2123
 msgid ""
@@ -2512,7 +2512,7 @@ msgid ""
 "function ``f`` to process the list element ``x : 'A`` and accumulator "
 "``z``. The argument order is necessarily different to that of a left "
 "fold."
-msgstr ""
+msgstr "这与以前非常相似。 在第 1 行，我们根据第一段所述，声明名称和类型签名。 在第 2 行，我们采用两个类型参数 ``'A`` 和 ``'B``。 第三行表示我们使用一些函数 ``f`` 来处理列表元素 ``x : 'A`` 和累加器 ``z``。 参数顺序必然与左折叠的顺序不同。"
 
 #: ../scilla-in-depth.rst:2129
 msgid ""
@@ -2524,13 +2524,13 @@ msgid ""
 "recursive call reaches an empty list it returns the original accumulator."
 " Then the function calls ``f x res`` (line 5) will evaluate outwards "
 "combining from the end to the beginning, see paragraph two."
-msgstr ""
+msgstr "之后，我们像以前一样编写折叠描述。 ``list_foldk`` 从左到右处理列表。 但是我们需要 ``list_foldr`` 来模拟从右到左的遍历。 通过在第 5 行调用 ``recurse z`` 作为我们的第一个动作，我们使用组合函数 ``f`` 将实际计算推迟到最后，保留原始累加器。 一旦递归调用到达一个空列表，它就会返回原始累加器。 然后函数调用 ``f x res`` （第 5 行）将评估从结尾到开头的向外组合，参见第二段。"
 
 #: ../scilla-in-depth.rst:2138
 msgid ""
 "The recursive call ``recurse z`` on line 5 may seem to be the same each "
 "time but what is changing is the list element we process."
-msgstr ""
+msgstr "第 5 行的递归调用 ``recurse z`` 似乎每次都一样，但改变的是我们处理的列表元素。"
 
 #: ../scilla-in-depth.rst:2141
 msgid ""
@@ -2540,25 +2540,25 @@ msgid ""
 "special about ``list_foldk`` is that it calls this function with a "
 "recursive call to itself that each time slightly truncates the list; this"
 " provides the recursion."
-msgstr ""
+msgstr "在第 6 行，我们通过应用类型 ``'A`` 和 ``'B`` 来实例化 ``list_foldk``，并以此创建特定于类型的函数。 最后一行我们部分应用带有正确折叠描述的 ``folder``。 和之前一样，``list_foldk`` 的特别之处在于它通过递归调用自身来调用这个函数，每次都会稍微截断列表； 它提供了递归。"
 
 #: ../scilla-in-depth.rst:2148
 msgid "Checking for Existence in a List"
-msgstr ""
+msgstr "检查列表中的存在性"
 
 #: ../scilla-in-depth.rst:2150
 msgid ""
 "The function ``list_exists`` takes a predicate function and a list, and "
 "returns a value indicating whether the predicate holds for at least one "
 "element in the list."
-msgstr ""
+msgstr "函数 ``list_exists`` 接受一个谓词函数和一个列表，并返回一个值，该值指示谓词是否至少对列表中的一个元素而成立。"
 
 #: ../scilla-in-depth.rst:2154
 msgid ""
 "A predicate function is a function returning a Boolean value, and since "
 "we want to apply it to elements in the list, the argument type of the "
 "function should be the same as the element type of the list."
-msgstr ""
+msgstr "谓词函数是一个返回布尔值的函数，由于我们希望将其应用于列表中的元素，因此函数的参数类型应该与列表的元素类型相同。"
 
 #: ../scilla-in-depth.rst:2158
 msgid ""
@@ -2566,19 +2566,19 @@ msgid ""
 " at least one element) or ``False`` (if the predicate does not hold for "
 "any element in the list), so the return type of ``list_exists`` should be"
 " ``Bool``."
-msgstr ""
+msgstr "``list_exists`` 应该返回 ``True``（如果谓词至少对一个元素成立）或 ``False``（如果谓词对列表中的任何元素都不成立），所以 ``list_exists`` 的返回类型应该是 ``Bool``。"
 
 #: ../scilla-in-depth.rst:2163
 msgid ""
 "The following code snippet shows the implementation of ``list_exists``, "
 "and how to apply it:"
-msgstr ""
+msgstr "以下代码片段显示了 ``list_exists`` 的实现，以及如何应用它："
 
 #: ../scilla-in-depth.rst:2201
 msgid ""
 "As in the previous example ``'A`` is a type variable to the function. The"
 " function takes two arguments:"
-msgstr ""
+msgstr "与前面的示例一样，``'A`` 是函数的类型变量。 该函数有两个参数："
 
 #: ../scilla-in-depth.rst:2204
 msgid ""
@@ -2586,13 +2586,13 @@ msgid ""
 "case, ``f`` will be applied to elements of the list, so the argument type"
 " of the predicate should be ``'A``. Hence, ``f`` should have the type "
 "``'A -> Bool``."
-msgstr ""
+msgstr "谓词 ``f``，即返回 ``Bool`` 的函数。 在这种情况下，``f`` 将应用于列表的元素，那么谓词的参数类型应为 ``'A``。 因此，``f`` 的类型应该是 ``'A -> Bool``。"
 
 #: ../scilla-in-depth.rst:2209
 msgid ""
 "A list of elements ``l`` of type ``List 'A``, so that the type of the "
 "elements in the list matches the argument type of ``f``."
-msgstr ""
+msgstr "类型为 ``List 'A`` 的元素 ``l`` 的列表，以便列表中元素的类型与 ``f`` 的参数类型相匹配。"
 
 #: ../scilla-in-depth.rst:2212
 msgid ""
@@ -2601,7 +2601,7 @@ msgid ""
 "``'A`` and for the accumulator type ``Bool``. In line 6 we set the "
 "initial accumulator value to ``False`` to indicate that no element "
 "satisfying the predicate has yet been seen."
-msgstr ""
+msgstr "为了遍历输入列表 ``l`` 的元素，我们使用 ``list_foldl``。 在第 5 行，我们为具有类型 ``'A`` 的元素的列表和类型为 ``Bool`` 的累加器实例化 ``list_foldl``。 在第 6 行中，我们将初始累加器值设置为 ``False`` 以指示尚未看到满足谓词的元素。"
 
 #: ../scilla-in-depth.rst:2218
 msgid ""
@@ -2610,7 +2610,7 @@ msgid ""
 "accumulator. If an element has been found which satisfies the predicate, "
 "the accumulator is set to ``True`` and remains so for the rest of the "
 "traversal."
-msgstr ""
+msgstr "第 7-16 行中定义的处理函数 ``iter`` 测试当前列表元素上的谓词，并返回更新的累加器。 如果找到满足谓词的元素，则累加器设置为 ``True`` 并在剩余的遍历中保留此值。"
 
 #: ../scilla-in-depth.rst:2224
 msgid ""
@@ -2618,25 +2618,25 @@ msgid ""
 "``f`` returned ``True`` for at least one element in the list, or "
 "``False``, indicating that ``f`` returned ``False`` for all elements in "
 "the list."
-msgstr ""
+msgstr "累加器的最终值要么是 ``True``，表示 ``f`` 对列表中的至少一个元素返回 ``True``，要么是 ``False``，表示 ``f`` 对列表中的所有元素都返回 ``False``。"
 
 #: ../scilla-in-depth.rst:2229
 msgid ""
 "In line 20 we instantiate ``list_exists`` to work on lists of type "
 "``Int128``. In lines 21-24 we define the predicate, which returns "
 "``True`` if its argument is less than 3, and returns ``False`` otherwise."
-msgstr ""
+msgstr "在第 20 行，我们实例化 ``list_exists`` 以处理 ``Int128`` 类型的列表。 在第 21-24 行中，我们定义了谓词，如果其参数小于 3，则返回 ``True``，否则返回 ``False``。"
 
 #: ../scilla-in-depth.rst:2234
 msgid ""
 "Omitted in line 27 is building the same list ``l3`` as in the previous "
 "example. In line 30 we apply the instantiated ``list_exists`` to the "
 "predicate and the list."
-msgstr ""
+msgstr "第 27 行省略了构建与前一个示例相同的列表 ``l3``。 在第 30 行，我们将实例化的 ``list_exists`` 应用于谓词和列表。"
 
 #: ../scilla-in-depth.rst:2241
 msgid "Finding the first occurrence satisfying a predicate"
-msgstr ""
+msgstr "找到满足谓词的第一次出现"
 
 #: ../scilla-in-depth.rst:2243
 msgid ""
@@ -2644,13 +2644,13 @@ msgid ""
 "that satisfies some predicate ``p : 'A -> Bool``. It takes the predicate "
 "and the list, returning ``Some {'A} x :: Option 'A`` if ``x`` is the "
 "first element such that ``p x`` and ``None {'A} :: Option 'A`` otherwise."
-msgstr ""
+msgstr "函数 ``list_find`` 在满足谓词 ``p : 'A -> Bool`` 的列表中搜索第一次出现。 它接受谓词和列表，如果 ``x`` 是第一个元素使得 ``p x`` 则返回 ``Some {'A} x :: Option 'A``，否则返回 ``None {'A} :: Option 'A`` 。"
 
 #: ../scilla-in-depth.rst:2249
 msgid ""
 "Below we have an implementation of ``list_find`` that illustrates how to "
 "use ``list_foldk``."
-msgstr ""
+msgstr "下面我们有一个 ``list_find`` 的实现，它说明了如何使用 ``list_foldk``。"
 
 #: ../scilla-in-depth.rst:2271
 msgid ""
@@ -2660,7 +2660,7 @@ msgid ""
 "The processing type being the list element type and the result type being"
 " ``Option 'A``. The next line is our accumulator, we assume that at the "
 "start of the search there is no satisfier."
-msgstr ""
+msgstr "和以前一样，我们在第 2 行取一个类型变量 ``'A``，并在下一行取谓词。 我们首先使用这个类型变量来实例化 ``foldk``，给它我们的处理类型和返回类型。 处理类型为列表元素类型，结果类型为 ``Option 'A``。 下一行是我们的累加器，我们假设在搜索开始时没有满足条件。"
 
 #: ../scilla-in-depth.rst:2278
 msgid ""
@@ -2671,7 +2671,7 @@ msgid ""
 " element to process and the third ``recurse`` is the recursive call. We "
 "do not care what the accumulator ``ignore`` is since if it mattered we "
 "will have already terminated."
-msgstr ""
+msgstr "在第 7 行，我们为 ``foldk`` 写了一个折叠描述。 这体现了递归的顺序和递归的条件。 ``predicate_step`` 的类型为 ``Option 'A -> 'A -> (Option 'A -> Option 'A) -> Option 'A``。 第一个参数是累加器，第二个 ``x`` 是下一个要处理的元素，第三个递归是递归调用。 我们不在乎累加器 ``ignore`` 的是什么，因为如果重要，我们就已经终止了。"
 
 #: ../scilla-in-depth.rst:2286
 msgid ""
@@ -2680,7 +2680,7 @@ msgid ""
 " element and so on via recursion. ``recurse init`` is in pseudo-code "
 "equal to ``λk. foldk predicate_step init k xs`` where ``xs`` is the tail "
 "of our list of to be processed elements."
-msgstr ""
+msgstr "在第 10 到 12 行检查 ``p x``，如果成立，则返回 ``Some {'A} x``。 在 ``p x`` 不成立的情况下，通过递归从头开始尝试下一个元素，依此类推。 ``recurse init`` 在伪代码中等于 ``λk. foldk predicate_step init k xs``，其中 ``xs`` 是我们要处理的元素列表的尾部。"
 
 #: ../scilla-in-depth.rst:2292
 msgid ""
@@ -2688,19 +2688,19 @@ msgid ""
 "list argument and gives us our final answer. The first argument of "
 "``foldk`` gives us the specific fold we want, for example if you wanted a"
 " left fold you would replace ``predicate_step`` with something else."
-msgstr ""
+msgstr "在最后一行中，我们部分应用了 ``foldk`` 以便它只接受一个列表参数并给出我们的最终答案。 ``foldk`` 的第一个参数为我们提供了我们想要的特定折叠，例如，如果你想要一个左折叠，你可以用其他东西替换 ``predicate_step``。"
 
 #: ../scilla-in-depth.rst:2298
 msgid "Standard Libraries"
-msgstr ""
+msgstr "标准库"
 
 #: ../scilla-in-depth.rst:2299
 msgid "The Scilla standard library is :doc:`documented<stdlib>` separately."
-msgstr ""
+msgstr "Scilla 标准库在 :doc:`Scilla 标准库<stdlib>` 中单独记录。"
 
 #: ../scilla-in-depth.rst:2304
 msgid "User-defined Libraries"
-msgstr ""
+msgstr "用户自定义库"
 
 #: ../scilla-in-depth.rst:2306
 msgid ""
@@ -2709,14 +2709,14 @@ msgid ""
 "only contain pure Scilla code (which is the same restriction that in-"
 "contract library code has). Library files must use the ``.scillib`` file "
 "extension."
-msgstr ""
+msgstr "除了 Scilla 提供的标准库，用户还可以在区块链上部署库代码。 库文件只允许包含纯 Scilla 代码（这与合约库代码的限制相同）。 库文件必须使用 ``.scillib`` 文件扩展名。"
 
 #: ../scilla-in-depth.rst:2311
 msgid ""
 "Below is an example of a user-defined library that defines a single "
 "function ``add_if_equal`` that adds to ``Uint128`` values if they are "
 "equal and returns ``0`` otherwise."
-msgstr ""
+msgstr "下面是一个用户自定义库的示例，它定义了一个函数 ``add_if_equal``，如果它们相等，则添加到 ``Uint128`` 值，否则返回 ``0``。"
 
 #: ../scilla-in-depth.rst:2328
 msgid ""
@@ -2724,13 +2724,13 @@ msgid ""
 "library part of a Scilla contract. A library file contains definitions of"
 " variables and pure library functions, but does not contain an actual "
 "contract definition with parameters, fields, transitions and so on."
-msgstr ""
+msgstr "库文件的结构类似于 Scilla 合约的库部分的结构。 库文件包含变量和纯库函数的定义，但不包含带有参数、字段、transition 等的实际合约定义。"
 
 #: ../scilla-in-depth.rst:2333
 msgid ""
 "Of particular importance is that a library cannot declare fields. "
 "Therefore, all libraries are stateless and can only contain pure code."
-msgstr ""
+msgstr "特别重要的是库不能声明字段。 因此，所有库都是无状态的，只能包含纯代码。"
 
 #: ../scilla-in-depth.rst:2336
 msgid ""
@@ -2741,11 +2741,11 @@ msgid ""
 " names in ``Z`` are not in scope in `X``, but only in ``Y``. Cyclic "
 "dependencies in imports are not allowed and flagged as errors during the "
 "checking phase."
-msgstr ""
+msgstr "与合约导入库的方式类似，库也可以导入其他库（包括用户自定义库）。 导入库中变量的范围仅限于直接导入者。 因此，如果 ``X`` 导入库 ``Y`` 而后者又导入库 ``Z``，则 ``Z`` 中的名称不在 ``X`` 的范围内，而仅在 ``Y`` 中。导入中的循环依赖项是不允许的，并在检查阶段标记为错误。"
 
 #: ../scilla-in-depth.rst:2345
 msgid "Local Development with User-defined Libraries"
-msgstr ""
+msgstr "使用用户自定义库进行本地开发"
 
 #: ../scilla-in-depth.rst:2347
 msgid ""
@@ -2759,7 +2759,7 @@ msgid ""
 "as they are provided to the Scilla executable. Alternatively, the "
 "environment variable ``SCILLA_STDLIB_PATH`` can be set to a list of "
 "library directories."
-msgstr ""
+msgstr "要使用在外部（用户定义）库模块中声明的变量和函数，Scilla 可执行文件的命令行参数必须包含 ``-libdir`` 选项，以及作为参数的目录列表。 如果 Scilla 文件导入库 ``ALib``，则 Scilla 可执行文件将在提供的目录中搜索名为 ``ALib.scillib`` 的库文件。 如果多个目录包含具有正确名称的文件，则这些目录的优先级与它们提供给 Scilla 可执行文件的顺序相同。 或者，可以将环境变量 ``SCILLA_STDLIB_PATH`` 设置为库目录列表。"
 
 #: ../scilla-in-depth.rst:2355
 msgid ""
@@ -2768,18 +2768,18 @@ msgid ""
 "``scilla-runner`` takes a ``blockhain.json`` as argument (the way it does"
 " for :ref:`Contract Creation <calling-interface>`) to be command line "
 "argument compatible with contract creation."
-msgstr ""
+msgstr "``scilla-checker`` 以与合约模块相同的方式检查库模块。 同样， ``scilla-runner`` 可以部署库。 请注意， ``scilla-runner`` 将 ``blockhain.json`` 作为参数（它是 :ref:`合约创建 <calling-interface>` 所使用的方式）作为与合约创建兼容的命令行参数。"
 
 #: ../scilla-in-depth.rst:2361
 msgid "User-defined Libraries on the Blockchain"
-msgstr ""
+msgstr "区块链上的用户自定义库"
 
 #: ../scilla-in-depth.rst:2363
 msgid ""
 "While the Zilliqa blockchain is designed to provide the standard Scilla "
 "libraries to an executing contract, it must be provided with extra "
 "information to support user-defined libraries."
-msgstr ""
+msgstr "虽然 Zilliqa 区块链旨在为执行合约提供标准 Scilla 库，但必须为其提供额外信息以支持用户自定义库。"
 
 #: ../scilla-in-depth.rst:2367
 msgid ""
@@ -2789,17 +2789,17 @@ msgid ""
 "named ``_extlibs``, of Scilla type ``List (Pair String ByStr20)``. Each "
 "entry in the list maps an imported library's name to its address in the "
 "blockchain."
-msgstr ""
+msgstr "库的 ``init.json`` 必须包含一个名为 ``_library`` 的 ``Bool`` 条目，设置为 ``True``。 此外，导入用户自定义库的合约或库必须在其 ``init.json`` 中包含一个名为 ``_extlibs`` 的条目，属于 Scilla 类型 ``List (Pair String ByStr20)``。 列表中的每个条目都将导入的库名称映射到其在区块链中的地址。"
 
 #: ../scilla-in-depth.rst:2373
 msgid ""
 "Continuing the previous example, a contract or library that imports "
 "``Examplelib`` should have the following entry in its ``init.json``:"
-msgstr ""
+msgstr "继续上一个示例，导入 ``Examplelib`` 的合约或库应在其 ``init.json`` 中包含以下条目："
 
 #: ../scilla-in-depth.rst:2400
 msgid "Namespaces"
-msgstr ""
+msgstr "命名空间"
 
 #: ../scilla-in-depth.rst:2401
 msgid ""
@@ -2808,7 +2808,7 @@ msgid ""
 "``Bar``, use the statement ``import Foo as Bar``. Accessing a variable "
 "``v`` in Foo must now be done using the qualified name ``Bar.v``. This is"
 " useful when importing multiple libraries that define the same name."
-msgstr ""
+msgstr "导入语句可用于为导入的名称定义单独的命名空间。 要将名称从库 ``Foo`` 推送到命名空间 ``Bar``，请使用语句 ``import Foo as Bar``。 现在必须使用限定名称 ``Bar.v`` 来访问 ``Foo`` 中的变量 ``v``。 这在导入多个定义相同名称的库时很有用。"
 
 #: ../scilla-in-depth.rst:2406
 msgid ""
@@ -2817,71 +2817,71 @@ msgid ""
 "at most one of the libraries may reside in the default (unqualified) "
 "namespace. All other conflicting libraries must be pushed to separate "
 "namespaces."
-msgstr ""
+msgstr "同一个变量名不能在同一个命名空间中定义多次，因此如果多个导入的库定义了相同的名称，那么最多一个库可以驻留在默认（非限定）命名空间中。 所有其他冲突的库必须推送到单独的命名空间。"
 
 #: ../scilla-in-depth.rst:2411
 msgid ""
 "Extending our previous example, shown below is a contract that imports "
 "``ExampleLib`` in namespace ``Bar``, to use the function "
 "``add_if_equal``."
-msgstr ""
+msgstr "扩展我们之前的示例，如下所示是一个为了使用函数 ``add_if_equal``而在命名空间 ``Bar`` 中导入 ``ExampleLib`` 的合约。"
 
 #: ../scilla-in-depth.rst:2430
 msgid "Scilla versions"
-msgstr ""
+msgstr "Scilla 版本"
 
 #: ../scilla-in-depth.rst:2434
 msgid "Major and Minor versions"
-msgstr ""
+msgstr "主要和次要版本"
 
 #: ../scilla-in-depth.rst:2436
 msgid ""
 "Scilla releases have a major version, minor version and a patch number, "
 "denoted as ``X.Y.Z`` where ``X`` is the major version, ``Y`` is the minor"
 " version, and ``Z`` the patch number."
-msgstr ""
+msgstr "Scilla 版本有一个主要版本、次要版本和补丁号，表示为 ``X.Y.Z``，其中 ``X`` 是主要版本，``Y`` 是次要版本，``Z`` 是补丁号。"
 
 #: ../scilla-in-depth.rst:2440
 msgid ""
 "Patches are usually bug fixes that do not impact the behaviour of "
 "existing contracts. Patches are backward compatible."
-msgstr ""
+msgstr "补丁通常是不影响现有合约行为的错误修复。 补丁向后兼容。"
 
 #: ../scilla-in-depth.rst:2443
 msgid ""
 "Minor versions typically include performance improvements and feature "
 "additions that do not affect the behaviour of existing contracts. Minor "
 "versions are backward compatible until the latest major version."
-msgstr ""
+msgstr "次要版本通常包括不影响现有合约行为的性能改进和功能添加。 次要版本向后兼容，直到最新的主要版本。"
 
 #: ../scilla-in-depth.rst:2448
 msgid ""
 "Major versions are not backward compatible. It is expected that miners "
 "have access to implementations of each major version of Scilla for "
 "running contracts set to that major version."
-msgstr ""
+msgstr "主要版本不向后兼容。 我们希望矿工可以访问 Scilla 的每个主要版本的实现，以运行设置为该主要版本的合约。"
 
 #: ../scilla-in-depth.rst:2452
 msgid ""
 "Within a major version, miners are advised to use the latest minor "
 "revision."
-msgstr ""
+msgstr "在主要版本中，建议矿工使用最新的小版本。"
 
 #: ../scilla-in-depth.rst:2455
 msgid ""
 "The command ``scilla-runner -version`` will print major, minor and patch "
 "versions of the interpreter being invoked."
-msgstr ""
+msgstr "命令 ``scilla-runner -version`` 将打印被调用的解释器的主要、次要和补丁版本。"
 
 #: ../scilla-in-depth.rst:2460
 msgid "Contract Syntax"
-msgstr ""
+msgstr "合约语法"
 
 #: ../scilla-in-depth.rst:2462
 msgid ""
 "Every Scilla contract must begin with a major version declaration. The "
 "syntax is shown below:"
-msgstr ""
+msgstr "每个 Scilla 合约都必须以主要版本声明开始。 语法如下所示："
 
 #: ../scilla-in-depth.rst:2490
 msgid ""
@@ -2889,11 +2889,11 @@ msgid ""
 "field ``scilla_version : X.Y.Z``, to be used by the blockchain code to "
 "keep track of the version of the contract. Similarly, ``scilla-checker`` "
 "also reports the version of the contract on a successful check."
-msgstr ""
+msgstr "部署合约时，解释器的输出包含字段 ``scilla_version : X.Y.Z``，区块链代码将使用该字段来跟踪合约的版本。 同样， ``scilla-checker`` 也会在检查成功时报告合约的版本。"
 
 #: ../scilla-in-depth.rst:2497
 msgid "The ``init.json`` file"
-msgstr ""
+msgstr "``init.json`` 文件"
 
 #: ../scilla-in-depth.rst:2499
 msgid ""
@@ -2902,21 +2902,21 @@ msgid ""
 "version when the contract is deployed and when the contract's transitions"
 " are invoked. This eases the process for the blockchain code to decide "
 "which interpreter to invoke."
-msgstr ""
+msgstr "除了合约源代码中指定的版本外，还要求合约的 ``init.json`` 在部署合约和调用合约 transition 时指定相同的版本。 这简化了区块链代码决定调用哪个解释器的过程。"
 
 #: ../scilla-in-depth.rst:2505
 msgid ""
 "A mismatch in the versions specified in ``init.json`` and the source code"
 " will lead to a gas-charged error by the interpreter."
-msgstr ""
+msgstr "``init.json`` 和源代码中指定的版本不匹配将导致解释器产生 gas-charged 错误。"
 
 #: ../scilla-in-depth.rst:2508
 msgid "An example ``init.json``:"
-msgstr ""
+msgstr "``init.json`` 示例："
 
 #: ../scilla-in-depth.rst:2527
 msgid "Chain Calls"
-msgstr ""
+msgstr "链式调用"
 
 #: ../scilla-in-depth.rst:2530
 msgid ""
@@ -2926,13 +2926,13 @@ msgid ""
 " other contracts. The resulting collection of messages, fund transfers, "
 "transition invocations, and contract state changes are referred to as a "
 "*transaction*."
-msgstr ""
+msgstr "当用户通过发送以合约地址作为接收者的消息来调用合约的 transition 时，那么该 transition  可能会继续发送一条或多条消息，也可能会调用其他合约的其他 transition。 由此产生的消息、资金转移、transition 调用和合约状态更改的集合称为 *交易*。"
 
 #: ../scilla-in-depth.rst:2537
 msgid ""
 "A transition that sends a message invoking another transition (typically "
 "on another contract) is referred to as a *chain call*."
-msgstr ""
+msgstr "发送消息调用另一个 transition （通常在另一个合约上）的 transition 称为 *链式调用*。"
 
 #: ../scilla-in-depth.rst:2540
 msgid ""
@@ -2940,7 +2940,7 @@ msgid ""
 " is maintained. Initially, the message queue contains only the single "
 "message sent by the original user, but additional messages may be added "
 "to the queue when a transition performs a chain call."
-msgstr ""
+msgstr "在交易期间，维护未处理消息的 LIFO 队列（即堆栈）。 最初，消息队列仅包含原始用户发送的单个消息，但当 transition 执行链式调用时，可能会向队列中添加其他消息。"
 
 #: ../scilla-in-depth.rst:2545
 msgid ""
@@ -2949,20 +2949,20 @@ msgid ""
 "queue for processing. If there are no messages left to process, then the "
 "transaction finishes, and all state changes and fund transfers are "
 "committed to the blockchain."
-msgstr ""
+msgstr "当 transition 完成时，它的传出消息被添加到消息队列中。 然后从队列中删除队列中的第一条消息以进行处理。 如果没有消息要处理，则交易完成，所有状态更改和资金转移都提交到区块链。"
 
 #: ../scilla-in-depth.rst:2551
 msgid ""
 "When a transition sends multiple messages, the messages are added to the "
 "queue in the following order:"
-msgstr ""
+msgstr "当 transition 发送多条消息时，消息按以下顺序添加到队列中："
 
 #: ../scilla-in-depth.rst:2554
 msgid ""
 "If multiple ``send`` statements are executed, then the messages of the "
 "last ``send`` are added first. This means that the messages of the first "
 "``send`` get processed first."
-msgstr ""
+msgstr "如果执行多条 ``send`` 语句，则最后一次 ``send`` 的消息最先添加。 这意味着首先处理第一次 ``send`` 的消息。"
 
 #: ../scilla-in-depth.rst:2558
 msgid ""
@@ -2971,7 +2971,7 @@ msgid ""
 "the tail of the list are added. This means that the last message in the "
 "list (the one that that was added to the list first) gets processed "
 "first."
-msgstr ""
+msgstr "如果给 ``send`` 语句提供了一个包含多条消息的列表，则在添加列表尾部的消息之前，将列表的头部添加到队列中。 这意味着列表中的最后一条消息（首先添加到列表中的消息）首先得到处理。"
 
 #: ../scilla-in-depth.rst:2564
 msgid ""
@@ -2981,20 +2981,20 @@ msgid ""
 "rolled back, and all transferred funds returned to their respective "
 "senders. However, gas is still charged for the transcaction up until the "
 "point of the failure."
-msgstr ""
+msgstr "交易执行期间的任何运行时故障都会导致整个交易中止，不再执行进一步的语句，不再处理进一步的消息，回滚所有状态更改，并将所有转移的资金返还给各自的发送者。 然而，直到故障点为止，仍然会为交易收取 gas 费用。"
 
 #: ../scilla-in-depth.rst:2571
 msgid ""
 "The total number of messages that can be sent in a single transaction is "
 "currently set at 10. The number is subject to revision in the future."
-msgstr ""
+msgstr "单笔交易可以发送的消息总数目前设置为 10。该数字将来可能会进行修订。"
 
 #: ../scilla-in-depth.rst:2575
 msgid ""
 "Contracts of different Scilla versions may invoke transitions on each "
 "other. The semantics of message passing between contracts is guaranteed "
 "to be backward compatible between major versions."
-msgstr ""
+msgstr "不同 Scilla 版本的合约可能会相互调用 transition。 合约之间消息传递的语义保证在主要版本之间向后兼容。"
 
 #: ../scilla-in-depth.rst:2581
 msgid "Accounting"
@@ -3006,7 +3006,7 @@ msgid ""
 "semantics`. For a transfer to take place the funds must explicitly be "
 "accepted by the recipient by executing an ``accept`` statement - it is "
 "not sufficient that the sender executes a ``send`` statement."
-msgstr ""
+msgstr "对于原生 ZIL 资金的转移，Scilla 遵循 `接受语义`。 要进行转账，接收方必须通过执行 ``accept`` 语句明确接受资金——仅发送方执行 ``send`` 语句是不够的。"
 
 #: ../scilla-in-depth.rst:2588
 msgid ""
@@ -3015,7 +3015,7 @@ msgid ""
 "Simultaneously, the ``_amount`` is deducted from the sender's balance "
 "(the ``_balance`` field if the sender is a contract, or the user account "
 "balance if the sender is a user)."
-msgstr ""
+msgstr "当合约执行 ``accept`` 语句时，传入消息的 ``_amount`` 被添加到合约的 ``_balance`` 字段中。 同时，``_amount`` 从发送方的余额中扣除（如果发送方是合约，则是 ``_balance`` 字段，或者如果发送方是用户，则从用户账户余额中扣除）。"
 
 #: ../scilla-in-depth.rst:2594
 msgid ""
@@ -3023,14 +3023,14 @@ msgid ""
 " values of the outgoing messages are `not` deducted from the ``_balance``"
 " field, because the outgoing funds have not yet been accepted by the "
 "recipients."
-msgstr ""
+msgstr "相反，当合约执行 ``send`` 语句时，外发消息的 ``_amount`` 值不会从 ``_balance`` 字段中扣除，因为外发资金尚未被接收者接受。"
 
 #: ../scilla-in-depth.rst:2601
 msgid ""
 "A user account (i.e., an address that does not hold a contract) "
 "implicitly accepts all incoming funds, but does not do so until the "
 "message carrying the funds is processed."
-msgstr ""
+msgstr "用户帐户（即不持有合约的地址）隐式接受所有传入资金，但在携带资金的消息被处理之前不会这样做。"
 
 #: ../scilla-in-depth.rst:2605
 msgid ""
@@ -3041,7 +3041,7 @@ msgid ""
 "messages causes a series of chain calls which results in the current "
 "contract receiving (and accepting) additional funds to cover the "
 "outgoings of the yet-to-be-processed messages."
-msgstr ""
+msgstr "使用接受语义进行转账意味着转换有可能发送比其合约当前的 ``_balance`` 多的资金。 只有在一个或多个接收者不接受资金，或者如果多个传出消息中的一个（它会导致当前合约接收（和接受）额外资金来支付尚未处理的消息的传出）导致一系列链式调用时，才必须注意要这样做。"
 
 #: ../scilla-in-depth.rst:2613
 msgid ""
@@ -3049,5 +3049,5 @@ msgid ""
 "are available in the sender's balance, then a run-time error occurs, and "
 "the entire transaction is aborted. In other words, no account balance may"
 " drop below 0 at any point during a transaction."
-msgstr ""
+msgstr "如果在交易过程中的任何时候，接收者接受的资金多于发送者余额中的可用资金，则会发生运行时错误，整个交易将被中止。 换句话说，在交易期间的任何时候，账户余额都不会低于 0。"
 
