@@ -26,36 +26,36 @@ msgid ""
 "The Scilla checker (``scilla-checker``) works as a compiler frontend, "
 "parsing the contract and performing a number of static checks including "
 "typechecking."
-msgstr ""
+msgstr "Scilla 检查器 (``scilla-checker``) 用作编译器前端，解析合约并执行静态检查，包括类型检查。"
 
 #: ../scilla-checker.rst:11
 msgid "Phases of the Scilla checker"
-msgstr ""
+msgstr "Scilla 检查器的阶段"
 
 #: ../scilla-checker.rst:14
 msgid ""
 "The Scilla checker operates in distinct phases, each of which can perform"
 " checks (and potentially reject contracts that do not pass the checks) "
 "and add annotations to each piece of syntax:"
-msgstr ""
+msgstr "Scilla 检查器在不同的阶段运行，每个阶段都可以执行检查（并可能拒绝未通过检查的合约）并为每段语法添加注释："
 
 #: ../scilla-checker.rst:18
 msgid ""
 "`Lexing and parsing` reads the contract code and builds an abstract "
 "syntax tree (AST). Each node in the tree is annotated with a location "
 "from the source file in the form of line and column numbers."
-msgstr ""
+msgstr "`词法分析` 读取合约代码并构建抽象语法树（AST）。 树中的每个节点都以行号和列号的形式使用源文件中的位置进行注释。"
 
 #: ../scilla-checker.rst:23
 msgid "`ADT checking` checks various constraints on user-defined ADTs."
-msgstr ""
+msgstr "`ADT 检查` 检查用户定义的 ADT 上的各种约束。"
 
 #: ../scilla-checker.rst:25
 msgid ""
 "`Typechecking` checks that values in the contract are used in a way that "
 "is consistent with the type system. The typechecker also annotates each "
 "expression with its type."
-msgstr ""
+msgstr "`类型检查` 检查合约中的值是否以与类型系统一致的方式使用。 类型检查器还用它的类型注释每个表达式。"
 
 #: ../scilla-checker.rst:29
 msgid ""
@@ -63,7 +63,7 @@ msgid ""
 "exhaustive (so that execution will not fail due to no match being found),"
 " and that each pattern can be reached (so that the programmer does not "
 "inadvertently introduce a pattern branch that can never be reached)."
-msgstr ""
+msgstr "`模式检查` 检查合约中的每个模式匹配是否是详尽的（这样不会因为找不到匹配而导致执行失败），并且每个模式都可以到达（这样开发者不会无意中引入一个永远无法到达的模式分支）。"
 
 #: ../scilla-checker.rst:35
 msgid ""
@@ -71,7 +71,7 @@ msgid ""
 "necessary fields. For events, if a contract emits two events with the "
 "same name (``_eventname``), then their structure (the fields and their "
 "types) must also be the same."
-msgstr ""
+msgstr "`Event-info` 检查合约中的消息和事件是否包含所有必需的字段。 对于事件，如果合约发出两个具有相同名称（``_eventname``）的事件，则它们的结构（字段和类型）也必须相同。"
 
 #: ../scilla-checker.rst:40
 msgid ""
@@ -79,7 +79,7 @@ msgid ""
 " attempts to determine which fields are used to represent (native) "
 "blockchain money. No checks are performed, but expressions, variables, "
 "fields and ADTs are annotated with tags indicating their usage."
-msgstr ""
+msgstr "`现金流分析` 分析变量、字段和 ADT 的使用，并尝试确定哪些字段用于表示（原生）区块链货币。 不执行任何检查，但表达式、变量、字段和 ADT 都使用标记进行注释，表明它们的用法。"
 
 #: ../scilla-checker.rst:46
 msgid ""
@@ -95,17 +95,17 @@ msgid ""
 "performed together with the cashflow analysis. For instance, fungible "
 "token contracts don't generally need ``accept`` statements, hence this "
 "check is not mandatory."
-msgstr ""
+msgstr "`付款承兑检查` 检查付款承兑合约。 如果合约没有接受付款的 transition，那么它会发出警告。 此外，如果 transition 具有任何包含多个接受语句的代码路径的可能，则检查会引发警告。 此检查不会引发错误，因为不可能通过静态分析在所有情况下都确定是否会到达多个接受语句（如果存在），原因是这可能取决于仅在运行时已知的条件。 Scilla 检查器仅在命令行上指定 ``-cf`` 标志时才执行此检查，即它与现金流分析一起执行。 例如，可互换代币合约通常不需要接受语句，因此此检查不是强制性的。"
 
 #: ../scilla-checker.rst:58
 msgid ""
 "`Sanity-checking` performs a number of minor checks, e.g., that all "
 "parameters to a transition or a procedure have distinct names."
-msgstr ""
+msgstr "`健全性检查` 执行多种次要检查，例如，transition 或procedure 的所有参数都具有不同的名称。"
 
 #: ../scilla-checker.rst:63
 msgid "Annotations"
-msgstr ""
+msgstr "注释"
 
 #: ../scilla-checker.rst:66
 msgid ""
@@ -113,7 +113,7 @@ msgid ""
 "the abstract syntax tree. The type of an annotation is specified through "
 "instantiations of the module signature ``Rep``. ``Rep`` specifies the "
 "type ``rep``, which is the type of the annotation:"
-msgstr ""
+msgstr "Scilla 检查器中的每个阶段都可以为抽象语法树中的每个节点添加注释。 注解的类型通过模块签名 ``Rep`` 的实例化来指定。 ``Rep`` 指定类型 ``rep``，即注释的类型："
 
 #: ../scilla-checker.rst:79
 msgid ""
@@ -122,7 +122,7 @@ msgid ""
 "annotations of previous phases. Some of these functions are declared in "
 "the ``Rep`` signature, because they involve creating new abstract syntax "
 "nodes, which must be created with annotations from the parser onward:"
-msgstr ""
+msgstr "除了注释类型之外，``Rep`` 的实例化还可以声明辅助函数，允许后续阶段访问先前阶段的注释。 其中一些函数在 ``Rep`` 签名中声明，因为它们涉及创建新的抽象语法节点，必须从解析器开始使用注释创建这些节点："
 
 #: ../scilla-checker.rst:103
 msgid ""
@@ -130,14 +130,14 @@ msgid ""
 "annotation if annotation is one of the phases that has been executed. If "
 "the typechecker has not yet been executed, the functions simply create an"
 " (untyped) identifier with a dummy location."
-msgstr ""
+msgstr "如果注释是已执行的阶段之一，则 ``mk_id_<type>`` 使用适当的类型注释创建标识符。 如果类型检查器还没有被执行，函数就简单地创建一个（无类型的）标识符和一个虚拟位置。"
 
 #: ../scilla-checker.rst:108
 msgid ""
 "``rep_of_sexp`` and ``sexp_of_rep`` are used for pretty-printing. They "
 "are automatically generated if rep is defined with the ``[@@deriving "
 "sexp]`` directive."
-msgstr ""
+msgstr "``rep_of_sexp`` 和 ``sexp_of_rep`` 用于美观打印。 如果 rep 是用 `[@@deriving sexp]`` 指令定义的，那么它们会自动生成。"
 
 #: ../scilla-checker.rst:112
 msgid ""
@@ -145,11 +145,11 @@ msgid ""
 "libraries, so that they do not need to be checked again if they haven't "
 "changed. These will likely be removed in future versions of the Scilla "
 "checker."
-msgstr ""
+msgstr "``parse_rep`` 和 ``get_rep_str`` 用于缓存类型检查的库，因此如果它们没有改变就不需要再次检查它们。 这些可能会在 Scilla 检查器的未来版本中被删除。"
 
 #: ../scilla-checker.rst:117
 msgid "As an example, consider the annotation module ``TypecheckerERep``:"
-msgstr ""
+msgstr "例如，考虑注释模块 ``TypecheckerERep``："
 
 #: ../scilla-checker.rst:144
 msgid ""
@@ -157,36 +157,36 @@ msgid ""
 "previous phase as the parameter ``R``. In the Scilla checker this "
 "previous phase is the parser, but any phase could be added in-between the"
 " two phases by specifying the phase in the top-level runner."
-msgstr ""
+msgstr "函子（参数化结构）将前一阶段的注释作为参数 ``R``。在 Scilla 检查器中，前一阶段是解析器，但可以通过在顶层解释器指定阶段来把任何阶段添加到两个阶段之间。"
 
 #: ../scilla-checker.rst:149
 msgid ""
 "The type ``rep`` specifies that the new annotation is a pair of a type "
 "and the previous annotation."
-msgstr ""
+msgstr "``rep`` 类型指定新注释是类型和前一个注释的一对。"
 
 #: ../scilla-checker.rst:152
 msgid ""
 "The function ``get_loc`` merely serves as a proxy for the ``get_loc`` "
 "function of the previous phase."
-msgstr ""
+msgstr "函数 ``get_loc`` 只是作为上一阶段 ``get_loc`` 函数的代理。"
 
 #: ../scilla-checker.rst:155
 msgid ""
 "The function ``mk_id`` is a helper function for the ``mk_id_<type>`` "
 "functions, which create an identifier with the appropriate type "
 "annotation."
-msgstr ""
+msgstr "函数 ``mk_id`` 是 ``mk_id_<type>`` 函数的辅助函数，它使用适当的类型注释创建标识符。"
 
 #: ../scilla-checker.rst:159
 msgid "The ``mk_rep`` function is a helper function used by the typechecker."
-msgstr ""
+msgstr "``mk_rep`` 函数是类型检查器使用的辅助函数。"
 
 #: ../scilla-checker.rst:161
 msgid ""
 "Prettyprinting does not output the types of AST nodes, so the functions "
 "``parse_rep`` and ``get_rep_str`` ignore the type annotations."
-msgstr ""
+msgstr "美观打印不输出 AST 节点的类型，因此函数 ``parse_rep`` 和 ``get_rep_str`` 忽略类型注释。"
 
 #: ../scilla-checker.rst:165
 msgid ""
@@ -194,11 +194,11 @@ msgid ""
 "for subsequent phases. This function is not mentioned in the ``Rep`` "
 "signature, since it is made available by the typechecker once type "
 "annotations have been added to the AST."
-msgstr ""
+msgstr "最后，函数 ``get_type`` 提供对后续阶段的类型信息的访问。 这个函数在 ``Rep`` 签名中没有提到，因为一旦类型注释被添加到 AST，它就会被类型检查器使用。"
 
 #: ../scilla-checker.rst:172
 msgid "Abstract syntax"
-msgstr ""
+msgstr "抽象语法"
 
 #: ../scilla-checker.rst:175
 msgid ""
@@ -207,34 +207,34 @@ msgid ""
 " output syntax. These two syntax instantiations differ only in the type "
 "of annotations of each syntax node. If the phase produces no additional "
 "annotations, the two instantiations will be identical."
-msgstr ""
+msgstr "``ScillaSyntax`` 函子定义了 AST 节点类型。 每个阶段都会将函子实例化两次，一次用于输入语法，一次用于输出语法。 这两个语法实例的区别仅在于每个语法节点的注释类型。 如果阶段不产生额外的注释，则两个实例化将是相同的。"
 
 #: ../scilla-checker.rst:181
 msgid ""
 "The parameters ``SR`` and ``ER``, both of type ``Rep``, define the "
 "annotations for statements and expressions, respectively."
-msgstr ""
+msgstr "参数 ``SR`` 和 ``ER`` 都是 ``Rep`` 类型，分别定义语句和表达式的注释。"
 
 #: ../scilla-checker.rst:196
 msgid "Initial annotation"
-msgstr ""
+msgstr "初始注释"
 
 #: ../scilla-checker.rst:199
 msgid ""
 "The parser generates the initial annotation, which only contains "
 "information about where the syntax node is located in the source file. "
 "The function ``get_loc`` allows subsequent phases to access the location."
-msgstr ""
+msgstr "解析器生成初始注释，其中仅包含有关语法节点在源文件中的位置的信息。 函数 ``get_loc`` 允许后续阶段访问该位置。"
 
 #: ../scilla-checker.rst:204
 msgid ""
 "The ``ParserRep`` structure is used for annotations both of statements "
 "and expressions."
-msgstr ""
+msgstr "``ParserRep`` 结构用于语句和表达式的注释。"
 
 #: ../scilla-checker.rst:218
 msgid "Typical phase"
-msgstr ""
+msgstr "典型阶段"
 
 #: ../scilla-checker.rst:221
 msgid ""
@@ -243,20 +243,20 @@ msgid ""
 "take the previous annotation type (as a structure implementing the "
 "``Rep`` module type) as a parameter, so that the phase's annotations can "
 "be added to the annotations of the previous phases."
-msgstr ""
+msgstr "产生附加注释的每个阶段都需要提供 ``Rep`` 模块类型的新实现。 实现应该以之前的注释类型（作为实现 ``Rep`` 模块类型的结构体）作为参数，这样阶段的注释就可以添加到之前阶段的注释中。"
 
 #: ../scilla-checker.rst:227
 msgid ""
 "The typechecker adds a type to each expression node in the AST, but "
 "doesn't add anything to statement node annotations. Consequently, the "
 "typechecker only defines an annotation type for expressions."
-msgstr ""
+msgstr "类型检查器向 AST 中的每个表达式节点添加类型，但不会向语句节点注释添加任何内容。 因此，类型检查器只为表达式定义一个注释类型。"
 
 #: ../scilla-checker.rst:231
 msgid ""
 "In addition, the ``Rep`` implementation defines a function ``get_type``, "
 "so that subsequent phases can access the type in the annotation."
-msgstr ""
+msgstr "此外，``Rep`` 实现定义了一个函数 ``get_type``，以便后续阶段可以访问注释中的类型。"
 
 #: ../scilla-checker.rst:247
 msgid ""
@@ -266,24 +266,24 @@ msgid ""
 "type for the previous phase, which serves as input to the typechecker), "
 "and ``ScillaSyntax`` again (creating the abstract syntax type that the "
 "typechecker outputs)."
-msgstr ""
+msgstr "Scilla 类型检查器获取上一阶段的语句和表达式注释，然后实例化 ``TypeCheckerERep``（创建新的注释类型）、``ScillaSyntax``（创建前一阶段的抽象语法类型，作为类型检查器的输入）和 ``ScillaSyntax`` （创建类型检查器输出的抽象语法类型）。"
 
 #: ../scilla-checker.rst:281
 msgid ""
 "Crucially, the typechecker module exposes the annotations and the syntax "
 "type that it generates, so that they can be made available to the next "
 "phase."
-msgstr ""
+msgstr "至关重要的是，类型检查器模块公开了它生成的注释和语法类型，以便它们可用于下一阶段。"
 
 #: ../scilla-checker.rst:285
 msgid ""
 "The typechecker finally instantiates helper functors such as "
 "``TypeUtilities`` and ``ScillaBuiltIns``."
-msgstr ""
+msgstr "类型检查器最终会实例化辅助函子，例如 ``TypeUtilities`` 和 ``ScillaBuiltIns``。"
 
 #: ../scilla-checker.rst:290
 msgid "Cashflow Analysis"
-msgstr ""
+msgstr "现金流分析"
 
 #: ../scilla-checker.rst:293
 msgid ""
@@ -291,7 +291,7 @@ msgid ""
 " fields, and ADT constructor, and attempts to determine which fields and "
 "ADTs are used to represent (native) blockchain money. Each contract field"
 " is annotated with a tag indicating the field's usage."
-msgstr ""
+msgstr "现金流分析阶段分析合约变量、字段和 ADT 构造函数的使用，并尝试确定哪些字段和 ADT 用于表示（原生）区块链货币。 每个合约字段都用一个标签进行注释，指示该字段的用法。"
 
 #: ../scilla-checker.rst:299
 msgid ""
@@ -299,35 +299,35 @@ msgid ""
 "contract's fields, variables, and ADT constructors. The tags are not "
 "guaranteed to be accurate, but are intended as a tool to help the "
 "contract developer use her fields in the intended manner."
-msgstr ""
+msgstr "结果标签是基于合约字段、变量和 ADT 构造函数的使用的近似值。 标签不保证准确，但旨在作为帮助合约开发人员以预期方式使用其字段的工具。"
 
 #: ../scilla-checker.rst:306
 msgid "Running the analysis"
-msgstr ""
+msgstr "运行分析"
 
 #: ../scilla-checker.rst:308
 msgid ""
 "The cashflow analysis is activated by running ``scilla-checker`` with the"
 " option ``-cf``. The analysis is not run by default, since it is only "
 "intended to be used during contract development."
-msgstr ""
+msgstr "通过使用选项 ``-cf`` 运行 ``scilla-checker`` 来激活现金流分析。 默认情况下不运行分析，因为它仅打算在合约开发期间使用。"
 
 #: ../scilla-checker.rst:312
 msgid ""
 "A contract is never rejected due to the result of the cashflow analysis. "
 "It is up to the contract developer to determine whether the cashflow tags"
 " are consistent with the intended use of each contract field."
-msgstr ""
+msgstr "合约永远不会因为现金流分析的结果而被拒绝。 由合约开发者决定现金流标签是否与每个合约字段的预期用途一致。"
 
 #: ../scilla-checker.rst:319
 msgid "The Analysis in Detail"
-msgstr ""
+msgstr "详细分析"
 
 #: ../scilla-checker.rst:321
 msgid ""
 "The analysis works by continually analysing the transitions and "
 "procedures of the contract until no further information is gathered."
-msgstr ""
+msgstr "分析的工作方式是不断分析合约的 transition 和 procedure，直到没有收集到进一步的信息。"
 
 #: ../scilla-checker.rst:324
 msgid ""
@@ -335,7 +335,7 @@ msgid ""
 "the contract's transition, the outgoing messages and events that may be "
 "sent by the contract, the contract's account balance, and any field being"
 " read from the blockchain such as the current blocknumber."
-msgstr ""
+msgstr "分析的起点是调用合约 transition 的传入消息、合约可能发送的传出消息和事件、合约的账户余额以及从区块链读取的任何字段，例如当前区块高度。"
 
 #: ../scilla-checker.rst:330
 msgid ""
@@ -346,7 +346,7 @@ msgid ""
 " representing money. Similarly, a local variable used to initialise the "
 "``_amount`` field of an outgoing message is also tagged as representing "
 "money."
-msgstr ""
+msgstr "传入和传出消息都包含一个字段 ``_amount``，其值是消息在帐户之间转移的金额。 每当传入消息的 ``_amount`` 字段的值加载到局部变量中时，该局部变量就会被标记为代表资金。 类似地，用于初始化外发消息的 ``_amount`` 字段的局部变量也被标记为表示资金。"
 
 #: ../scilla-checker.rst:338
 msgid ""
@@ -356,7 +356,7 @@ msgid ""
 "not represent money, so any variable used to initialise those fields or "
 "to hold the value read from one of those fields is tagged as not "
 "representing money."
-msgstr ""
+msgstr "相反，已知消息字段 ``_sender``、``_origin``、``_recipient`` 和 ``_tag``、事件字段 ``_eventname``、异常字段 ``_exception`` 和区块链字段 ``BLOCKNUMBER`` 不代表货币，因此任何用于初始化这些字段或从这些字段之一读取保存值的变量都被标记为不代表资金。"
 
 #: ../scilla-checker.rst:345
 msgid ""
@@ -365,20 +365,20 @@ msgid ""
 "are added to each other, the result is also deemed to represent money. "
 "Conversely, if two variables tagged as non-money are added, the result is"
 " deemed to represent non-money."
-msgstr ""
+msgstr "一旦标记了某些变量，它们的用法就意味着如何标记其他变量。 例如，如果两个标记为货币的变量相加，则结果也被视为代表货币。 相反，如果两个标记为非货币的变量相加，则结果被视为代表非货币。"
 
 #: ../scilla-checker.rst:351
 msgid ""
 "Tagging of contract fields happens when a local variable is used when "
 "loading or storing a contract field. In these cases, the field is deemed "
 "to have the same tag as the local variable."
-msgstr ""
+msgstr "当加载或存储合约字段而使用局部变量时，会发生合约字段的标记。 在这些情况下，该字段被认为具有与局部变量相同的标签。"
 
 #: ../scilla-checker.rst:355
 msgid ""
 "Tagging of custom ADTs is done when they are used for constructing "
 "values, and when they are used in pattern-matching."
-msgstr ""
+msgstr "自定义 ADT 的标记是在它们用于构造值时以及在模式匹配中使用时完成的。"
 
 #: ../scilla-checker.rst:358
 msgid ""
@@ -387,30 +387,30 @@ msgid ""
 " procedure while keeping the tags of the contract fields and ADTs. The "
 "analysis continues until all the transitions and procedures have been "
 "analysed without any existing tags having changed."
-msgstr ""
+msgstr "一旦 transition 或 procedure 被分析时，局部变量和它们的标签就会被保存并且分析继续到下一个 transition 或 procedure，同时保留合约字段和 ADT 的标签。 分析一直持续到所有 transition 和 procedure 都已分析完毕，同时没有任何现有标签已经更改。"
 
 #: ../scilla-checker.rst:367
 msgid "Tags"
-msgstr ""
+msgstr "标签"
 
 #: ../scilla-checker.rst:369
 msgid "The analysis uses the following set of tags:"
-msgstr ""
+msgstr "分析使用以下标签集："
 
 #: ../scilla-checker.rst:371
 msgid ""
 "`No information`: No information has been gathered about the variable. "
 "This sometimes (but not always) indicates that the variable is not being "
 "used, indicating a potential bug."
-msgstr ""
+msgstr "`No information`：未收集到有关该变量的信息。 这有时（但并非总是）表明该变量未被使用，同时还表明它存在潜在错误。"
 
 #: ../scilla-checker.rst:375
 msgid "`Money`: The variable represents money."
-msgstr ""
+msgstr "`Money`：变量代表货币。"
 
 #: ../scilla-checker.rst:377
 msgid "`Not money`: The variable represents something other than money."
-msgstr ""
+msgstr "`Not money`：变量代表货币以外的东西。"
 
 #: ../scilla-checker.rst:379
 msgid ""
@@ -420,7 +420,7 @@ msgid ""
 " result is tagged with `t`. Keys of maps are assumed to always be `Not "
 "money`. Using a variable as a function parameter does not give rise to a "
 "tag."
-msgstr ""
+msgstr "`Map t`（其中 `t` 是一个标签）：该变量表示一个映射或一个函数，其共同域被标记为 `t`。 因此，当在映射中执行查找时，或对存储在映射中的值应用函数时，结果用 `t` 标记。 映射的键总是被假定为 `Not money`。 使用变量作为函数参数不会产生标签。"
 
 #: ../scilla-checker.rst:385
 msgid ""
@@ -428,28 +428,28 @@ msgid ""
 "variable represents a value of an ADT, such as `List` or `Option`. The "
 "tags `t1 ... tn` correspond to the tags of each type parameter of the "
 "ADT. (See the simple example_ further down.)"
-msgstr ""
+msgstr "`T t1 ... tn`（其中 `T` 是 ADT，`t1 ... tn` 是标签）：变量表示 ADT 的值，例如 `List` 或 `Option`。 标签 `t1 ... tn` 对应于 ADT 的每个类型参数的标签。 （请参阅下面的简单 example_。）"
 
 #: ../scilla-checker.rst:390
 msgid ""
 "`Inconsistent`: The variable has been used to represent both money and "
 "not money. Inconsistent usage indicates a bug."
-msgstr ""
+msgstr "`Inconsistent`：该变量已被用于表示货币和非货币。 不一致的用法表示存在错误。"
 
 #: ../scilla-checker.rst:393
 msgid ""
 "Library and local functions are only partially supported, since no "
 "attempt is made to connect the tags of parameters to the tag of the "
 "result. Built-in functions are fully supported, however."
-msgstr ""
+msgstr "仅部分支持库函数和本地函数，因为没有尝试将参数标签连接到结果标签。 但是，完全支持内置函数。"
 
 #: ../scilla-checker.rst:400
 msgid "A simple example"
-msgstr ""
+msgstr "一个简单的例子"
 
 #: ../scilla-checker.rst:401
 msgid "Consider the following code snippet:"
-msgstr ""
+msgstr "思考以下代码片段："
 
 #: ../scilla-checker.rst:412
 msgid ""
@@ -459,7 +459,7 @@ msgid ""
 "same tag as ``x``. ``xs`` therefore gets tagged with `List Money`, "
 "corresponding to the fact that the ``List 'A`` type has one type "
 "parameter."
-msgstr ""
+msgstr "``x`` 用于初始化消息的 ``_amount`` 字段，因此 ``x`` 被标记为 `Money`。 由于 ``xs`` 是列表的尾部，其中 ``x`` 是第一个元素，因此 ``xs`` 必须是与 ``x`` 具有相同标签的元素列表。由于存在 ``List 'A`` 类型具有一个类型参数的事实，因此 ``xs`` 被标记为 `List Money`。"
 
 #: ../scilla-checker.rst:419
 msgid ""
@@ -471,34 +471,34 @@ msgid ""
 "the first element ``x`` is tagged with `Money`, and the tail of the list "
 "is tagged with `List Money`. Consequently, ``Cons x xs`` corresponds to "
 "`List Money`."
-msgstr ""
+msgstr "类似地，``p`` 与模式 ``Nil`` 和 ``Cons x xs`` 匹配。 ``Nil`` 是一个列表，但由于列表是空的，我们对列表的内容一无所知，因此 ``Nil`` 模式对应于标签 `List (No information)`。 ``Cons x xs`` 也是一个列表，但这次我们确实知道了一些关于内容的信息，即第一个元素 ``x`` 用 `Money` 标记，列表的尾部用 `List Money` 标记。 因此，``Cons x xs`` 对应于 `List Money`。"
 
 #: ../scilla-checker.rst:428
 msgid ""
 "Unifying the two tags `List (No information)` and `List Money` gives the "
 "tag `List Money`, so ``p`` gets tagged with `List Money`."
-msgstr ""
+msgstr "统一两个标签 `List (No information)` 和 `List Money` 从而给出了 `List Money` 标签，所以 ``p`` 被标记为 `List Money`。"
 
 #: ../scilla-checker.rst:433
 msgid "ADT constructor tagging"
-msgstr ""
+msgstr "ADT 构造函数标记"
 
 #: ../scilla-checker.rst:435
 msgid ""
 "In addition to tagging fields and local variables, the cashflow analyser "
 "also tags constructors of custom ADTs."
-msgstr ""
+msgstr "除了标记字段和局部变量，现金流分析器还标记自定义 ADT 的构造函数。"
 
 #: ../scilla-checker.rst:438
 msgid "To see how this works, consider the following custom ADT:"
-msgstr ""
+msgstr "要了解其工作原理，请思考以下自定义 ADT："
 
 #: ../scilla-checker.rst:446
 msgid ""
 "A user transaction is a transaction where the recipient is a user "
 "account, so the ``UserTransaction`` constructor takes two arguments: An "
 "address of the recipient user account, and the amount to transfer."
-msgstr ""
+msgstr "用户交易是接收方为用户账户的交易，因此 ``UserTransaction`` 构造函数采用两个参数：接收方用户账户的地址和要转账的金额。"
 
 #: ../scilla-checker.rst:450
 msgid ""
@@ -506,7 +506,7 @@ msgid ""
 "contract, so the ``ContractTransaction`` takes three arguments: An "
 "address of the recipient contract, the name of the transition to invoke "
 "on the recipient contract, and the amount to transfer."
-msgstr ""
+msgstr "合约交易是接收方是另一个合约的交易，因此 ``ContractTransaction`` 接受三个参数：接收方合约的地址、在接收方合约上调用的 transition 名称以及要转移的金额。"
 
 #: ../scilla-checker.rst:455
 msgid ""
@@ -516,18 +516,18 @@ msgid ""
 "therefore attempts to tag the arguments of the two constructors with "
 "appropriate tags, using the principles described in the previous "
 "sections."
-msgstr ""
+msgstr "就现金流而言，很明显，两个构造函数的最后一个参数都用于表示货币，而所有其他参数都用于表示非货币。 因此，现金流分析器尝试使用前几节中描述的原则，用适当的标签来标记两个构造函数的参数。"
 
 #: ../scilla-checker.rst:464
 msgid "A more elaborate example"
-msgstr ""
+msgstr "一个更详细的例子"
 
 #: ../scilla-checker.rst:466
 msgid ""
 "As an example, consider a crowdfunding contract written in Scilla. Such a"
 " contract may declare the following immutable parameters and mutable "
 "fields:"
-msgstr ""
+msgstr "例如，思考一下用 Scilla 编写的众筹合约。 这样的合约可以声明以下不可变参数和可变字段："
 
 #: ../scilla-checker.rst:482
 msgid ""
@@ -535,14 +535,14 @@ msgid ""
 "the contract. The ``goal`` parameter is the amount of money the owner is "
 "trying to raise, and the ``max_block`` parameter represents the deadline "
 "by which the goal is to be met."
-msgstr ""
+msgstr "``owner`` 参数表示部署合约的人的地址。 ``goal`` 参数是所有者试图筹集的金额，``max_block`` 参数表示达到目标的截止日期。"
 
 #: ../scilla-checker.rst:487
 msgid ""
 "The field ``backers`` is a map from the addresses of contributors to the "
 "amount of money contributed, and the field ``funded`` represents whether "
 "the goal has been reached."
-msgstr ""
+msgstr "字段 ``backers`` 是捐赠者地址与捐赠金额的映射，``funded`` 字段表示目标是否已经达到。"
 
 #: ../scilla-checker.rst:491
 msgid ""
@@ -550,14 +550,14 @@ msgid ""
 "be tagged as `Money` by the analysis. Similarly, the ``backers`` field is"
 " a map with a co-domain representing `Money`, so ``backers`` should be "
 "tagged with `Map Money`."
-msgstr ""
+msgstr "由于字段 ``goal`` 代表金额，因此分析应将目标标记为 `Money`。 类似地，``backers`` 字段是一个带有代表 `Money` 的共同域的映射，因此应使用 `Map Money` 标记捐赠者。"
 
 #: ../scilla-checker.rst:496
 msgid ""
 "Conversely, both ``owner``, ``max_block`` and ``funded`` represent "
 "something other than money, so they should all be tagged with `Not "
 "money`."
-msgstr ""
+msgstr "相反，``owner``、``max_block`` 和 ``funded`` 都代表货币以外的东西，所以它们都应该被标记为 `Not money`。"
 
 #: ../scilla-checker.rst:500
 msgid ""
@@ -565,5 +565,5 @@ msgid ""
 " they are used in the contract's transitions and procedures, and if the "
 "resulting tags do not correspond to the expectation, then the contract "
 "likely contains a bug somewhere."
-msgstr ""
+msgstr "现金流分析将根据参数和字段在合约的 transition 和 procedure 中的使用情况对其进行标记，如果结果标签与预期不符，则合约可能在某处包含错误。"
 
