@@ -28,7 +28,7 @@ msgid ""
 "``NatUtils.scilla`` and ``PairUtils.scilla``. As the names suggests these"
 " contracts implement utility operations for the ``Bool``, ``IntX``, "
 "``List``, ``Nat`` and ``Pair`` types, respectively."
-msgstr ""
+msgstr "Scilla 标准库包含五个库：``BoolUtils.scilla``、``IntUtils.scilla``、``ListUtils.scilla``、``NatUtils.scilla`` 和 ``PairUtils.scilla``。 顾名思义，这些合约分别为 ``Bool``、``IntX``、``List``、``Nat`` 和 ``Pair`` 类型实现了实用操作。"
 
 #: ../stdlib.rst:11
 msgid ""
@@ -36,173 +36,173 @@ msgid ""
 "library file must be imported using the ``import`` declaration. The "
 "following code snippet shows how to import the functions from the "
 "``ListUtils`` and ``IntUtils`` libraries:"
-msgstr ""
+msgstr "要在合约中使用标准库中的函数，必须使用 ``import`` 声明导入相关库文件。 以下代码片段显示了如何从 ``ListUtils`` 和 ``IntUtils`` 库中导入函数："
 
 #: ../stdlib.rst:20
 msgid ""
 "The ``import`` declaration must occur immediately before the contract's "
 "own library declaration, e.g.:"
-msgstr ""
+msgstr "``import`` 声明必须紧接在合约自己的库声明之前，例如："
 
 #: ../stdlib.rst:34
 msgid "Below, we present the functions defined in each of the library."
-msgstr ""
+msgstr "下面，我们介绍每个库中定义的函数。"
 
 #: ../stdlib.rst:37
 msgid "BoolUtils"
-msgstr ""
+msgstr "BoolUtils"
 
 #: ../stdlib.rst:39
 msgid ""
 "``andb : Bool -> Bool -> Bool``: Computes the logical AND of two ``Bool``"
 " values."
-msgstr ""
+msgstr "``andb : Bool -> Bool -> Bool``：计算两个 ``Bool` 值的逻辑与。"
 
 #: ../stdlib.rst:41
 msgid ""
 "``orb  : Bool -> Bool -> Bool``: Computes the logical OR of two ``Bool`` "
 "values."
-msgstr ""
+msgstr "``orb : Bool -> Bool -> Bool``：计算两个 ``Bool`` 值的逻辑或。"
 
 #: ../stdlib.rst:43
 msgid ""
 "``negb : Bool -> Bool``: Computes the logical negation of a ``Bool`` "
 "value."
-msgstr ""
+msgstr "``negb : Bool -> Bool``：计算 Bool 值的逻辑否定。"
 
 #: ../stdlib.rst:45
 msgid ""
 "``bool_to_string : Bool -> String``: Transforms a ``Bool`` value into a "
 "``String`` value. ``True`` is transformed into ``\"True\"``, and "
 "``False`` is transformed into ``\"False\"``."
-msgstr ""
+msgstr "``bool_to_string : Bool -> String``：将 ``Bool`` 值转换为 ``String`` 值。 ``True`` 变 ``\"True\"``，``False`` 变 ``\"False\"``。"
 
 #: ../stdlib.rst:50
 msgid "IntUtils"
-msgstr ""
+msgstr "IntUtils"
 
 #: ../stdlib.rst:52
 msgid ""
 "``intX_eq : IntX -> IntX -> Bool``: Equality operator specialised for "
 "each ``IntX`` type."
-msgstr ""
+msgstr "intX_eq ：IntX -> IntX -> Bool：专用于 ``IntX`` 类型的相等运算符。"
 
 #: ../stdlib.rst:74
 msgid ""
 "``uintX_eq : UintX -> UintX -> Bool``: Equality operator specialised for "
 "each ``UintX`` type."
-msgstr ""
+msgstr "``uintX_eq ：UintX -> UintX -> Bool``：专用于 ``UintX`` 类型的相等运算符。"
 
 #: ../stdlib.rst:77
 msgid ""
 "``intX_lt : IntX -> IntX -> Bool``: Less-than operator specialised for "
 "each ``IntX`` type."
-msgstr ""
+msgstr "``intX_lt ：IntX -> IntX -> Bool``：专用于 ``IntX`` 类型的小于运算符。"
 
 #: ../stdlib.rst:79
 msgid ""
 "``uintX_lt : UintX -> UintX -> Bool``: Less-than operator specialised for"
 " each ``UintX`` type."
-msgstr ""
+msgstr "``uintX_lt ：UintX -> UintX -> Bool``：专用于 ``UintX`` 类型的小于运算符。"
 
 #: ../stdlib.rst:82
 msgid ""
 "``intX_neq : IntX -> IntX -> Bool``: Not-equal operator specialised for "
 "each ``IntX`` type."
-msgstr ""
+msgstr "``intX_neq ：IntX -> IntX -> Bool``：专用于 ``IntX`` 类型的不等运算符。"
 
 #: ../stdlib.rst:84
 msgid ""
 "``uintX_neq : UintX -> UintX -> Bool``: Not-equal operator specialised "
 "for each ``UintX`` type."
-msgstr ""
+msgstr "``uintX_neq : UintX -> UintX -> Bool``: 专用于 ``UintX`` 类型的不等运算符。"
 
 #: ../stdlib.rst:87
 msgid ""
 "``intX_le : IntX -> IntX -> Bool``: Less-than-or-equal operator "
 "specialised for each ``IntX`` type."
-msgstr ""
+msgstr "``intX_le : IntX -> IntX -> Bool``: 小于或等于 ``IntX`` 类型的运算符。"
 
 #: ../stdlib.rst:89
 msgid ""
 "``uintX_le : UintX -> UintX -> Bool``: Less-than-or-equal operator "
 "specialised for each ``UintX`` type."
-msgstr ""
+msgstr "``uintX_le : UintX -> UintX -> Bool``: 小于或等于 ``UintX`` 类型的运算符。"
 
 #: ../stdlib.rst:92
 msgid ""
 "``intX_gt : IntX -> IntX -> Bool``: Greater-than operator specialised for"
 " each ``IntX`` type."
-msgstr ""
+msgstr "``intX_gt ：IntX -> IntX -> Bool``：专用于 ``IntX`` 类型的大于运算符。"
 
 #: ../stdlib.rst:94
 msgid ""
 "``uintX_gt : UintX -> UintX -> Bool``: Greater-than operator specialised "
 "for each ``UintX`` type."
-msgstr ""
+msgstr "``uintX_gt ：UintX -> UintX -> Bool``：专用于 ``UintX`` 类型的大于运算符。"
 
 #: ../stdlib.rst:97
 msgid ""
 "``intX_ge : IntX -> IntX -> Bool``: Greater-than-or-equal operator "
 "specialised for each ``IntX`` type."
-msgstr ""
+msgstr "``intX_ge : IntX -> IntX -> Bool``: 大于或等于 ``IntX`` 类型的运算符。"
 
 #: ../stdlib.rst:99
 msgid ""
 "``uintX_ge : UintX -> UintX -> Bool``: Greater-than-or-equal operator "
 "specialised for each ``UintX`` type."
-msgstr ""
+msgstr "``uintX_ge : UintX -> UintX -> Bool``: 大于或等于 ``UintX`` 类型的运算符。"
 
 #: ../stdlib.rst:104
 msgid "ListUtils"
-msgstr ""
+msgstr "ListUtils"
 
 #: ../stdlib.rst:106
 msgid "``list_map : ('A -> 'B) -> List 'A -> : List 'B``."
-msgstr ""
+msgstr "``list_map : ('A -> 'B) -> List 'A -> : List 'B``。"
 
 #: ../stdlib.rst
 msgid ""
 "Apply ``f : 'A -> 'B`` to every element of ``l : List 'A``, constructing "
 "a list (of type ``List 'B``) of the results."
-msgstr ""
+msgstr "将 ``f : 'A -> 'B`` 应用于 ``l : List 'A`` 的每个元素，构造结果的列表（类型为 ``List 'B``）。"
 
 #: ../stdlib.rst:125
 msgid "``list_filter : ('A -> Bool) -> List 'A -> List 'A``."
-msgstr ""
+msgstr "``list_filter : ('A -> Bool) -> List 'A -> List 'A``。"
 
 #: ../stdlib.rst
 msgid ""
 "Filter out elements on the list based on the predicate ``f : 'A -> "
 "Bool``. If an element satisfies ``f``, it will be in the resultant list, "
 "otherwise it is removed. The order of the elements is preserved."
-msgstr ""
+msgstr "根据谓词 ``f 'A -> Bool`` 过滤掉列表中的元素。 如果一个元素满足 ``f``，它将在结果列表中，否则将被删除。 元素的顺序被保留。"
 
 #: ../stdlib.rst:146
 msgid "``list_head : (List 'A) -> (Option 'A)``."
-msgstr ""
+msgstr "``list_head : (List 'A) -> (Option 'A)``。"
 
 #: ../stdlib.rst
 msgid ""
 "Return the head element of a list ``l : List 'A`` as an optional value. "
 "If ``l`` is not empty with the first element ``h``, the result is ``Some "
 "h``. If ``l`` is empty, then the result is ``None``."
-msgstr ""
+msgstr "返回列表 ``l List 'A`` 的头元素作为可选值。 如果 ``l`` 的第一个元素 ``h`` 不为空，则结果为 ``Some h``。 如果 ``l`` 为空，则结果为 ``None``。"
 
 #: ../stdlib.rst:153
 msgid "``list_tail : (List 'A) -> (Option List 'A)``."
-msgstr ""
+msgstr "``list_tail : (List 'A) -> (Option List 'A)``。"
 
 #: ../stdlib.rst
 msgid ""
 "Return the tail of a list ``l : List 'A`` as an optional value. If ``l`` "
 "is a non-empty list of the form ``Cons h t``, then the result is ``Some "
 "t``. If ``l`` is empty, then the result is ``None``."
-msgstr ""
+msgstr "返回列表 ``l : List 'A`` 的尾部作为可选值。 如果 ``l`` 是形式为 ``Cons h t`` 的非空列表，则结果为 ``Some t``。 如果 ``l`` 为空，则结果为 ``None``。"
 
 #: ../stdlib.rst:160
 msgid "``list_foldl_while : ('B -> 'A -> Option 'B) -> 'B -> List 'A -> 'B``"
-msgstr ""
+msgstr "``list_foldl_while : ('B -> 'A -> Option 'B) -> 'B -> List 'A -> 'B``"
 
 #: ../stdlib.rst
 msgid ""
@@ -210,32 +210,32 @@ msgid ""
 "and list ``ls : List 'A`` execute a left fold when our given function "
 "returns ``Some x : Option 'B`` using ``f z x : 'B`` or list is empty but "
 "in the case of ``None : Option 'B`` terminate early, returning ``z``."
-msgstr ""
+msgstr "给定一个函数 ``f : 'B -> 'A -> Option 'B``，累加器 ``z : 'B`` 以及列表 ``ls : List 'A`` ，当我们给定的函数使用 ``f z x : 'B`` 返回 ``Some x : Option 'B`` 或者列表为空，但在 ``None : Option 'B`` 的情况下提前终止，并返回 ``z``，来执行左折叠。"
 
 #: ../stdlib.rst:192
 msgid "``list_append : (List 'A -> List 'A ->  List 'A)``."
-msgstr ""
+msgstr "``list_append : (List 'A -> List 'A ->  List 'A)``。"
 
 #: ../stdlib.rst
 msgid ""
 "Append the first list to the front of the second list, keeping the order "
 "of the elements in both lists. Note that ``list_append`` has linear time "
 "complexity in the length of the first argument list."
-msgstr ""
+msgstr "将第一个列表附加到第二个列表的前面，保持两个列表中元素的顺序。 请注意， ``list_append`` 在第一个参数列表的长度上具有线性时间复杂度。"
 
 #: ../stdlib.rst:198
 msgid "``list_reverse : (List 'A -> List 'A)``."
-msgstr ""
+msgstr "``list_reverse : (List 'A -> List 'A)``。"
 
 #: ../stdlib.rst
-msgid ""
+msgid "``list_reverse : (List 'A -> List 'A)``。"
 "Return the reverse of the input list. Note that ``list_reverse`` has "
 "linear time complexity in the length of the argument list."
-msgstr ""
+msgstr "返回输入列表的反转。 请注意， ``list_reverse`` 在参数列表的长度上具有线性时间复杂度。"
 
 #: ../stdlib.rst:203
 msgid "``list_flatten : (List List 'A) -> List 'A``."
-msgstr ""
+msgstr "``list_flatten : (List List 'A) -> List 'A``。"
 
 #: ../stdlib.rst
 msgid ""
@@ -244,21 +244,21 @@ msgid ""
 "List 'A``) are all concatenated together, keeping the order of the input "
 "list. Note that ``list_flatten`` has linear time complexity in the total "
 "number of elements in all of the lists."
-msgstr ""
+msgstr "构造一个所有元素都在一个列表中的列表。 输入列表（类型为 ``List List 'A``）的每个元素（类型为 ``List 'A``）都连接在一起，并保持输入列表的顺序。 请注意， ``list_flatten`` 在所有列表中的元素总数中具有线性时间复杂度。"
 
 #: ../stdlib.rst:212
 msgid "``list_length : List 'A -> Uint32``"
-msgstr ""
+msgstr "``list_length : List 'A -> Uint32``"
 
 #: ../stdlib.rst
 msgid ""
 "Count the number of elements in a list. Note that ``list_length`` has "
 "linear time complexity in the number of elements in the list."
-msgstr ""
+msgstr "计算列表中元素的数量。 请注意， ``list_length`` 在列表中的元素数量方面具有线性时间复杂度。"
 
 #: ../stdlib.rst:217
 msgid "``list_eq : ('A -> 'A -> Bool) -> List 'A -> List 'A -> Bool``."
-msgstr ""
+msgstr "``list_eq : ('A -> 'A -> Bool) -> List 'A -> List 'A -> Bool``。"
 
 #: ../stdlib.rst
 msgid ""
@@ -267,22 +267,22 @@ msgid ""
 "then ``list_eq`` returns ``True``. If ``f`` returns ``False`` for at "
 "least one pair of elements, or if the lists have different lengths, then "
 "``list_eq`` returns ``False``."
-msgstr ""
+msgstr "使用谓词函数 ``f : 'A -> 'A -> Bool`` 逐个元素比较两个列表。 如果 ``f`` 对于每对元素都返回 ``True``，则 ``list_eq`` 返回 ``True``。 如果 ``f`` 至少对一对元素返回 ``False``，或者如果列表具有不同的长度，则 ``list_eq`` 返回 ``False``。"
 
 #: ../stdlib.rst:225
 msgid "``list_mem : ('A -> 'A -> Bool) -> 'A -> List 'A -> Bool``."
-msgstr ""
+msgstr "``list_mem : ('A -> 'A -> Bool) -> 'A -> List 'A -> Bool``。"
 
 #: ../stdlib.rst
 msgid ""
 "Checks whether an element ``a : 'A`` is an element in the list ``l : "
 "List'A``. ``f : 'A -> 'A -> Bool`` should be provided for equality "
 "comparison."
-msgstr ""
+msgstr "检查元素 ``a : 'A`` 是否是列表 ``l : List'A`` 中的元素。 ``f : 'A -> 'A -> Bool`` 应该提供等式比较。"
 
 #: ../stdlib.rst:246
 msgid "``list_forall : ('A -> Bool) -> List 'A -> Bool``."
-msgstr ""
+msgstr "``list_forall : ('A -> Bool) -> List 'A -> Bool``。"
 
 #: ../stdlib.rst
 msgid ""
@@ -290,11 +290,11 @@ msgid ""
 "``f : 'A -> Bool``. ``list_forall`` returns ``True`` if all elements "
 "satisfy ``f``, and ``False`` if at least one element does not satisfy "
 "``f``."
-msgstr ""
+msgstr "检查列表 ``l : List 'A`` 的所有元素是否满足谓词 ``f : 'A -> Bool``。 如果所有元素都满足 ``f``，则 ``list_forall`` 返回 ``True``，如果至少有一个元素不满足 ``f``，则返回 ``False``。"
 
 #: ../stdlib.rst:253
 msgid "``list_exists : ('A -> Bool) -> List 'A -> Bool``."
-msgstr ""
+msgstr "``list_exists : ('A -> Bool) -> List 'A -> Bool``。"
 
 #: ../stdlib.rst
 msgid ""
@@ -302,11 +302,11 @@ msgid ""
 "predicate ``f : 'A -> Bool``. ``list_exists`` returns ``True`` if at "
 "least one element satisfies ``f``, and ``False`` if none of the elements "
 "satisfy ``f``."
-msgstr ""
+msgstr "检查列表 ``l : List 'A`` 的至少一个元素是否满足谓词 ``f : 'A -> Bool``。 如果至少有一个元素满足 ``f``，则 ``list_exists`` 返回 ``True``，如果没有一个元素满足 ``f``，则返回 ``False``。"
 
 #: ../stdlib.rst:260
 msgid "``list_sort : ('A -> 'A -> Bool) -> List 'A -> List 'A``."
-msgstr ""
+msgstr "``list_sort : ('A -> 'A -> Bool) -> List 'A -> List 'A``。"
 
 #: ../stdlib.rst
 msgid ""
@@ -314,11 +314,11 @@ msgid ""
 "function ``flt : 'A -> 'A -> Bool`` provided must return ``True`` if its "
 "first argument is less than its second argument. ``list_sort`` has "
 "quadratic time complexity."
-msgstr ""
+msgstr "使用插入排序对输入列表 ``l : List 'A`` 进行排序。 如果第一个参数小于第二个参数，则提供的比较函数 ``flt : 'A -> 'A -> Bool`` 必须返回 ``True``。 ``list_sort`` 具有二次时间复杂度。"
 
 #: ../stdlib.rst:296
 msgid "``list_find : ('A -> Bool) -> List 'A -> Option 'A``."
-msgstr ""
+msgstr "``list_find : ('A -> Bool) -> List 'A -> Option 'A``。"
 
 #: ../stdlib.rst
 msgid ""
@@ -327,22 +327,22 @@ msgid ""
 "satisfies the predicate, and the first one of those elements is ``x``, "
 "then the result is ``Some x``. If no element satisfies the predicate, the"
 " result is ``None``."
-msgstr ""
+msgstr "返回列表 ``l : List 'A`` 中满足谓词 ``f : 'A -> Bool`` 的第一个元素。 如果列表中至少有一个元素满足谓词，并且这些元素中的第一个元素是 ``x``，则结果是 ``Some x``。 如果没有元素满足谓词，则结果为 ``None``。"
 
 #: ../stdlib.rst:304
 msgid "``list_zip : List 'A -> List 'B -> List (Pair 'A 'B)``."
-msgstr ""
+msgstr "``list_zip : List 'A -> List 'B -> List (Pair 'A 'B)``。"
 
 #: ../stdlib.rst
 msgid ""
 "Combine two lists element by element, resulting in a list of pairs. If "
 "the lists have different lengths, the trailing elements of the longest "
 "list are ignored."
-msgstr ""
+msgstr "将两个列表逐个元素组合在一起，产生一个对列表。 如果列表具有不同的长度，则最长列表的尾随元素将被忽略。"
 
 #: ../stdlib.rst:310
 msgid "``list_zip_with : ('A -> 'B -> 'C) -> List 'A -> List 'B -> List 'C )``."
-msgstr ""
+msgstr "``list_zip_with : ('A -> 'B -> 'C) -> List 'A -> List 'B -> List 'C )``。"
 
 #: ../stdlib.rst
 msgid ""
@@ -350,21 +350,21 @@ msgid ""
 "-> 'B -> 'C``. The result of ``list_zip_with`` is a list of the results "
 "of applying ``f`` to the elements of the two lists. If the lists have "
 "different lengths, the trailing elements of the longest list are ignored."
-msgstr ""
+msgstr "使用组合函数 ``f ：'A -> 'B -> 'C`` 逐个元素地组合两个列表。 ``list_zip_with`` 的结果是将 ``f`` 应用于两个列表的元素的结果列表。 如果列表具有不同的长度，则最长列表的尾随元素将被忽略。"
 
 #: ../stdlib.rst:318
 msgid "``list_unzip : List (Pair 'A 'B) -> Pair (List 'A) (List 'B)``."
-msgstr ""
+msgstr "``list_unzip : List (Pair 'A 'B) -> Pair (List 'A) (List 'B)``。"
 
 #: ../stdlib.rst
 msgid ""
 "Split a list of pairs into a pair of lists consisting of the elements of "
 "the pairs of the original list."
-msgstr ""
+msgstr "将一个对列表拆分为一对列表，这些列表由原始列表对的元素组成。"
 
 #: ../stdlib.rst:323
 msgid "``list_nth : Uint32 -> List 'A -> Option 'A``."
-msgstr ""
+msgstr "``list_nth : Uint32 -> List 'A -> Option 'A``。"
 
 #: ../stdlib.rst
 msgid ""
@@ -372,11 +372,11 @@ msgid ""
 "``n`` elements, and the element number ``n`` is ``x``, ``list_nth`` "
 "returns ``Some x``. If the list has fewer than ``n`` elements, "
 "``list_nth`` returns ``None``."
-msgstr ""
+msgstr "从列表中返回元素编号 ``n``。 如果列表至少有 ``n`` 个元素，并且元素编号 ``n`` 为 ``x``，则 ``list_nth`` 返回 ``Some x``。 如果列表少于 ``n`` 个元素，则 ``list_nth`` 返回 ``None``。"
 
 #: ../stdlib.rst:331
 msgid "NatUtils"
-msgstr ""
+msgstr "NatUtils"
 
 #: ../stdlib.rst:333
 msgid ""
@@ -384,7 +384,7 @@ msgid ""
 "the current one. If the current number is ``Zero``, the result is "
 "``None``. If the current number is ``Succ x``, then the result is ``Some "
 "x``."
-msgstr ""
+msgstr "``nat_prev : Nat -> Option Nat``: 返回比当前小 1 的 Peano 数字。 如果当前数字为 ``Zero``，则结果为 ``None``。 如果当前数字是 ``Succ x``，则结果是 ``Some x``。"
 
 #: ../stdlib.rst:338
 msgid ""
@@ -393,30 +393,30 @@ msgid ""
 "This is ``nat_fold`` with early termination. Continues recursing so long "
 "as ``f`` returns ``Some y`` with new accumulator ``y``. Once ``f`` "
 "returns ``None``, the recursion terminates."
-msgstr ""
+msgstr "``nat_fold_while : ('T -> Nat -> Option 'T) -> 'T -> Nat -> 'T``: 接受参数 ``f : 'T -> Nat -> Option 'T`` 、``z : `T`` 以及 ``m : Nat``。 这是提前终止的 ``nat_fold``。 只要 ``f`` 用新的累加器 ``y`` 返回 ``Some y``，就继续递归。 一旦 ``f`` 返回 ``None``，递归终止。"
 
 #: ../stdlib.rst:344
 msgid "``is_some_zero : Nat -> Bool``: Zero check for Peano numbers."
-msgstr ""
+msgstr "``is_some_zero : Nat -> Bool``：Peano 数字的零检查。"
 
 #: ../stdlib.rst:346
 msgid ""
 "``nat_eq : Nat -> Nat -> Bool``: Equality check specialised for the "
 "``Nat`` type."
-msgstr ""
+msgstr "``nat_eq : Nat -> Nat -> Bool``: 专门用于 ``Nat`` 类型的相等检查。"
 
 #: ../stdlib.rst:349
 msgid ""
 "``nat_to_int : Nat -> Uint32``: Convert a Peano number to its equivalent "
 "``Uint32`` integer."
-msgstr ""
+msgstr "``nat_to_int : Nat -> Uint32``: 将 Peano 数转换为其等效的 ``Uint32`` 整数。"
 
 #: ../stdlib.rst:352
 msgid ""
 "``uintX_to_nat : UintX -> Nat``: Convert a ``UintX`` integer to its "
 "equivalent Peano number. The integer must be small enough to fit into a "
 "``Uint32``. If it is not, then an overflow error will occur."
-msgstr ""
+msgstr "``uintX_to_nat : UintX -> Nat``：将 ``UintX`` 整数转换为其等效的 Peano 数。该整数必须足够小，以适应 ``Uint32``。如果不是，那么就会发生溢出错误。"
 
 #: ../stdlib.rst:356
 msgid ""
@@ -424,35 +424,35 @@ msgid ""
 "equivalent Peano number. The integer must be non-negative, and must be "
 "small enough to fit into a ``Uint32``. If it is not, then an underflow or"
 " overflow error will occur."
-msgstr ""
+msgstr "``intX_to_nat : IntX -> Nat``：将 ``IntX`` 整数转换为其等效的 Peano 数。 该整数必须是非负数，并且必须足够小以适合 ``Uint32``。 如果不是，则会发生下溢或上溢错误。"
 
 #: ../stdlib.rst:363
 msgid "PairUtils"
-msgstr ""
+msgstr "PairUtils"
 
 #: ../stdlib.rst:365
 msgid "``fst : Pair 'A 'B -> 'A``: Extract the first element of a Pair."
-msgstr ""
+msgstr "``fst : Pair 'A 'B -> 'A``: 提取 Pair 的第一个元素。"
 
 #: ../stdlib.rst:375
 msgid "``snd : Pair 'A 'B -> 'B``: Extract the second element of a Pair."
-msgstr ""
+msgstr "``snd : Pair 'A 'B -> 'B``: 提取 Pair 的第二个元素。"
 
 #: ../stdlib.rst:378
 msgid "Conversions"
-msgstr ""
+msgstr "Conversions"
 
 #: ../stdlib.rst:380
 msgid ""
 "This library provides conversions b/w Scilla types, particularly between "
 "integers and byte strings."
-msgstr ""
+msgstr "该库提供了 b/w Scilla 类型的转换，特别是整数和字节字符串之间的转换。"
 
 #: ../stdlib.rst:383
 msgid ""
 "To enable specifying the encoding of integer arguments to these "
 "functions, a type is defined for endianness."
-msgstr ""
+msgstr "为了能够为这些函数指定整数参数的编码，因此为字节序定义了一个类型。"
 
 #: ../stdlib.rst:392
 msgid ""
@@ -462,7 +462,7 @@ msgid ""
 "useful when deserializing a byte stream. In other words, ``next_pos`` "
 "indicates where this function stopped reading bytes from the input byte "
 "string."
-msgstr ""
+msgstr "下面的函数连同它们的主要结果，也返回 ``next_pos : Uint32``，它指可以从输入 ``ByStr`` 值中提取任何进一步数据的位置。 这在反序列化字节流时很有用。 换句话说，``next_pos`` 指此函数停止从输入字节字符串读取字节的位置。"
 
 #: ../stdlib.rst:398
 msgid ""
@@ -473,7 +473,7 @@ msgid ""
 "function to extract, from a string ``s : ByStr``, a substring starting at"
 " position ``pos : Uint32`` and of length ``len : Uint32``. It returns "
 "``Some ByStr`` on success and ``None`` on failure."
-msgstr ""
+msgstr "``substr_safe : ByStr -> Uint32 -> Uint32 -> Option ByStr`` 虽然 Scilla 提供了一个内置函数来提取字节字符串的子字符串 (``ByStr``)，但它并不是异常安全的。 当提供不正确的参数时，它会抛出异常。 此库函数作为异常安全函数提供，用于从字符串 ``s : ByStr`` 中提取从位置 ``pos : Uint32`` 开始且长度为 ``len : Uint32`` 的子字符串。 它在成功时返回 ``Some ByStr``，在失败时返回 ``None``。"
 
 #: ../stdlib.rst:406
 msgid ""
@@ -481,7 +481,7 @@ msgid ""
 "Uint32 Uint32)`` Extracts a ``Uint32`` value from ``bs : ByStr``, "
 "starting at position ``pos : Uint32``. On success, ``Some "
 "extracted_uint32_value next_pos`` is returned. ``None`` otherwise."
-msgstr ""
+msgstr "``extract_uint32 : IntegerEncoding -> ByStr -> Uint32 -> Option (Pair Uint32 Uint32)`` 从位置 ``pos : Uint32`` 开始，在 ``bs : ByStr`` 中提取一个 ``Uint32`` 的值。 成功时，返回 ``Some extract_uint32_value next_pos``，否则返回 ``None``。"
 
 #: ../stdlib.rst:410
 msgid ""
@@ -489,7 +489,7 @@ msgid ""
 "Uint64 Uint32)`` Extracts a ``Uint64`` value from ``bs : ByStr``, "
 "starting at position ``pos : Uint32``. On success, ``Some "
 "extracted_uint64_value next_pos`` is returned. ``None`` otherwise."
-msgstr ""
+msgstr "``extract_uint64 : IntegerEncoding -> ByStr -> Uint32 -> Option (Pair Uint64 Uint32)`` 从位置 ``pos : Uint32`` 开始，在 ``bs : ByStr`` 中提取一个 ``Uint64`` 的值。 成功返回 ``Some extract_uint64_value next_pos``，否则返回 ``None``。"
 
 #: ../stdlib.rst:414
 msgid ""
@@ -497,7 +497,7 @@ msgid ""
 "Uint128 Uint32)`` Extracts a Uint128 value from ``bs : ByStr``, starting "
 "at position ``pos : Uint32``. On success, ``Some extracted_uint128_value "
 "next_pos`` is returned. ``None`` otherwise."
-msgstr ""
+msgstr "``extract_uint128 : IntegerEncoding -> ByStr -> Uint32 -> Option (Pair Uint128 Uint32)`` 从位置 ``pos : Uint32`` 开始，在 ``bs : ByStr`` 中提取一个 ``Uint128`` 的值。 成功后，会返回 ``Some extract_uint128_value next_pos``，否则返回 ``None``。"
 
 #: ../stdlib.rst:418
 msgid ""
@@ -505,7 +505,7 @@ msgid ""
 "Uint256 Uint32)`` Extracts a ``Uint256`` value from ``bs : ByStr``, "
 "starting at position ``pos : Uint32``. On success, ``Some "
 "extracted_uint256_value next_pos`` is returned. ``None`` otherwise."
-msgstr ""
+msgstr "``extract_uint256 : IntegerEncoding -> ByStr -> Uint32 -> Option (Pair Uint256 Uint32)`` 从位置 ``pos : Uint32`` 开始，在 ``bs : ByStr`` 中提取一个 ``Uint256`` 的值。 成功时，返回 ``Some extract_uint256_value next_pos``，否则返回 ``None``。"
 
 #: ../stdlib.rst:422
 msgid ""
@@ -513,7 +513,7 @@ msgid ""
 "Extracts a ``ByStr1`` value from ``bs : ByStr``, starting at position "
 "``pos : Uint32``. On success, ``Some extracted_bystr1_value next_pos`` is"
 " returned. ``None`` otherwise."
-msgstr ""
+msgstr "``extract_bystr1 : ByStr -> Uint32 -> Option (Pair ByStr1 Uint32)`` 从位置 ``pos : Uint32`` 开始，在 ``bs : ByStr`` 中提取一个 ``ByStr1`` 的值。 成功后，会返回 ``Some extract_bystr1_value next_pos``，否则返回 ``None``。"
 
 #: ../stdlib.rst:426
 msgid ""
@@ -521,7 +521,7 @@ msgid ""
 "Extracts a ``ByStr2`` value from ``bs : ByStr``, starting at position "
 "``pos : Uint32``. On success, ``Some extracted_bystr2_value next_pos`` is"
 " returned. ``None`` otherwise."
-msgstr ""
+msgstr "``extract_bystr2 : ByStr -> Uint32 -> Option (Pair ByStr2 Uint32)`` 从位置 ``pos : Uint32`` 开始，在 ``bs : ByStr`` 中提取一个 ``ByStr2`` 的值。 成功时，返回 ``Some extract_bystr2_value next_pos``，否则返回 ``None``。"
 
 #: ../stdlib.rst:430
 msgid ""
@@ -529,7 +529,7 @@ msgid ""
 "Extracts a ``ByStr2`` value from ``bs : ByStr``, starting at position "
 "``pos : Uint32``. On success, ``Some extracted_bystr20_value next_pos`` "
 "is returned. ``None`` otherwise."
-msgstr ""
+msgstr "``extract_bystr20 : ByStr -> Uint32 -> Option (Pair ByStr20 Uint32)`` 从位置 ``pos : Uint32`` 开始，在 ``bs : ByStr`` 中提取一个 ``ByStr2`` 的值。 成功后，会返回 ``Some extract_bystr20_value next_pos``，否则返回 ``None``。"
 
 #: ../stdlib.rst:434
 msgid ""
@@ -537,39 +537,39 @@ msgid ""
 "Extracts a ``ByStr2`` value from ``bs : ByStr``, starting at position "
 "``pos : Uint32``. On success, ``Some extracted_bystr32_value next_pos`` "
 "is returned. ``None`` otherwise."
-msgstr ""
+msgstr "``extract_bystr32 : ByStr -> Uint32 -> Option (Pair ByStr32 Uint32)`` 从位置 ``pos : Uint32`` 开始，在 ``bs : ByStr`` 中提取一个 ``ByStr2`` 的值。 成功后，会返回 ``Some extract_bystr32_value next_pos``，否则返回 ``None``。"
 
 #: ../stdlib.rst:438
 msgid ""
 "``append_uint32 : IntegerEncoding -> ByStr -> Uint32 -> ByStr`` Serialize"
 " a ``Uint32`` value (with the specified encoding) and append it to the "
 "provided ``ByStr`` and return the result ``ByStr``."
-msgstr ""
+msgstr "``append_uint32 : IntegerEncoding -> ByStr -> Uint32 -> ByStr`` 序列化一个 ``Uint32`` 的值（使用指定的编码）并将其附加到提供的 ``ByStr`` 并返回结果 ``ByStr``。"
 
 #: ../stdlib.rst:442
 msgid ""
 "``append_uint64 : IntegerEncoding -> ByStr -> Uint32 -> ByStr`` Serialize"
 " a ``Uint64`` value (with the specified encoding) and append it to the "
 "provided ``ByStr`` and return the result ``ByStr``."
-msgstr ""
+msgstr "``append_uint64 : IntegerEncoding -> ByStr -> Uint32 -> ByStr`` 序列化一个 ``Uint64`` 的值（使用指定的编码）并将其附加到提供的 ``ByStr`` 并返回结果 ``ByStr``。"
 
 #: ../stdlib.rst:446
 msgid ""
 "``append_uint128 : IntegerEncoding -> ByStr -> Uint32 -> ByStr`` "
 "Serialize a ``Uint128`` value (with the specified encoding) and append it"
 " to the provided ``ByStr`` and return the result ``ByStr``."
-msgstr ""
+msgstr "``append_uint128 : IntegerEncoding -> ByStr -> Uint32 -> ByStr`` 序列化一个 ``Uint128`` 的值（使用指定的编码）并将其附加到提供的 ``ByStr`` 并返回结果 ``ByStr``。"
 
 #: ../stdlib.rst:450
 msgid ""
 "``append_uint256 : IntegerEncoding -> ByStr -> Uint32 -> ByStr`` "
 "Serialize a ``Uint256`` value (with the specified encoding) and append it"
 " to the provided ``ByStr`` and return the result ``ByStr``."
-msgstr ""
+msgstr "``append_uint256 : IntegerEncoding -> ByStr -> Uint32 -> ByStr`` 序列化一个 ``Uint256`` 的值（使用指定的编码）并将其附加到提供的 ``ByStr`` 并返回结果 ``ByStr``。"
 
 #: ../stdlib.rst:455
 msgid "Polynetwork Support Library"
-msgstr ""
+msgstr "Polynetwork 支持库"
 
 #: ../stdlib.rst:457
 msgid ""
@@ -578,5 +578,5 @@ msgid ""
 "ethereum support <https://github.com/polynetwork/eth-"
 "contracts/tree/master/contracts/core/cross_chain_manager>`_, with the "
 "contract itself separately deployed."
-msgstr ""
+msgstr "该库提供了用于构建 Zilliqa Polynetwork 网桥的实用函数。 这些功能从 `Polynetwork 的以太坊支持 <https://github.com/polynetwork/eth-contracts/tree/master/contracts/core/cross_chain_manager>`_ 迁移而来，合约本身单独部署。"
 
