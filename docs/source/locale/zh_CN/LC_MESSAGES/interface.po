@@ -27,11 +27,11 @@ msgid ""
 " invoke transitions with specified inputs and obtain outputs. Execution "
 "of a transition with supplied inputs will result in a set of outputs, and"
 " a change in the smart contract mutable state."
-msgstr ""
+msgstr "Scilla 解释器提供了一个调用接口，使用户能够使用指定的输入调用 transition 并获得输出。 使用提供的输入执行 transition 将产生一组输出，以及智能合约可变状态的变化。"
 
 #: ../interface.rst:15
 msgid "Calling Interface"
-msgstr ""
+msgstr "调用接口"
 
 #: ../interface.rst:17
 msgid ""
@@ -39,14 +39,14 @@ msgid ""
 "of a transaction, or by message calls from another contract. The same "
 "calling interface will be used to call the contract via external "
 "transactions and inter-contract message calls."
-msgstr ""
+msgstr "在合约所定义的 transaction 可以通过发行事务，或者从其他合约消息调用而被调用。相同的调用接口将被用来调用通过外部交易和合约间的消息调用合约。"
 
 #: ../interface.rst:22
 msgid ""
 "The inputs to the interpreter (``scilla-runner``) consists of four input "
 "JSON files as described below. Every invocation of the interpreter to "
 "execute a transition must be provided with these four JSON inputs: ::"
-msgstr ""
+msgstr "解释器 (``scilla-runner``) 的输入由四个输入 JSON 文件组成，如下所述。 每次调用解释器来执行 transition 都必须提供这四个 JSON 输入："
 
 #: ../interface.rst:28
 msgid ""
@@ -62,20 +62,20 @@ msgid ""
 "``CreateContract``, the interpreter only performs basic checks such as "
 "matching the contract’s immutable parameters with ``init.json`` and "
 "whether the contract definition is free of syntax errors."
-msgstr ""
+msgstr "解释器可执行文件可以运行以创建合约（表示为 ``CreateContract``）或调用合约中的 transition（``InvokeContract``）。 根据这两者中的任何一个，都将导致某些论点不存在。 下表列出了在这两种情况下应该出现的论点。 ``CreateContract`` 与 ``InvokeContract`` 的区别在于 ``input_message.json`` 和 ``input_state.json`` 的存在。 如果这些参数不存在，那么解释器会将其评估为 ``CreateContract``。 否则，它会将其视为 ``InvokeContract``。 请注意，对于 ``CreateContract``，解释器仅执行基本检查，例如将合约的不可变参数与 ``init.json`` 匹配以及合约定义有没有语法错误。"
 
 #: ../interface.rst:42
 msgid "Present"
-msgstr ""
+msgstr "当前值"
 
 #: ../interface.rst:44
 msgid "Input"
-msgstr ""
+msgstr "输入"
 
 #: ../interface.rst:44 ../interface.rst:74 ../interface.rst:260
 #: ../interface.rst:453 ../interface.rst:469 ../interface.rst:491
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../interface.rst:44
 msgid "``CreateContract``"
@@ -91,7 +91,7 @@ msgstr ""
 
 #: ../interface.rst:46
 msgid "Immutable contract parameters"
-msgstr ""
+msgstr "不可变合约参数"
 
 #: ../interface.rst:46 ../interface.rst:48 ../interface.rst:50
 #: ../interface.rst:52 ../interface.rst:54 ../interface.rst:56
@@ -104,7 +104,7 @@ msgstr ""
 
 #: ../interface.rst:48
 msgid "Mutable contract state"
-msgstr ""
+msgstr "可变合约状态"
 
 #: ../interface.rst:48 ../interface.rst:52
 msgid "No"
@@ -116,7 +116,7 @@ msgstr ""
 
 #: ../interface.rst:50
 msgid "Blockchain state"
-msgstr ""
+msgstr "区块链状态"
 
 #: ../interface.rst:52
 msgid "``input_message.json``"
@@ -124,7 +124,7 @@ msgstr ""
 
 #: ../interface.rst:52
 msgid "Transition and parameters"
-msgstr ""
+msgstr "transition 和参数"
 
 #: ../interface.rst:54
 msgid "``output.json``"
@@ -132,7 +132,7 @@ msgstr ""
 
 #: ../interface.rst:54
 msgid "Output"
-msgstr ""
+msgstr "输出"
 
 #: ../interface.rst:56
 msgid "``input.scilla``"
@@ -140,7 +140,7 @@ msgstr ""
 
 #: ../interface.rst:56
 msgid "Input contract"
-msgstr ""
+msgstr "输入合约"
 
 #: ../interface.rst:59
 msgid ""
@@ -151,23 +151,23 @@ msgid ""
 "provided, with a list of directories (in the standard PATH format) as the"
 " argument, indicating directories to be searched for for finding the "
 "libraries."
-msgstr ""
+msgstr "除了上面提供的命令行参数之外，解释器还需要一个强制的 ``-gaslimit X`` 参数（其中 ``X`` 是一个正整数值）。 如果合约或库模块导入其他库（包括标准库），则必须提供 ``-libdir`` 选项，以目录列表（标准 PATH 格式）作为参数，指出要搜索的目录从而查找库。"
 
 #: ../interface.rst:67
 msgid "Initializing the Immutable State"
-msgstr ""
+msgstr "初始化不可变状态"
 
 #: ../interface.rst:69
 msgid ""
 "``init.json`` defines the values of the immutable parameters of a "
 "contract. It does not change between invocations.  The JSON is an array "
 "of objects, each of which contains the following fields:"
-msgstr ""
+msgstr "``init.json`` 限定了合约的不可变参数的值。 它不会在调用之间改变。JSON 是一个包含以下字段的对象数组："
 
 #: ../interface.rst:74 ../interface.rst:260 ../interface.rst:453
 #: ../interface.rst:469 ../interface.rst:491
 msgid "Field"
-msgstr ""
+msgstr "字段"
 
 #: ../interface.rst:76
 msgid "``vname``"
@@ -175,7 +175,7 @@ msgstr ""
 
 #: ../interface.rst:76
 msgid "Name of the immutable contract parameter"
-msgstr ""
+msgstr "不可变合约参数的名称"
 
 #: ../interface.rst:77
 msgid "``type``"
@@ -183,7 +183,7 @@ msgstr ""
 
 #: ../interface.rst:77
 msgid "Type of the immutable contract parameter"
-msgstr ""
+msgstr "不可变合约参数的类型"
 
 #: ../interface.rst:78
 msgid "``value``"
@@ -191,7 +191,7 @@ msgstr ""
 
 #: ../interface.rst:78
 msgid "Value of the immutable contract parameter"
-msgstr ""
+msgstr "不可变合约参数的值"
 
 #: ../interface.rst:81
 msgid ""
@@ -203,58 +203,58 @@ msgid ""
 "the block in which the contract is / was created. While working with the "
 "offline interpreter, you may need to provide these values in the "
 "``init.json`` yourself."
-msgstr ""
+msgstr "``init.json`` 必须指定类型为 ``Uint32`` 的 ``_scilla_version``，指定一个与合约源中指定的值相同的值。 此外，区块链将提供两个隐式合约参数 ``_this_address``，一个表示合约本身地址的 ``ByStr20`` 值，和 一个 ``BNum`` 值 ``_creation_block``，表示以前和现在创建合约的区块。 在使用离线解释器时，你可能需要自己在 ``init.json`` 中提供这些值。"
 
 #: ../interface.rst:90 ../interface.rst:278 ../interface.rst:502
 msgid "Example 1"
-msgstr ""
+msgstr "例1"
 
 #: ../interface.rst:92
 msgid ""
 "For the ``HelloWorld.scilla`` contract fragment given below, we have only"
 " one immutable parameter ``owner``."
-msgstr ""
+msgstr "对于下面给出的 ``HelloWorld.scilla`` 合约片段，我们只有一个不可变参数 ``owner``。"
 
 #: ../interface.rst:102 ../interface.rst:146
 msgid "A sample ``init.json`` for this contract will look like the following:"
-msgstr ""
+msgstr "此合约的示例 ``init.json`` 将如下所示："
 
 #: ../interface.rst:131 ../interface.rst:298 ../interface.rst:553
 msgid "Example 2"
-msgstr ""
+msgstr "例2"
 
 #: ../interface.rst:133
 msgid ""
 "For the ``Crowdfunding.scilla`` contract fragment given below, we have "
 "three immutable parameters ``owner``, ``max_block`` and ``goal``."
-msgstr ""
+msgstr "对于下面给出的 ``Crowdfunding.scilla`` 合约片段，我们有三个不可变参数 ``owner``、``max_block`` 和 ``goal``。"
 
 #: ../interface.rst:185
 msgid "Example 3: Using Address Types"
-msgstr ""
+msgstr "例3：使用地址类型"
 
 #: ../interface.rst:187
 msgid ""
 "Whenever a contract has an immutable parameter of an address type, the "
 "type ``ByStr20`` must be used in the to initialise the parameter."
-msgstr ""
+msgstr "每当一个合约有一个地址类型的不可变参数时，类型 ``ByStr20`` 必须用于初始化参数。"
 
 #: ../interface.rst:190
 msgid ""
 "For the ``SimpleExchange`` we have a single the immutable parameter, "
 "which has an address type:"
-msgstr ""
+msgstr "对于 ``SimpleExchange``，我们有一个不可变参数，它具有地址类型："
 
 #: ../interface.rst:200
 msgid ""
 "The JSON entry for the ``initial_admin`` parameter must use the type "
 "``ByStr20`` rather than the type ``ByStr20 with end``, so an example "
 "``init.json`` for this contract could like the following:"
-msgstr ""
+msgstr "``initial_admin`` 参数的 JSON 条目必须使用类型 ``ByStr20`` 而不是类型 ``ByStr20 with end``，因此此合约的示例 ``init.json`` 可能如下所示："
 
 #: ../interface.rst:234
 msgid "Input Blockchain State"
-msgstr ""
+msgstr "输入区块链状态"
 
 #: ../interface.rst:236
 msgid ""
@@ -263,23 +263,23 @@ msgid ""
 "size array of objects, where each object has ``vname`` fields only from a"
 " predetermined set (which correspond to actual blockchain state "
 "variables)."
-msgstr ""
+msgstr "``input_blockchain.json`` 将当前区块链状态提供给解释器。 它与 ``init.json`` 类似，不同之处在于它是一个固定大小的对象数组，其中每个对象只有来自预定集合（对应于实际区块链状态变量）的 ``vname`` 字段。"
 
 #: ../interface.rst:241
 msgid ""
 "**Permitted JSON fields:** At the moment, the only blockchain value that "
 "is exposed to contracts is the current ``BLOCKNUMBER``."
-msgstr ""
+msgstr "**允许JSON字段：** 目前，暴露于合约的唯一区块链值是当前 ``BLOCKNUMBER``。"
 
 #: ../interface.rst:254
 msgid "Input Message"
-msgstr ""
+msgstr "输入消息"
 
 #: ../interface.rst:256
 msgid ""
 "``input_message.json`` contains the information required to invoke a "
 "transition. The json is an array containing the following four objects:"
-msgstr ""
+msgstr "``input_message.json`` 包含调用 transition 所需的信息。 这个 json 是一个包含以下四个对象的数组："
 
 #: ../interface.rst:262 ../interface.rst:471
 msgid "``_tag``"
@@ -287,7 +287,7 @@ msgstr ""
 
 #: ../interface.rst:262 ../interface.rst:471
 msgid "Transition to be invoked"
-msgstr ""
+msgstr "要调用的 transition"
 
 #: ../interface.rst:263 ../interface.rst:472
 msgid "``_amount``"
@@ -295,7 +295,7 @@ msgstr ""
 
 #: ../interface.rst:263 ../interface.rst:472
 msgid "Number of QA to be transferred"
-msgstr ""
+msgstr "要转移的QA数量"
 
 #: ../interface.rst:264
 msgid "``_sender``"
@@ -303,7 +303,7 @@ msgstr ""
 
 #: ../interface.rst:264
 msgid "Address of the invoker (in a chain call, this is the immediate caller)"
-msgstr ""
+msgstr "调用者的地址（在链式调用中，这是直接调用者）"
 
 #: ../interface.rst:265
 msgid "``_origin``"
@@ -311,7 +311,7 @@ msgstr ""
 
 #: ../interface.rst:265
 msgid "Address from which the transaction originated"
-msgstr ""
+msgstr "发起交易的地址"
 
 #: ../interface.rst:266 ../interface.rst:474 ../interface.rst:494
 msgid "``params``"
@@ -319,32 +319,32 @@ msgstr ""
 
 #: ../interface.rst:266
 msgid "An array of parameter objects"
-msgstr ""
+msgstr "参数对象数组"
 
 #: ../interface.rst:270
 msgid ""
 "All the four fields are mandatory. ``params`` can be empty if the "
 "transition takes no parameters."
-msgstr ""
+msgstr "所有四个字段都是强制性的。如果 transition 不带任何参数，则 ``params`` 可以为空。"
 
 #: ../interface.rst:273 ../interface.rst:478
 msgid ""
 "The ``params`` array is encoded similar to how ``init.json`` is encoded, "
 "with each parameter specifying the (``vname``, ``type``, ``value``) that "
 "has to be passed to the transition that is being invoked."
-msgstr ""
+msgstr "``params`` 数组的编码方式类似于 ``init.json`` 的编码方式，每个参数指定必须传递给正在调用的 transition 的 (``vname``、``type``、``value``)。"
 
 #: ../interface.rst:279 ../interface.rst:299
 msgid "For the following transition:"
-msgstr ""
+msgstr "对于以下 transition："
 
 #: ../interface.rst:285 ../interface.rst:305
 msgid "an example ``input_message.json`` is given below:"
-msgstr ""
+msgstr "下面给出了一个示例 ``input_message.json``："
 
 #: ../interface.rst:334
 msgid "Example 3: Using user-defined types"
-msgstr ""
+msgstr "例3：使用用户自定义类型"
 
 #: ../interface.rst:338
 msgid ""
@@ -353,7 +353,7 @@ msgid ""
 " in Scilla versions prior to 0.10.0 and which exploit this bug will have "
 "to be rewritten and redeployed, as they will no longer work from version "
 "0.10.0 and onwards."
-msgstr ""
+msgstr "由于 Scilla 实现中的错误，本节中的信息仅从 Scilla 版本 0.10.0 开始有效。 使用 0.10.0 之前的 Scilla 版本编写并碰到此错误的合约必须重新编写和重新部署，因为它们将不再适用于 0.10.0 及更高版本。"
 
 #: ../interface.rst:344
 msgid ""
@@ -361,19 +361,19 @@ msgid ""
 "interface, the json structure is identical to the one described in the "
 "previous example. However, in the interpreter interface all types must be"
 " fully qualified, which is defined as follows:"
-msgstr ""
+msgstr "当通过解释器接口传递用户自定义类型的值时，json 结构与前面示例中描述的相同。 但是，在解释器接口中，所有类型都必须是完全限定的，其定义如下："
 
 #: ../interface.rst:346
 msgid ""
 "For a user-defined type ``T`` defined in a module deployed at address "
 "``A``, the fully qualified name is ``A.T``."
-msgstr ""
+msgstr "对于在地址 ``A`` 部署的模块中定义的用户自定义类型 ``T``，完全限定名称是 ``A.T``。"
 
 #: ../interface.rst:348
 msgid ""
 "For a user-defined constructor ``C`` defined in a module deployed at "
 "address ``A``, the fully qualified name is ``A.C``."
-msgstr ""
+msgstr "对于在地址 ``A`` 部署的模块中定义的用户自定义构造函数 ``C``，完全限定名称是 ``A.C``。"
 
 #: ../interface.rst:352
 msgid ""
@@ -382,14 +382,14 @@ msgid ""
 "contract defines a type ``T`` with a constructor ``C`` in a file "
 "``F.scilla``, then the fully qualified name of the type is ``F.T``, and "
 "the fully qualified name of the constructor is ``F.C``."
-msgstr ""
+msgstr "为了离线开发，模块的地址被定义为模块的文件名，没有文件扩展名。 也就是说，如果合约在文件 ``F.scilla`` 中定义了带有构造函数 ``C`` 的类型 ``T``，则该类型的完全限定名称为 ``F.T``，构造函数的完全限定名称为 ``F.C``。"
 
 #: ../interface.rst:359
 msgid ""
 "As an example consider a contract that implements a simple board game. "
 "The contract might define a type ``Direction`` and a transition "
 "``MoveAction`` as follows:"
-msgstr ""
+msgstr "例如，考虑一个实现简单棋盘游戏的合约。 合约可能定义一个类型 ``Direction`` 和一个 transition ``MoveAction``，如下："
 
 #: ../interface.rst:374
 msgid ""
@@ -399,44 +399,44 @@ msgid ""
 "``0x1234567890123456789012345678906784567890.Direction`` and the "
 "constructor name ``0x1234567890123456789012345678906784567890.East`` in "
 "the message json:"
-msgstr ""
+msgstr "假设合约已部署在地址 ``0x1234567890123456789012345678906784567890``。为了调用带有参数 ``East`` 和 ``2`` 的 transition，则需使用类型名称 ``0x1234567890123456789012345678906784567890.Direction`` 和在消息 JSON 中的构造名称``0x1234567890123456789012345678906784567890.East``："
 
 #: ../interface.rst:403
 msgid ""
 "If a contract has immutable fields of user-defined types, then the fields"
 " must also be initialised using fully qualified names in the associated "
 "``init.json``."
-msgstr ""
+msgstr "如果合约具有用户自定义类型的不可变字段，则还必须使用关联的 ``init.json`` 中的完全限定名称初始化这些字段。"
 
 #: ../interface.rst:406
 msgid "Example 4: Using Address Types"
-msgstr ""
+msgstr "例4：使用地址类型"
 
 #: ../interface.rst:408
 msgid ""
 "When passing an address value the type ``ByStr20`` must be used. It is "
 "not possible to use address types (``ByStr20 with ... end``) in messages."
-msgstr ""
+msgstr "传递地址值时，必须使用类型 ``ByStr20``。 不能在消息中使用地址类型（``ByStr20 with ... end``）。"
 
 #: ../interface.rst:412
 msgid "This means that for the following transition"
-msgstr ""
+msgstr "这意味着对于接下来的 transition"
 
 #: ../interface.rst:421
 msgid ""
 "the ``input_message.json`` must use the type ``ByStr20`` for the "
 "``new_token`` parameter, e.g., as follows:"
-msgstr ""
+msgstr "所述 ``input_message.json`` 必须使用类型 ``ByStr20`` 作为 ``new_token`` 参数，例如，如下所示："
 
 #: ../interface.rst:447
 msgid "Interpreter Output"
-msgstr ""
+msgstr "解释器输出"
 
 #: ../interface.rst:449
 msgid ""
 "The interpreter will return a JSON object (``output.json``)  with the "
 "following fields:"
-msgstr ""
+msgstr "解释器将返回一个带有以下字段的 JSON 对象 (``output.json``)："
 
 #: ../interface.rst:455
 msgid "``scilla_major_version``"
@@ -444,7 +444,7 @@ msgstr ""
 
 #: ../interface.rst:455
 msgid "The major version of the Scilla language of this contract."
-msgstr ""
+msgstr "本合约的 Scilla 语言的主要版本。"
 
 #: ../interface.rst:456
 msgid "``gas_remaining``"
@@ -452,7 +452,7 @@ msgstr ""
 
 #: ../interface.rst:456
 msgid "The remaining gas after invoking or deploying a contract."
-msgstr ""
+msgstr "调用或部署合约后剩余的 gas。"
 
 #: ../interface.rst:457
 msgid "``_accepted``"
@@ -470,7 +470,7 @@ msgstr ""
 
 #: ../interface.rst:458
 msgid "The message to be sent to another contract/non-contract account, if any."
-msgstr ""
+msgstr "传入的 QA 是否已被接受（``\"true\"`` 或 ``\"false\"``)"
 
 #: ../interface.rst:459
 msgid "``states``"
@@ -478,7 +478,7 @@ msgstr ""
 
 #: ../interface.rst:459
 msgid "An array of objects that form the new contract state"
-msgstr ""
+msgstr "形成新合约状态的对象数组"
 
 #: ../interface.rst:460
 msgid "``events``"
@@ -488,14 +488,14 @@ msgstr ""
 msgid ""
 "An array of events emitted by the transition and the procedures it "
 "invoked."
-msgstr ""
+msgstr "由 transition  及其调用的 procedure 发出的事件数组。"
 
 #: ../interface.rst:463
 msgid ""
 "``message`` is a JSON object with a similar format to "
 "``input_message.json``, except that it has a ``_recipient`` field instead"
 " of the ``_sender`` field. The fields in ``message`` are given below:"
-msgstr ""
+msgstr "``message`` 是一个与 ``input_message.json`` 格式类似的 JSON 对象，除了它有一个 ``_recipient`` 字段而不是 ``_sender`` 字段。 消息中的字段如下："
 
 #: ../interface.rst:473
 msgid "``_recipient``"
@@ -503,25 +503,25 @@ msgstr ""
 
 #: ../interface.rst:473
 msgid "Address of the recipient"
-msgstr ""
+msgstr "接收者地址"
 
 #: ../interface.rst:474
 msgid "An array of parameter objects to be passed"
-msgstr ""
+msgstr "要传递的参数对象数组"
 
 #: ../interface.rst:482
 msgid ""
 "``states`` is an array of objects that represents the mutable state of "
 "the contract. Each entry of the ``states`` array also specifies "
 "(``vname``, ``type``, ``value``)."
-msgstr ""
+msgstr "``states`` 是一个对象数组，表示合约的可变状态。 状态数组的每个条目还指定了（``vname``、``type``、``value``）。"
 
 #: ../interface.rst:486
 msgid ""
 "``events`` is an array of objects that represents the events emitted by "
 "the transition. The fields in each object in the ``events`` array are "
 "given below:"
-msgstr ""
+msgstr "``events`` 是一个对象数组，表示 transition 发出的事件。 事件数组中每个对象的字段如下："
 
 #: ../interface.rst:493
 msgid "``_eventname``"
@@ -529,32 +529,32 @@ msgstr ""
 
 #: ../interface.rst:493
 msgid "The name of the event"
-msgstr ""
+msgstr "事件名称"
 
 #: ../interface.rst:494
 msgid "An array of additional event fields"
-msgstr ""
+msgstr "额外的事件字段数组"
 
 #: ../interface.rst:497
 msgid ""
 "The ``params`` array is encoded similar to how ``init.json`` is encoded, "
 "with each parameter specifying the (``vname``, ``type``, ``value``) of "
 "each event field."
-msgstr ""
+msgstr "``params`` 数组的编码方式类似于 ``init.json`` 的编码方式，每个参数都需指定事件字段的 (``vname``、``type``、``value``)。"
 
 #: ../interface.rst:504
 msgid ""
 "An example of the output generated by ``Crowdfunding.scilla`` is given "
 "below. The example also shows the format for maps in contract states."
-msgstr ""
+msgstr "下面给出了 ``Crowdfunding.scilla`` 生成的输出示例。 该示例还显示了合同状态中映射的格式。"
 
 #: ../interface.rst:555
 msgid "For values of an ADT type, the ``value`` field contains three subfields:"
-msgstr ""
+msgstr "对于 ADT 类型的值，``value`` 字段包含三个子字段："
 
 #: ../interface.rst:557
 msgid "``constructor``: The name of the constructor used to construct the value."
-msgstr ""
+msgstr "``constructor``：用于构造值的构造函数的名称。"
 
 #: ../interface.rst:559
 msgid ""
@@ -563,21 +563,21 @@ msgid ""
 "of the list elements or the optional value, respectively. For the "
 "``Pair`` type, the array will contain two types, indicating the types of "
 "the two values in the pair. For all other ADTs, the array will be empty."
-msgstr ""
+msgstr "``argtypes``：类型实例的数组。对于 ``List`` 和 ``Option`` 类型，这个数组将包含一种类型，分别指示列表中的元素或可选值的类型。对于 ``Pair`` 类型，数组将包含两种类型，表示该类型的 pair 中的两个值。对于所有其他抽象数据类型，数组都将是空数组。"
 
 #: ../interface.rst:566
 msgid "``arguments``: The arguments to the constructor."
-msgstr ""
+msgstr "``arguments``：该构造函数的参数。"
 
 #: ../interface.rst:568
 msgid ""
 "The following example shows how values of the ``List`` and ``Option`` "
 "types are represented in the output json:"
-msgstr ""
+msgstr "以下示例显示了如何在输出 json 中表示 ``List`` 和 ``Option`` 类型的值："
 
 #: ../interface.rst:618
 msgid "Input Mutable Contract State"
-msgstr ""
+msgstr "输入可变合约状态"
 
 #: ../interface.rst:620
 msgid ""
@@ -585,5 +585,5 @@ msgid ""
 "variables. It has the same forms  as the ``states`` field in "
 "``output.json``.  An example of ``input_state.json`` for "
 "``Crowdfunding.scilla`` is given below."
-msgstr ""
+msgstr "``input_state.json`` 包含可变状态变量的当前值。 它与 ``output.json`` 中的 ``states`` 字段具有相同的形式。 下面给出了 ``Crowdfunding.scilla`` 的 ``input_state.json`` 示例。"
 
