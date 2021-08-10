@@ -699,7 +699,7 @@ msgid ""
 "The exchange has a number of listed tokens that can be freely swapped "
 "with each other. Each listed token is identified by its token code (e.g.,"
 " \"USD\" for US dollars)."
-msgstr "该交易所有许多上市的代币，这些代币可以彼此自由转换。每个列出的代币都由其代币代简称标识(例如，“USD”表示美元)。"
+msgstr "该交易所有许多上市的代币，这些代币可以彼此自由转换。每个列出的代币都由其代币代简称标识(例如，\"USD\" 表示美元)。"
 
 #: ../scilla-by-example.rst:887
 msgid ""

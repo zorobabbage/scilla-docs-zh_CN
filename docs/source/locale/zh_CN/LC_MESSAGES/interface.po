@@ -399,7 +399,7 @@ msgid ""
 "``0x1234567890123456789012345678906784567890.Direction`` and the "
 "constructor name ``0x1234567890123456789012345678906784567890.East`` in "
 "the message json:"
-msgstr "假设合约已部署在地址 ``0x1234567890123456789012345678906784567890``。为了调用带有参数 ``East`` 和 ``2`` 的 transition，则需使用类型名称 ``0x1234567890123456789012345678906784567890.Direction`` 和在消息 JSON 中的构造名称``0x1234567890123456789012345678906784567890.East``："
+msgstr "假设合约已部署在地址 ``0x1234567890123456789012345678906784567890``。为了调用带有参数 ``East`` 和 ``2`` 的 transition，则需使用类型名称 ``0x1234567890123456789012345678906784567890.Direction`` 和在消息 JSON 中的构造名称 ``0x1234567890123456789012345678906784567890.East``："
 
 #: ../interface.rst:403
 msgid ""
@@ -462,7 +462,7 @@ msgstr ""
 msgid ""
 "Whether the incoming QA have been accepted (Either ``\"true\"`` or "
 "``\"false\"``)"
-msgstr ""
+msgstr "传入的 QA 是否已被接受（``\"true\"`` 或 ``\"false\"``)"
 
 #: ../interface.rst:458
 msgid "``message``"
@@ -470,7 +470,7 @@ msgstr ""
 
 #: ../interface.rst:458
 msgid "The message to be sent to another contract/non-contract account, if any."
-msgstr "传入的 QA 是否已被接受（``\"true\"`` 或 ``\"false\"``)"
+msgstr "要发送到另一个合约/非合约账户的消息（如果有）。"
 
 #: ../interface.rst:459
 msgid "``states``"

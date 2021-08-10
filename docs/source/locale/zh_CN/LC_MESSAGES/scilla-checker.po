@@ -266,7 +266,7 @@ msgid ""
 "type for the previous phase, which serves as input to the typechecker), "
 "and ``ScillaSyntax`` again (creating the abstract syntax type that the "
 "typechecker outputs)."
-msgstr "Scilla 类型检查器获取上一阶段的语句和表达式注释，然后实例化 ``TypeCheckerERep``（创建新的注释类型）、``ScillaSyntax``（创建前一阶段的抽象语法类型，作为类型检查器的输入）和 ``ScillaSyntax`` （创建类型检查器输出的抽象语法类型）。"
+msgstr "Scilla 类型检查器获取上一阶段的语句和表达式注释，然后实例化 ``TypeCheckerERep`` （创建新的注释类型）、``ScillaSyntax`` （创建前一阶段的抽象语法类型，作为类型检查器的输入）和 ``ScillaSyntax`` （创建类型检查器输出的抽象语法类型）。"
 
 #: ../scilla-checker.rst:281
 msgid ""

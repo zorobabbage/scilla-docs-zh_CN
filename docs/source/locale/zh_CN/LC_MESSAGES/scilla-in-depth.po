@@ -626,7 +626,7 @@ msgid ""
 "<https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-5.md>`_, i.e. "
 "``AddFunds``. Please make sure to check if a contract to which you intend"
 " to send funds is implemented in adherence with ZRC-5 convention."
-msgstr "为了能够将资金从合约转移到合约和用户账户，请使用 `ZRC-5<https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-5.md>`_  中的标准 transition 名称，即 ``AddFunds``。 请务必检查您打算向其发送资金的合约是否符合 ZRC-5 公约。"
+msgstr "为了能够将资金从合约转移到合约和用户账户，请使用 `ZRC-5 <https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-5.md>`_  中的标准 transition 名称，即 ``AddFunds``。 请务必检查您打算向其发送资金的合约是否符合 ZRC-5 公约。"
 
 #: ../scilla-in-depth.rst:573
 msgid ""
@@ -1312,7 +1312,7 @@ msgstr "Scilla 支持以下对哈希和其他加密原语（包括字节序列�
 msgid ""
 "``builtin eq h1 h2``: Is ``h1`` equal to ``h2``? Both inputs are of the "
 "same type ``ByStrX`` (or both are of type ``ByStr``). Returns a ``Bool``."
-msgstr "``builtin eq h1 h2``：``h1`` 是否等于 ``h2``？ 两个输入都是相同类型的 ``ByStrX``（或者都是 ``ByStr`` 类型）。 返回一个布尔值。"
+msgstr "``builtin eq h1 h2``：``h1`` 是否等于 ``h2``？ 两个输入都是相同类型的 ``ByStrX`` （或者都是 ``ByStr`` 类型）。 返回一个布尔值。"
 
 #: ../scilla-in-depth.rst:1045
 msgid ""
@@ -1509,7 +1509,7 @@ msgid ""
 "supported with the syntax ``x <- m[k1][k2][...]``. If one or more of the "
 "intermediate keys do not exist in the corresponding map, the result of "
 "the fetch is ``None``."
-msgstr "``x <- m[k]``：*就地* 本地获取。 获取与映射 ``m`` 中的键 ``k`` 关联的值。 ``m`` 必须引用当前合约中的可变字段。 如果 ``k`` 在 ``m`` 中具有关联值 ``v``，则获取的结果为 ``Some v``（请参阅下面的 ``Option`` 类型），否则结果为 ``None``。 在获取之后，结果被绑定到局部变量 ``x``。 使用语法 ``x <- m[k1][k2][...]`` 支持从嵌套映射中获取。 如果对应的映射中不存在一个或多个中间键，则获取的结果为 ``None``。"
+msgstr "``x <- m[k]``：*就地* 本地获取。 获取与映射 ``m`` 中的键 ``k`` 关联的值。 ``m`` 必须引用当前合约中的可变字段。 如果 ``k`` 在 ``m`` 中具有关联值 ``v``，则获取的结果为 ``Some v`` （请参阅下面的 ``Option`` 类型），否则结果为 ``None``。 在获取之后，结果被绑定到局部变量 ``x``。 使用语法 ``x <- m[k1][k2][...]`` 支持从嵌套映射中获取。 如果对应的映射中不存在一个或多个中间键，则获取的结果为 ``None``。"
 
 #: ../scilla-in-depth.rst:1164
 msgid ""
@@ -2482,7 +2482,7 @@ msgid ""
 " function ``f : 'A -> 'B -> 'B``, accumulator ``z : 'B`` and list ``xs : "
 "List 'A``. Like ``list_foldl``, this can be a recursion primitive or a "
 "list utility function."
-msgstr "在给定一些函数 ``f : 'A -> 'B -> 'B``、累加器 ``z : 'B`` 和列表 ``xs : List 'A``的情况下，函数 ``list_foldr`` 返回右折叠的结果。 与 ``list_foldl`` 一样，这可以是递归原语或列表实用程序函数。"
+msgstr "在给定一些函数 ``f : 'A -> 'B -> 'B``、累加器 ``z : 'B`` 和列表 ``xs : List 'A`` 的情况下，函数 ``list_foldr`` 返回右折叠的结果。 与 ``list_foldl`` 一样，这可以是递归原语或列表实用程序函数。"
 
 #: ../scilla-in-depth.rst:2092
 msgid ""
@@ -2566,7 +2566,7 @@ msgid ""
 " at least one element) or ``False`` (if the predicate does not hold for "
 "any element in the list), so the return type of ``list_exists`` should be"
 " ``Bool``."
-msgstr "``list_exists`` 应该返回 ``True``（如果谓词至少对一个元素成立）或 ``False``（如果谓词对列表中的任何元素都不成立），所以 ``list_exists`` 的返回类型应该是 ``Bool``。"
+msgstr "``list_exists`` 应该返回 ``True`` （如果谓词至少对一个元素成立）或 ``False`` （如果谓词对列表中的任何元素都不成立），所以 ``list_exists`` 的返回类型应该是 ``Bool``。"
 
 #: ../scilla-in-depth.rst:2163
 msgid ""
@@ -2824,7 +2824,7 @@ msgid ""
 "Extending our previous example, shown below is a contract that imports "
 "``ExampleLib`` in namespace ``Bar``, to use the function "
 "``add_if_equal``."
-msgstr "扩展我们之前的示例，如下所示是一个为了使用函数 ``add_if_equal``而在命名空间 ``Bar`` 中导入 ``ExampleLib`` 的合约。"
+msgstr "扩展我们之前的示例，如下所示是一个为了使用函数 ``add_if_equal`` 而在命名空间 ``Bar`` 中导入 ``ExampleLib`` 的合约。"
 
 #: ../scilla-in-depth.rst:2430
 msgid "Scilla versions"
