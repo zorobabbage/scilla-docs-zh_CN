@@ -23,11 +23,11 @@ msgstr "Scilla注意事项及使用技巧"
 
 #: ../scilla-tips-and-tricks.rst:9
 msgid "Performance"
-msgstr ""
+msgstr "性能"
 
 #: ../scilla-tips-and-tricks.rst:15
 msgid "Field map size"
-msgstr ""
+msgstr "映射大小"
 
 #: ../scilla-tips-and-tricks.rst:17
 msgid ""
@@ -36,7 +36,7 @@ msgid ""
 " map into a variable and applies the ``size`` builtin (as in the "
 "following code snippet) can be very inefficient as it requires making a "
 "copy of the map in question."
-msgstr ""
+msgstr "如果你的合约需要知道字段映射的大小，即字段变量是映射，那么将字段映射读入变量并应用内置 ``size`` 的明显实现（如以下代码片段所示）可能非常低效，因为它需要制作相关映射的副本。"
 
 #: ../scilla-tips-and-tricks.rst:34
 msgid ""
@@ -44,7 +44,7 @@ msgid ""
 "corresponding field variable as in the following code snippet. Notice "
 "that now instead of copying a map one just reads from ``accounts_size`` "
 "field variable."
-msgstr ""
+msgstr "为了解决这个问题，可以跟踪相应字段变量中的大小信息，如下面的代码片段所示。 请注意，现在不是复制映射，而是从 ``accounts_size`` 字段变量中读取。"
 
 #: ../scilla-tips-and-tricks.rst:52
 msgid ""
@@ -52,27 +52,27 @@ msgid ""
 "update the size of the map when using the builtin in-place statements "
 "like ``m[k] := v`` or ``delete m[k]`` or better yet define and use "
 "systematically procedures that do exactly that."
-msgstr ""
+msgstr "现在，为了确保映射及其大小保持同步，在使用内置的就地语句时需要更新映射的大小，例如使用 ``m[k] := v`` 或 ``delete m[k]`` 时，或者更好地定义并使用系统化的程序来做到这一点。"
 
 #: ../scilla-tips-and-tricks.rst:57
 msgid ""
 "Here is the definition of a procedure that updates a key/value pair in "
 "the ``accounts`` map and changes its size accordingly."
-msgstr ""
+msgstr "这是更新帐户映射中的键/值对并相应地更改其大小的 procedure 定义。"
 
 #: ../scilla-tips-and-tricks.rst:75
 msgid ""
 "And this is the definition of a procedure that removes a key/value pair "
 "from the ``accounts`` map and changes its size accordingly."
-msgstr ""
+msgstr "这是从帐户映射中删除键/值对并相应地更改其大小的 procedure 定义。"
 
 #: ../scilla-tips-and-tricks.rst:95
 msgid "Money Idioms"
-msgstr ""
+msgstr "资金俗语"
 
 #: ../scilla-tips-and-tricks.rst:99
 msgid "Partially accepting funds"
-msgstr ""
+msgstr "部分接受资金"
 
 #: ../scilla-tips-and-tricks.rst:101
 msgid ""
@@ -83,25 +83,25 @@ msgid ""
 "either not accept at all or accept the funds fully. We can work around "
 "this restriction by fully accepting the incoming funds and then "
 "immediately refunding the tipper if the tip exceeds some cap."
-msgstr ""
+msgstr "假设你正在编写一个让人们互相提示的合约。 你很自然地希望避免一个人因为打字错误而给太多小费的情况。 要求 Scilla 部分接受传入的资金会很好，但是却没有内置 ``accept <cap>``。 你可以完全不接受或完全接受资金。 我们可以通过完全接受传入资金，然后在小费超过某个上限时立即退还小费来解决此限制。"
 
 #: ../scilla-tips-and-tricks.rst:109
 msgid ""
 "It turns out we can encapsulate this kind of behavior as a reusable "
 "procedure."
-msgstr ""
+msgstr "事实证明，我们可以将这种行为封装为一个可重用的 procedure。"
 
 #: ../scilla-tips-and-tricks.rst:127
 msgid "Now, the ``accept_with_cap`` procedure can be used as follows."
-msgstr ""
+msgstr "现在，procedure  ``accept_with_cap`` 可以如下使用。"
 
 #: ../scilla-tips-and-tricks.rst:144
 msgid "Safety"
-msgstr ""
+msgstr "安全性"
 
 #: ../scilla-tips-and-tricks.rst:150
 msgid "Transfer Contract Ownership"
-msgstr ""
+msgstr "转让合约所有权"
 
 #: ../scilla-tips-and-tricks.rst:152
 msgid ""
@@ -110,7 +110,7 @@ msgid ""
 "which can be changed at runtime then at first sight this can be "
 "formalized in the code as a field ``owner`` and a transition like "
 "``ChangeOwner``:"
-msgstr ""
+msgstr "如果你的合约有一个所有者（通常意味着拥有管理员权限的人，例如添加/删除用户帐户或暂停/取消暂停合约）可以在运行时更改，那么乍一看，这可以在代码中形式化为字段 ``owner`` 和像 ``ChangeOwner`` 一样的 transition："
 
 #: ../scilla-tips-and-tricks.rst:170
 msgid ""
@@ -120,53 +120,53 @@ msgid ""
 "address due to a typo in the address parameter when calling the "
 "``ChangeOwner`` transition. Here we provide a design pattern to "
 "circumvent this issue."
-msgstr ""
+msgstr "但是，这可能会导致当前所有者无法控制合约的情况。 例如，当调用 transition ``ChangeOwner`` 时，由于地址参数中的拼写错误，当前所有者可能会将合约所有权转移到不存在的地址。 在这里，我们提供了一种设计模式来规避这个问题。"
 
 #: ../scilla-tips-and-tricks.rst:176
 msgid ""
 "One way to ensure the new owner is active is to do ownership transfer in "
 "two phases:"
-msgstr ""
+msgstr "确保新的所有者活跃的一种方法是分两个阶段进行所有权转让："
 
 #: ../scilla-tips-and-tricks.rst:179
 msgid ""
 "the current owner offers to transfer ownership to a new owner, note that "
 "at this point the current owner is still the contract owner;"
-msgstr ""
+msgstr "当前所有者提出将所有权转让给新的所有者，请注意，此时当前所有者仍然是合约所有者；"
 
 #: ../scilla-tips-and-tricks.rst:182
 msgid ""
 "the future new owner accepts the pending ownership transfer and becomes "
 "the current owner;"
-msgstr ""
+msgstr "未来的新所有者接受待处理的所有权转让并成为当前所有者；"
 
 #: ../scilla-tips-and-tricks.rst:185
 msgid ""
 "at any moment before the future new owner accepts the transfer the "
 "current owner can abort the ownership transfer."
-msgstr ""
+msgstr "在未来的新所有者接受转让之前的任何时刻，当前所有者都可以中止所有权转让。"
 
 #: ../scilla-tips-and-tricks.rst:188
 msgid ""
 "Here is a possible implementation of the pattern outlined above (the code"
 " for the ``isOwner`` procedure is not shown):"
-msgstr ""
+msgstr "这是上述模式的可能实现（未展示 procedure  ``isOwner`` 的代码）："
 
 #: ../scilla-tips-and-tricks.rst:221
 msgid ""
 "Ownership transfer for contracts with the above transition is supposed to"
 " happen as follows:"
-msgstr ""
+msgstr "具有上述 transition 的合约的所有权转让应该如下所示发生："
 
 #: ../scilla-tips-and-tricks.rst:224
 msgid ""
 "the current owner calls ``RequestOwnershipTransfer`` transition with the "
 "new owner address as its only explicit parameter;"
-msgstr ""
+msgstr "当前所有者使用新的所有者地址作为其唯一的显式参数调用 transition ``RequestOwnershipTransfer``；"
 
 #: ../scilla-tips-and-tricks.rst:226
 msgid "the new owner calls ``ConfirmOwnershipTransfer``."
-msgstr ""
+msgstr "新所有者调用 ``ConfirmOwnershipTransfer``。"
 
 #: ../scilla-tips-and-tricks.rst:228
 msgid ""
@@ -174,5 +174,5 @@ msgid ""
 "it by calling ``RequestOwnershipTransfer`` with their own address. A "
 "(redundant) dedicated transition can be added to make it even more "
 "evident to the contract owners and users."
-msgstr ""
+msgstr "在所有权转换完成之前，当前所有者可以通过使用自己的地址调用 ``RequestOwnershipTransfer`` 来中止它。 可以添加（冗余）专用 transition，使其对合约所有者和用户更加明显。"
 
