@@ -1783,7 +1783,7 @@ msgid ""
 " an *accumulator* (which can be thought of as a running total). "
 "``list_foldl`` takes three arguments, which all depend on the two type "
 "variables ``'A`` and ``'B``:"
-msgstr "``list_foldl: ('B -> 'A -> 'B) -> 'B -> (List 'A) -> 'B`` ：从前到后递归处理列表中的元素，同时跟踪 *累加器*（ 可以认为是一个累计）。 ``list_foldl`` 接受三个参数，它们都依赖于两个类型变量 ``'A`` 和 ``'B``："
+msgstr "``list_foldl: ('B -> 'A -> 'B) -> 'B -> (List 'A) -> 'B`` ：从前到后递归处理列表中的元素，同时跟踪 *累加器* （ 可以认为是一个累计）。 ``list_foldl`` 接受三个参数，它们都依赖于两个类型变量 ``'A`` 和 ``'B``："
 
 #: ../scilla-in-depth.rst:1386
 msgid ""
