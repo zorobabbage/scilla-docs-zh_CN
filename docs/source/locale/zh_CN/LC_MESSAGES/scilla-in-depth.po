@@ -803,7 +803,7 @@ msgstr "``builtin eq i1 i2`` ：判断 ``i1`` 是否等于 ``i2``。 返回 ``Bo
 msgid ""
 "``builtin add i1 i2``: Add integer values ``i1`` and ``i2``. Returns an "
 "integer of the same type."
-msgstr "``builtin add i1 i2``：整数值 ``i1` 和 ``i2`` 相加。 返回相同类型的整数。"
+msgstr "``builtin add i1 i2``：整数值 ``i1`` 和 ``i2`` 相加。 返回相同类型的整数。"
 
 #: ../scilla-in-depth.rst:713
 msgid ""
@@ -1373,7 +1373,7 @@ msgid ""
 "``ByStr``), having signature ``sig`` (of type ``ByStr64``) and a "
 "``Uint32`` recovery integer ``recid``, whose value is restricted to be 0,"
 " 1, 2 or 3, the uncompressed public key, returning a ``ByStr65`` value."
-msgstr "``builtin ecdsa_recover_pk data sig recid`` ：恢复 ``data``（``ByStr`` 类型），同时具有签名 ``sig``（``ByStr64`` 类型）和 ``Uint32`` 类型的恢复整数 ``recid``，其值限制为 0、1、2 或 3，未压缩的公钥，返回一个 ``ByStr65`` 的值。"
+msgstr "``builtin ecdsa_recover_pk data sig recid`` ：恢复 ``data`` （``ByStr`` 类型），同时具有签名 ``sig`` （``ByStr64`` 类型）和 ``Uint32`` 类型的恢复整数 ``recid``，其值限制为 0、1、2 或 3，未压缩的公钥，返回一个 ``ByStr65`` 的值。"
 
 #: ../scilla-in-depth.rst:1074
 msgid ""
@@ -1410,7 +1410,7 @@ msgid ""
 "``alt_bn128`` curve (as described previously), and a scalar ``ByStr32`` "
 "value ``s`` and returns the sum of the point ``p`` taken ``s`` times. The"
 " result is a point on the curve."
-msgstr "``builtin alt_bn128_G1_mul p s``。 内置函数取 ``alt_bn128`` 曲线上的一个点 ``p``（如前所述）和一个标量 ``ByStr32`` 的值 ``s`` 并返回点 ``p`` 取 ``s`` 次的总和。 结果是曲线上的一个点。"
+msgstr "``builtin alt_bn128_G1_mul p s``。 内置函数取 ``alt_bn128`` 曲线上的一个点 ``p`` （如前所述）和一个标量 ``ByStr32`` 的值 ``s`` 并返回点 ``p`` 取 ``s`` 次的总和。 结果是曲线上的一个点。"
 
 #: ../scilla-in-depth.rst:1092
 msgid ""
@@ -1623,7 +1623,7 @@ msgid ""
 "String = Emp Uint128 String`` declares a ``Map`` field with keys of type "
 "``Uint128`` and values of type ``String``, which is initialized to be the"
 " empty map."
-msgstr "可以使用 ``Emp`` 关键字构造空映射，指定键和值类型作为其参数。 这是将 ``Map`` 字段初始化为空的方法。 例如``field foomap : Map Uint128  String = Emp Uint128 String`` 声明一个 ``Map`` 字段，其键是 ``Uint128`` 类型，值是 ``String`` 类型，它被初始化为空映射。"
+msgstr "可以使用 ``Emp`` 关键字构造空映射，指定键和值类型作为其参数。 这是将 ``Map`` 字段初始化为空的方法。 例如 ``field foomap : Map Uint128  String = Emp Uint128 String`` 声明一个 ``Map`` 字段，其键是 ``Uint128`` 类型，值是 ``String`` 类型，它被初始化为空映射。"
 
 #: ../scilla-in-depth.rst:1249
 msgid "Block Numbers"
@@ -1717,7 +1717,7 @@ msgid ""
 "value is an absent string value, constructed using ``None``. The second "
 "value is the ``Int32`` value 10, which, because the value is present, is "
 "constructed using ``Some``:"
-msgstr "以下代码片段构造了两个可选值。 第一个值是一个不存在的字符串值，使用 ``None`` 构造。 第二个值是 ``Int32`` 值 10，因为该值存在，所以使用 ``Some`` 构造："
+msgstr "以下代码片段构造了两个可选值。 第一个值是一个不存在的字符串类型的值，使用 ``None`` 构造。 第二个值是 ``Int32`` 类型的值 10，因为该值存在，所以使用 ``Some`` 构造："
 
 #: ../scilla-in-depth.rst:1316
 msgid ""

@@ -56,7 +56,7 @@ msgstr "BoolUtils"
 msgid ""
 "``andb : Bool -> Bool -> Bool``: Computes the logical AND of two ``Bool``"
 " values."
-msgstr "``andb : Bool -> Bool -> Bool``：计算两个 ``Bool` 值的逻辑与。"
+msgstr "``andb : Bool -> Bool -> Bool``：计算两个 ``Bool`` 值的逻辑与。"
 
 #: ../stdlib.rst:41
 msgid ""
