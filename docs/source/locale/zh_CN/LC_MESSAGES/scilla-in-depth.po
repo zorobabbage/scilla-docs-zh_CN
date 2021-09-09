@@ -415,7 +415,7 @@ msgid ""
 "example binds the value of ``one`` to ``1`` of type ``Int32`` and ``two``"
 " to ``2`` of type ``Int32`` in the expression ``builtin add one two``, "
 "which adds ``1`` to ``2`` and hence evaluates to ``3`` of type ``Int32``."
-msgstr "``let x = f in expr`` ：将 ``f`` 绑定到表达式 ``expr`` 中的名称 ``x`` 。 这里的绑定对 ``expr`` 来说仅仅是 **local** 。 以下示例将 ``Int32` 类型的 ``1`` 的值绑定到 ``one`` 以及将 ``Int32` 类型的 ``2`` 的值绑定到 ``two`` 并使用内置表达式 ``builtin add one two`` 计算，该表达式将 ``1`` 与 ``2`` 相加，因此计算结果为 ``Int32` 类型的 ``3``。"
+msgstr "``let x = f in expr`` ：将 ``f`` 绑定到表达式 ``expr`` 中的名称 ``x`` 。 这里的绑定对 ``expr`` 来说仅仅是 **local** 。 以下示例将 ``Int32`` 类型的 ``1`` 的值绑定到 ``one`` 以及将 ``Int32`` 类型的 ``2`` 的值绑定到 ``two`` 并使用内置表达式 ``builtin add one two`` 计算，该表达式将 ``1`` 与 ``2`` 相加，因此计算结果为 ``Int32`` 类型的 ``3``。"
 
 #: ../scilla-in-depth.rst:399
 msgid ""
@@ -441,7 +441,7 @@ msgid ""
 "type and returns the value to which expression ``expr`` evaluates. These "
 "are typically used to build library functions. See the implementation of "
 "fst_ for an example."
-msgstr "``tfun 'T => expr`` ：一个类型函数，它将 ``'T`` 作为参数类型并返回表达式 ``expr` 求值结果。 这些通常用于构建库函数。 有关示例，请参阅 fst_ 的实现。"
+msgstr "``tfun 'T => expr`` ：一个类型函数，它将 ``'T`` 作为参数类型并返回表达式 ``expr`` 求值结果。 这些通常用于构建库函数。 有关示例，请参阅 fst_ 的实现。"
 
 #: ../scilla-in-depth.rst:415
 msgid ""
